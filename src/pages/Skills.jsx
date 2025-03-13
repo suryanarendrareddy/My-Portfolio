@@ -25,9 +25,18 @@ import {
 } from 'react-icons/si'
 
 const skills = [
-  { name: 'HTML', icon: <FaHtml5 className="text-orange-500 text-6xl" /> },
-  { name: 'CSS', icon: <FaCss3Alt className="text-blue-500 text-6xl" /> },
-  { name: 'JavaScript', icon: <FaJs className="text-yellow-400 text-6xl" /> },
+  {
+    name: 'HTML',
+    icon: <FaHtml5 className="text-orange-500 text-6xl" />,
+  },
+  {
+    name: 'CSS',
+    icon: <FaCss3Alt className="text-blue-500 text-6xl" />,
+  },
+  {
+    name: 'JavaScript',
+    icon: <FaJs className="text-yellow-400 text-6xl" />,
+  },
   {
     name: 'Bootstrap',
     icon: <FaBootstrap className="text-purple-600 text-6xl" />,
@@ -36,21 +45,42 @@ const skills = [
     name: 'TailwindCSS',
     icon: <SiTailwindcss className="text-cyan-500 text-6xl" />,
   },
-  { name: 'React.js', icon: <FaReact className="text-blue-400 text-6xl" /> },
-  { name: 'Node.js', icon: <FaNodeJs className="text-green-500 text-6xl" /> },
-  { name: 'MongoDB', icon: <SiMongodb className="text-green-500 text-6xl" /> },
-  { name: 'Java', icon: <FaJava className="text-red-500 text-6xl" /> },
+  {
+    name: 'React.js',
+    icon: <FaReact className="text-blue-400 text-6xl" />,
+  },
+  {
+    name: 'Node.js',
+    icon: <FaNodeJs className="text-green-500 text-6xl" />,
+  },
+  {
+    name: 'MongoDB',
+    icon: <SiMongodb className="text-green-500 text-6xl" />,
+  },
+  {
+    name: 'Java',
+    icon: <FaJava className="text-red-500 text-6xl" />,
+  },
   {
     name: 'Express.js',
     icon: <SiExpress className="text-gray-400 text-6xl" />,
   },
-  { name: 'Git/GitHub', icon: <FaGitAlt className="text-red-500 text-6xl" /> },
+  {
+    name: 'Git/GitHub',
+    icon: <FaGitAlt className="text-red-500 text-6xl" />,
+  },
   {
     name: 'Spring Boot',
     icon: <SiSpringboot className="text-green-500 text-6xl" />,
   },
-  { name: 'DSA', icon: <FaProjectDiagram className="text-red-500 text-6xl" /> },
-  { name: 'MySQL', icon: <SiMysql className="text-blue-400 text-6xl" /> },
+  {
+    name: 'DSA',
+    icon: <FaProjectDiagram className="text-red-500 text-6xl" />,
+  },
+  {
+    name: 'MySQL',
+    icon: <SiMysql className="text-blue-400 text-6xl" />,
+  },
 ]
 
 const softSkills = [
@@ -58,7 +88,10 @@ const softSkills = [
     name: 'Communication',
     icon: <FaComments className="text-yellow-400 text-5xl" />,
   },
-  { name: 'Teamwork', icon: <FaUsers className="text-purple-500 text-5xl" /> },
+  {
+    name: 'Teamwork',
+    icon: <FaUsers className="text-purple-500 text-5xl" />,
+  },
   {
     name: 'Leadership',
     icon: <FaLightbulb className="text-orange-400 text-5xl" />,

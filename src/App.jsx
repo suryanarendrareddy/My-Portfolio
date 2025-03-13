@@ -7,10 +7,11 @@ import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import Resume from './pages/Resume'
 import Skills from './pages/Skills'
-
+import ScrollToTop from './pages/ScrollToTop'
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <div className="flex-grow">
