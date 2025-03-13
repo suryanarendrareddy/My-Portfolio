@@ -10,8 +10,9 @@ const Footer = () => {
         
         <nav>
           <h1 className="text-lime-500 text-xl font-extrabold mb-4">Quick Links</h1>
+          <Link to="/" className="hover:text-lime-400 hover:translate-x-1 transition-transform duration-200">Home</Link>
           <div className="flex flex-col space-y-2 text-lg font-medium">
-            {["Home", "Skills", "Projects", "Resume", "Contact"].map((item, index) => (
+            {["Skills", "Projects", "Resume", "Contact"].map((item, index) => (
               <Link 
                 key={index} 
                 to={`/${item.toLowerCase()}`} 
