@@ -163,7 +163,7 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-lime-400"
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-lime-400"
           >
             {skill.icon}
             <p className="mt-4 text-lg font-semibold text-lime-300">
@@ -180,7 +180,7 @@ const Skills = () => {
         {tools.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-lime-400"
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-lime-400"
           >
             {skill.icon}
             <p className="mt-4 text-lg font-semibold text-lime-300">
@@ -197,7 +197,7 @@ const Skills = () => {
         {softSkills.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-gray-800/50 p-6 rounded-xl shadow-lg backdrop-blur-md transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-yellow-400"
+            className="flex flex-col items-center bg-gray-800/50 p-6 rounded-xl shadow-lg backdrop-blur-md transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-yellow-400"
           >
             {skill.icon}
             <p className="mt-2 text-lg font-semibold text-yellow-300">

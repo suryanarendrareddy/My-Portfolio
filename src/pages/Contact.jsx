@@ -75,7 +75,7 @@ const Contact = () => {
               className="flex flex-col items-center space-x-3 p-5 bg-gray-700 rounded-xl hover:bg-gray-600 transition transform hover:scale-105 shadow-md hover:shadow-lg"
             >
               {item.icon}
-              <span className="text-lime-400 hover:text-lime-500 transition text-lg font-medium text-center">
+              <span className="text-lime-400 hover:text-lime-500 transition md:text-lg font-medium text-center sm:text-md">
                 {item.text}
               </span>
             </a>

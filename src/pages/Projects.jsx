@@ -21,28 +21,22 @@ const projects = [
     description:
       'Built a personal portfolio website using modern web technologies to showcase my projects and skills in an engaging manner.',
     technologiesUsed: ['React.js', 'TailwindCSS', 'Netlify'],
-    liveLink: '',
-    githubLink: '',
+    liveLink: 'https://surya-narendra-portfolio.vercel.app/',
+    githubLink: 'https://github.com/Narendra-017/My-Portfolio',
   },
   {
     name: 'Engineers World',
     description:
       'Engineers World is a platform for engineers to collaborate, share knowledge, and access career opportunities.',
     technologiesUsed: ['React.js', 'CSS', 'Hostinger', 'Framer Motion'],
-    liveLink: '',
+    liveLink: 'https://engineersworld.in',
     githubLink: '',
   },
   {
     name: 'Shadow Fax',
     description:
       'Shadowfax is a tech-driven logistics company specializing in fast and reliable last-mile delivery for e-commerce, food, and pharmaceuticals.',
-    technologiesUsed: [
-      'React.js',
-      'CSS',
-      'Spring Boot',
-      'MySQL',
-      'RESTful APIs',
-    ],
+    technologiesUsed: ['React.js', 'CSS', 'Spring Boot', 'MySQL', 'REST APIs'],
     liveLink: '',
     githubLink: '',
   },
@@ -63,7 +57,9 @@ const Projects = () => {
             <h2 className="text-2xl font-bold text-yellow-400 mb-3">
               {project.name}
             </h2>
-            <p className="text-gray-300 mb-4 font-medium" >{project.description}</p>
+            <p className="text-gray-300 mb-4 font-medium">
+              {project.description}
+            </p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologiesUsed.map((tech, i) => (
                 <span

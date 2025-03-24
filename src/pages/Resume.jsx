@@ -39,8 +39,8 @@ const Resume = () => {
       'TailwindCSS',
       'React.js',
     ],
-    Backend: ['Node.js', 'Express.js', 'MongoDB', 'MySQL'],
-    Tools: ['Git/GitHub', 'Netlify', 'Java', 'DSA'],
+    Backend: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Java', 'Spring Boot'],
+    Tools: ['Git/GitHub', 'Netlify', 'Git', 'Vercel'],
   }
 
   const projects = [

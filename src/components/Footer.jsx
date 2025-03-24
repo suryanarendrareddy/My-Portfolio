@@ -44,7 +44,7 @@ const Footer = () => {
               href="https://github.com/Narendra-017"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center md:justify-start gap-2 hover:text-gray-400 duration-200 hover:scale-105"
+              className="flex items-center justify-center md:justify-start gap-2 hover:text-gray-400"
             >
               <FaGithub className="text-2xl" /> GitHub
             </a>
@@ -52,7 +52,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/muli-surya-narendra-reddy-217386337"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center md:justify-start gap-2 hover:text-blue-500 duration-200 hover:scale-105"
+              className="flex items-center justify-center md:justify-start gap-2 hover:text-blue-500"
             >
               <FaLinkedin className="text-2xl" /> LinkedIn
             </a>
@@ -60,7 +60,7 @@ const Footer = () => {
               href="https://twitter.com/yourtwitter"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center md:justify-start gap-2 hover:text-blue-400 duration-200 hover:scale-105"
+              className="flex items-center justify-center md:justify-start gap-2 hover:text-blue-400"
             >
               <FaTwitter className="text-2xl" /> Twitter
             </a>
@@ -82,7 +82,7 @@ const Footer = () => {
             </div>
             <div className="flex gap-2 items-center justify-center md:justify-start">
               <RiPhoneLine className="text-xl" />
-              <a href="tel:+917993830599">
+              <a href="tel:+917993830599" className="hover:text-gray-400 transition">
                 +91 79938 3<span>XXXX</span>
               </a>
             </div>
