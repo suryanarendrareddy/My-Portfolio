@@ -6,11 +6,12 @@ import {
   RiUserLocationFill,
   RiWhatsappFill,
 } from 'react-icons/ri'
+import { FaMapMarkerAlt } from "react-icons/fa"
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="bg-cyan-950 text-gray-300 py-10">
+    <footer className="bg-cyan-950 text-gray-300 py-10 ">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-5 text-center md:text-left">
         <nav>
           <h1 className="text-lime-500 text-xl font-extrabold mb-4">
@@ -97,7 +98,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="flex gap-2 items-center justify-center md:justify-start">
-              <RiUserLocationFill className="text-xl" />
+              <FaMapMarkerAlt className="text-xl" />
               <p>
                 3-98A, ThathiReddy Palli, Komannuthala,
                 <br />
