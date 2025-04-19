@@ -3,17 +3,15 @@ import { Link } from 'react-router-dom'
 import {
   RiMailAddLine,
   RiPhoneLine,
-  RiUserLocationFill,
   RiWhatsappFill,
 } from 'react-icons/ri'
-import { FaMapMarkerAlt } from "react-icons/fa"
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="bg-cyan-950 text-gray-300 py-10 ">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-5 text-center md:text-left">
-        <nav>
+    <footer className="bg-cyan-950 text-gray-300 py-10">
+      <div className="container mx-auto flex flex-col md:flex-row justify-around gap-8 px-5 text-center md:text-left">
+        <nav className="flex-1">
           <h1 className="text-lime-500 text-xl font-extrabold mb-4">
             Quick Links
           </h1>
@@ -35,8 +33,7 @@ const Footer = () => {
             ))}
           </div>
         </nav>
-
-        <div>
+        <div className="flex-1">
           <h1 className="text-lime-500 text-xl font-extrabold mb-4">
             Social Media
           </h1>
@@ -58,7 +55,7 @@ const Footer = () => {
               <FaLinkedin className="text-2xl" /> LinkedIn
             </a>
             <a
-              href="https://twitter.com/yourtwitter"
+              href="https://twitter.com/SuryaNarendra17"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center md:justify-start gap-2 hover:text-blue-400"
@@ -67,8 +64,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
-        <div>
+        <div className="flex-1">
           <h1 className="text-lime-500 text-xl font-extrabold mb-4">Contact</h1>
           <div className="space-y-3 text-lg font-medium">
             <div className="flex gap-2 items-center justify-center md:justify-start">
@@ -77,13 +73,15 @@ const Footer = () => {
                 href="mailto:suryanarendra1000@gmail.com"
                 className="hover:text-gray-400 transition"
               >
-                {' '}
                 suryanarendra1000@gmail.com
               </a>
             </div>
             <div className="flex gap-2 items-center justify-center md:justify-start">
               <RiPhoneLine className="text-xl" />
-              <a href="tel:+917993830599" className="hover:text-gray-400 transition">
+              <a
+                href="tel:+917993830599"
+                className="hover:text-gray-400 transition"
+              >
                 +91 79938 3<span>XXXX</span>
               </a>
             </div>
@@ -92,6 +90,7 @@ const Footer = () => {
               <a
                 href="https://wa.me/7993830599"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-gray-400 transition"
               >
                 Connect with me
@@ -108,7 +107,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
       <div className="mt-8 text-center border-t border-gray-700 pt-4">
         <h1 className="text-md font-bold text-gray-100">
           Surya Narendra Reddy

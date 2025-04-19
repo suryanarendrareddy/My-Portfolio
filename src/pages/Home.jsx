@@ -21,15 +21,7 @@ const Home = () => {
           <h1 className="text-4xl font-extrabold text-gray-100 mx-5 my-0">
             I'm{' '}
             <span className="text-yellow-600 text-5xl font-bold">
-              <Typewriter
-                words={['Muli Surya Narendra Reddy']}
-                loop={true}
-                cursor
-                cursorStyle="|"
-                typeSpeed={100}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
+              Muli Surya Narendra Reddy
             </span>
           </h1>
           <p className="text-xl font-medium max-w-2xl text-gray-300 mx-auto md:mx-0 mt-4">
@@ -71,7 +63,7 @@ const Home = () => {
           <img
             src="/Profile.jpg"
             alt="Surya Image"
-            className="w-52 md:w-64 lg:w-80 rounded-full border-4 border-lime-500 shadow-xl transition-transform duration-300 hover:scale-105"
+            className="w-52 md:w-64 lg:w-72 h-52 md:h-64 lg:h-72 rounded-full border-4 border-lime-500 shadow-xl transition-transform duration-300 hover:scale-105"
           />
         </motion.div>
       </motion.div>

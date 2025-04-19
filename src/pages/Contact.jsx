@@ -1,42 +1,47 @@
 import React from 'react'
 import {
   FaEnvelope,
-  FaPhone,
   FaLinkedin,
   FaGithub,
   FaWhatsapp,
   FaMapMarkerAlt,
+  FaPhoneAlt,
 } from 'react-icons/fa'
-import { RiPhoneFill } from 'react-icons/ri'
 
 const contactDetails = [
   {
-    icon: <FaEnvelope className="text-yellow-500 text-5xl" />,
+    icon: <FaEnvelope />,
+    label: 'Email',
     text: 'suryanarendra1000@gmail.com',
     link: 'mailto:suryanarendra1000@gmail.com',
   },
   {
-    icon: <RiPhoneFill className="text-yellow-500 text-5xl" />,
+    icon: <FaPhoneAlt />,
+    label: 'Phone',
     text: '+91 79938 3XXXX',
     link: 'tel:+917993830599',
   },
   {
-    icon: <FaWhatsapp className="text-green-500 text-5xl" />,
+    icon: <FaWhatsapp />,
+    label: 'WhatsApp',
     text: 'Chat on WhatsApp',
     link: 'https://wa.me/917993830599',
   },
   {
-    icon: <FaLinkedin className="text-yellow-500 text-5xl" />,
+    icon: <FaLinkedin />,
+    label: 'LinkedIn',
     text: 'linkedin.com/in/muli-surya-narendra-reddy',
     link: 'https://www.linkedin.com/in/muli-surya-narendra-reddy-217386337',
   },
   {
-    icon: <FaGithub className="text-yellow-500 text-5xl" />,
+    icon: <FaGithub />,
+    label: 'GitHub',
     text: 'github.com/Narendra-017',
     link: 'https://github.com/Narendra-017',
   },
   {
-    icon: <FaMapMarkerAlt className="text-red-500 text-5xl" />,
+    icon: <FaMapMarkerAlt />,
+    label: 'Location',
     text: 'Faridabad, Haryana',
     link: 'https://goo.gl/maps/faridabad',
   },
@@ -44,58 +49,60 @@ const contactDetails = [
 
 const Contact = () => {
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center text-gray-100 px-6 my-10">
-      <h1 className="text-5xl font-extrabold text-lime-500 mb-8 animate-bounce">
-        Let's Connect!
-      </h1>
+    <div className="bg-gradient-to-br from-gray-900 to-black text-white py-20 px-6 min-h-screen flex items-center justify-center">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="backdrop-blur-xl bg-white/5 border border-gray-700 rounded-2xl p-8 shadow-2xl transition-all">
+          <h1 className="text-4xl font-extrabold text-lime-400 mb-4">
+            Let's Talk!
+          </h1>
+          <p className="text-gray-300 mb-6 leading-relaxed text-lg">
+            I’m a{' '}
+            <span className="text-lime-500 font-semibold">
+              Full-Stack Developer
+            </span>{' '}
+            who loves crafting amazing user experiences and solving real-world
+            problems with code.
+          </p>
 
-      <div className="bg-gray-800 p-10 rounded-2xl shadow-2xl w-full max-w-3xl text-center border-2 border-gray-700">
-        <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-          I'm always open to exciting projects, collaborations, and discussions.
-          Feel free to reach out!
-        </p>
+          <div className="mb-6">
+            <h2 className="text-2xl font-semibold text-yellow-400 mb-2">
+              Availability
+            </h2>
+            <p className="text-gray-300">
+              🟢 Open for freelance & full-time roles
+              <br />
+              ⏰ Weekdays: 10 AM - 8 PM IST
+              <br />
+              📆 Weekends: Flexible
+            </p>
+          </div>
 
-        <h2 className="text-3xl font-bold text-yellow-400 mb-4">About Me</h2>
-        <p className="text-gray-300 text-lg leading-relaxed">
-          I'm a passionate{' '}
-          <span className="text-lime-500 font-semibold">
-            Full-Stack Developer
-          </span>{' '}
-          specializing in building interactive and user-friendly web
-          applications. If you have an idea, let's bring it to life together!
-        </p>
+          <button className="px-6 py-3 bg-lime-500 text-gray-900 font-bold rounded-full hover:bg-lime-600 shadow-xl transition-transform hover:scale-110 flex items-center gap-2">
+            Message me via links
+            <span className="inline md:hidden">below ⬇️</span>
+            <span className="hidden md:inline">beside ➡️</span>
+          </button>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {contactDetails.map((item, index) => (
             <a
               key={index}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center space-x-3 p-5 bg-gray-700 rounded-xl hover:bg-gray-600 transition transform hover:scale-105 shadow-md hover:shadow-lg"
+              className="group flex flex-col justify-center items-center text-center p-6 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 hover:border-lime-500 transition-all duration-300 transform hover:scale-105 shadow-md"
             >
-              {item.icon}
-              <span className="text-lime-400 hover:text-lime-500 transition md:text-lg font-medium text-center sm:text-md">
+              <div className="text-3xl text-lime-400 mb-2 group-hover:text-white">
+                {item.icon}
+              </div>
+              <p className="text-sm text-gray-400">{item.label}</p>
+              <p className="text-lime-300 text-md font-medium group-hover:text-white break-words">
                 {item.text}
-              </span>
+              </p>
             </a>
           ))}
         </div>
-
-        <div className="mt-8 text-left">
-          <h2 className="text-2xl font-bold text-yellow-400">Availability</h2>
-          <p className="text-gray-300 mt-2 text-lg font-medium flex items-center space-x-2">
-            <span className="text-green-400 text-xl">🟢</span>
-            <span>
-              Available for freelance work and full-time roles. ⏳ Weekdays: 10
-              AM - 8 PM (IST) | Weekends: Flexible
-            </span>
-          </p>
-        </div>
-
-        <button className="mt-8 px-8 py-3 bg-lime-500 hover:bg-lime-600 text-gray-900 font-bold rounded-full shadow-lg transition-transform transform hover:scale-110">
-          Say Hello 👋
-        </button>
       </div>
     </div>
   )

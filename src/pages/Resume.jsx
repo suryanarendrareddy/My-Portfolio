@@ -1,10 +1,10 @@
 import React from 'react'
 import {
   FaEnvelope,
-  FaPhone,
   FaLinkedin,
   FaGithub,
   FaMapMarkerAlt,
+  FaPhoneAlt,
 } from 'react-icons/fa'
 import { RiDownload2Fill } from 'react-icons/ri'
 
@@ -39,7 +39,14 @@ const Resume = () => {
       'TailwindCSS',
       'React.js',
     ],
-    Backend: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Java', 'Spring Boot'],
+    Backend: [
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'MySQL',
+      'Java',
+      'Spring Boot',
+    ],
     Tools: ['Git/GitHub', 'Netlify', 'Git', 'Vercel'],
   }
 
@@ -120,23 +127,25 @@ const Resume = () => {
 
         <div className="bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-lime-500">
           <h2 className="text-2xl font-bold text-yellow-400 mb-4">Skills</h2>
-          {Object.entries(skills).map(([category, skillList], index) => (
-            <div key={index} className="mb-4">
-              <h3 className="text-xl font-semibold text-lime-400">
-                {category}
-              </h3>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {skillList.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="bg-lime-600 text-gray-900 px-3 py-1 rounded-lg font-semibold text-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
+          <div className="space-y-4">
+            {Object.entries(skills).map(([category, skillList], index) => (
+              <div key={index}>
+                <h3 className="text-xl font-semibold text-lime-400">
+                  {category}
+                </h3>
+                <div className="grid grid-cols-2 gap-4 mt-2">
+                  {skillList.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="bg-lime-600 text-gray-900 px-3 py-1 rounded-lg font-semibold text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -167,7 +176,7 @@ const Resume = () => {
             </a>
           </p>
           <p className="flex items-center space-x-3">
-            <FaPhone className="text-yellow-500 text-2xl" />
+            <FaPhoneAlt className="text-yellow-500 text-2xl" />
             <a href="tel:+917993830599" className="text-lime-400">
               +91 79938 3XXXX
             </a>

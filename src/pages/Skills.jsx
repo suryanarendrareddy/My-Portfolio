@@ -18,10 +18,12 @@ import {
   FaMicrophone,
   FaGithub,
 } from 'react-icons/fa'
+import { TbBrandReactNative } from 'react-icons/tb'
 import {
   SiNetlify,
   SiVercel,
   SiTailwindcss,
+  SiTypescript,
   SiExpress,
   SiSpringboot,
   SiMongodb,
@@ -31,6 +33,7 @@ import {
   SiRedux,
   SiGitlab,
 } from 'react-icons/si'
+import { SiCplusplus } from 'react-icons/si'
 
 const skills = [
   {
@@ -46,6 +49,10 @@ const skills = [
     icon: <FaJs className="text-yellow-400 text-6xl" />,
   },
   {
+    name: 'TypeScript',
+    icon: <SiTypescript className="text-blue-500 text-6xl" />,
+  },
+  {
     name: 'Bootstrap',
     icon: <FaBootstrap className="text-purple-600 text-6xl" />,
   },
@@ -56,6 +63,10 @@ const skills = [
   {
     name: 'React.js',
     icon: <FaReact className="text-blue-400 text-6xl" />,
+  },
+  {
+    name: 'React Native',
+    icon: <TbBrandReactNative className="text-6xl text-[#00D8FF]" />,
   },
   {
     name: 'Node.js',
@@ -76,10 +87,6 @@ const skills = [
   {
     name: 'Spring Boot',
     icon: <SiSpringboot className="text-green-500 text-6xl" />,
-  },
-  {
-    name: 'DSA',
-    icon: <FaProjectDiagram className="text-red-500 text-6xl" />,
   },
   {
     name: 'MySQL',
@@ -117,6 +124,7 @@ const softSkills = [
     icon: <FaMicrophone className="text-red-500 text-6xl" />,
   },
 ]
+
 const tools = [
   {
     name: 'Http',
@@ -152,6 +160,25 @@ const tools = [
   },
 ]
 
+const coreCS = [
+  {
+    name: 'Algorithms',
+    icon: <FaProjectDiagram className="text-red-500 text-6xl" />,
+  },
+  {
+    name: 'Data Structures through Java',
+    icon: <FaJava className="text-red-500 text-6xl" />,
+  },
+  {
+    name: 'Databases',
+    icon: <SiMysql className="text-blue-400 text-6xl" />,
+  },
+  {
+    name: 'Software Engineering',
+    icon: <FaProjectDiagram className="text-green-500 text-6xl" />,
+  },
+]
+
 const Skills = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen py-16 px-6">
@@ -172,7 +199,26 @@ const Skills = () => {
           </div>
         ))}
       </div>
-      <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text mt-16">
+
+      <h2 className="text-5xl font-extrabold text-center mb-12 mt-16 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
+        Core CS Skills
+      </h2>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        {coreCS.map((skill, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-lime-400"
+          >
+            {skill.icon}
+            <p className="mt-4 text-lg font-semibold text-lime-300">
+              {skill.name}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-5xl font-extrabold text-center mb-12 mt-16 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
         Tools
       </h2>
 
@@ -189,6 +235,7 @@ const Skills = () => {
           </div>
         ))}
       </div>
+
       <h2 className="text-5xl font-extrabold text-center mb-12 mt-16 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
         Soft Skills
       </h2>

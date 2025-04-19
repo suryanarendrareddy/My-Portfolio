@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
   {
@@ -13,14 +14,14 @@ const projects = [
       'MongoDB',
       'Node.js',
     ],
-    liveLink: '',
-    githubLink: '',
+    liveLink: 'dfb',
+    githubLink: 'dfbdf',
   },
   {
     name: 'Portfolio Website',
     description:
       'Built a personal portfolio website using modern web technologies to showcase my projects and skills in an engaging manner.',
-    technologiesUsed: ['React.js', 'TailwindCSS', 'Netlify'],
+    technologiesUsed: ['React.js', 'TailwindCSS', 'Vercel'],
     liveLink: 'https://surya-narendra-portfolio.vercel.app/',
     githubLink: 'https://github.com/Narendra-017/My-Portfolio',
   },
@@ -30,63 +31,65 @@ const projects = [
       'Engineers World is a platform for engineers to collaborate, share knowledge, and access career opportunities.',
     technologiesUsed: ['React.js', 'CSS', 'Hostinger', 'Framer Motion'],
     liveLink: 'https://engineersworld.in',
-    githubLink: '',
+    githubLink: 'fdbd',
   },
   {
     name: 'Shadow Fax',
     description:
       'Shadowfax is a tech-driven logistics company specializing in fast and reliable last-mile delivery for e-commerce, food, and pharmaceuticals.',
     technologiesUsed: ['React.js', 'CSS', 'Spring Boot', 'MySQL', 'REST APIs'],
-    liveLink: '',
-    githubLink: '',
+    liveLink: 'fbdf',
+    githubLink: 'dfdf',
   },
 ]
 
 const Projects = () => {
   return (
-    <div className="bg-gray-900 text-white min-h-screen p-10">
-      <h1 className="text-4xl font-bold text-center text-lime-400 mb-10">
+    <div className="bg-gradient-to-br from-gray-900 to-black text-white py-16 px-6">
+      <h1 className="text-4xl font-bold text-center text-lime-400 mb-14">
         My Projects
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-800 p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+            className="bg-white bg-opacity-5 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-gray-700 hover:scale-[1.03] transition-all duration-300"
           >
-            <h2 className="text-2xl font-bold text-yellow-400 mb-3">
+            <h2 className="text-2xl font-bold text-yellow-300 mb-3">
               {project.name}
             </h2>
-            <p className="text-gray-300 mb-4 font-medium">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <p className="text-gray-300 mb-4 md:text-[17px]">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mb-6">
               {project.technologiesUsed.map((tech, i) => (
                 <span
                   key={i}
-                  className="bg-lime-600 text-gray-900 px-3 py-1 rounded-lg text-sm font-bold shadow-sm"
+                  className="bg-lime-500 text-black px-3 py-1 rounded-full text-sm font-semibold"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <div className="flex space-x-4">
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-600 px-4 py-2 rounded-lg text-white font-semibold hover:bg-blue-700 transition duration-300 shadow-md"
-              >
-                Live
-              </a>
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-600 px-4 py-2 rounded-lg text-white font-semibold hover:bg-gray-700 transition duration-300 shadow-md"
-              >
-                GitHub
-              </a>
+            <div className="flex gap-4">
+              {project.liveLink && (
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition"
+                >
+                  <FaExternalLinkAlt /> Live
+                </a>
+              )}
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-800 text-white font-semibold px-4 py-2 rounded-lg transition"
+                >
+                  <FaGithub /> GitHub
+                </a>
+              )}
             </div>
           </div>
         ))}
