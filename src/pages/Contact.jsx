@@ -77,11 +77,11 @@ const Contact = () => {
             </p>
           </div>
 
-          <button className="px-6 py-3 bg-lime-500 text-gray-900 font-bold rounded-full hover:bg-lime-600 shadow-xl transition-transform hover:scale-110 flex items-center gap-2">
-            Message me via links
-            <span className="inline md:hidden">below ⬇️</span>
-            <span className="hidden md:inline">beside ➡️</span>
-          </button>
+          <button className="w-full max-w-fit px-6 py-3 bg-lime-500 text-gray-900 font-bold rounded-full hover:bg-lime-600 shadow-xl transition-transform hover:scale-110 flex flex-wrap justify-center items-center gap-2 text-center">
+  <span>Message me via links</span>
+  <span className="block md:hidden">below ⬇️</span>
+  <span className="hidden md:block">beside ➡️</span>
+</button>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
