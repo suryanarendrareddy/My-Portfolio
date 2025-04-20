@@ -126,7 +126,7 @@ const softSkills = [
 
 const Skills = () => {
   return (
-    <div className="text-white min-h-screen py-16 px-6 bg-gradient-to-b from-gray-900 via-black to-gray-900">
+    <div className="text-white min-h-screen py-16 px-6 ">
       <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
         Technical Skills
       </h2>
