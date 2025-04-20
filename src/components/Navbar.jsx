@@ -7,7 +7,7 @@ const Navbar = () => {
   const [navDrawerOpen, setNavDrawerOpen] = useState(false)
 
   return (
-    <div className="flex bg-cyan-950 p-3 w-full items-center justify-around shadow-md">
+    <div className="flex bg-gradient-to-t from-zinc-900 to-black p-3 w-full items-center justify-around shadow-md">
       <div className="flex gap-3 items-center">
         <img
           src="/Profile.jpg"
