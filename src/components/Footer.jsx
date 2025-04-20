@@ -4,7 +4,7 @@ import { FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-t from-black to-[#18181b] text-gray-300 py-10 border-none">
+    <footer className="bg-gradient-to-b from-[#18181b] to-black text-gray-300 py-10 border-none">
       <div className="container mx-auto flex flex-col md:flex-row justify-between gap-8 px-5 text-center md:text-left">
         {/* Quick Contact */}
         <div className="flex-1">
