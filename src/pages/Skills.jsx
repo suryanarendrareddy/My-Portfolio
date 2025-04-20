@@ -181,7 +181,7 @@ const coreCS = [
 
 const Skills = () => {
   return (
-    <div className="bg-gray-900 text-white min-h-screen py-16 px-6">
+    <div className="text-white min-h-screen py-16 px-6">
       <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
         Technical Skills
       </h2>
