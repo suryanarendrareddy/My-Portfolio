@@ -21,6 +21,10 @@ const App = () => {
             content="Hi, I'm Surya Narendra Reddy – a Full Stack Developer specializing in React, Node.js, and modern web projects."
           />
           <meta
+            name="google-site-verification"
+            content="E0OFjHE0ms9e1bZAywty9EoTiu7MUhxWvbl9HIScDRU"
+          />
+          <meta
             name="keywords"
             content="Surya Narendra Reddy, Full Stack Developer, React, Node.js, Portfolio, Web Developer, India"
           />
