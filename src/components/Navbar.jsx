@@ -38,8 +38,8 @@ const Navbar = () => {
       </nav>
 
       <a
-        href="resume.pdf"
-        download="Muli_Surya_Resume.pdf"
+        href="/surya_resume.pdf"
+        download="Surya_Narendra_Resume.pdf"
         className="hidden md:flex items-center gap-1 font-semibold text-lg text-gray-100 bg-cyan-700 p-2 rounded-lg hover:bg-cyan-800 transition"
       >
         <RiDownload2Fill />

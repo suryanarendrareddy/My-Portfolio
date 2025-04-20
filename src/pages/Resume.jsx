@@ -5,8 +5,9 @@ import {
   FaGithub,
   FaMapMarkerAlt,
   FaPhoneAlt,
+  FaFilePdf,
 } from 'react-icons/fa'
-import { RiDownload2Fill } from 'react-icons/ri'
+import { RiDownload2Fill,  RiLink } from 'react-icons/ri'
 
 const Resume = () => {
   const education = [
@@ -203,10 +204,17 @@ const Resume = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-8 gap-5">
         <a
-          href="/resume.pdf"
-          download="Muli_Surya_Resume.pdf"
+          href="/surya_resume.pdf"
+          target='_blank'
+          className="flex items-center gap-2 font-medium bg-lime-500 text-black px-5 py-3 rounded-lg shadow-md hover:bg-lime-400 transition-transform duration-300 hover:scale-105"
+        >
+          <FaFilePdf className="text-xl" /> View Resume
+        </a>
+        <a
+          href="/surya_resume.pdf"
+          download="Surya_Narendra_Resume.pdf"
           className="flex items-center gap-2 font-medium bg-lime-500 text-black px-5 py-3 rounded-lg shadow-md hover:bg-lime-400 transition-transform duration-300 hover:scale-105"
         >
           <RiDownload2Fill className="text-xl" /> Download Resume
