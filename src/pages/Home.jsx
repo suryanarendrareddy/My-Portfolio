@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Typewriter } from 'react-simple-typewriter'
 import { motion } from 'framer-motion'
 import Education from './Education'
 import Certifications from './Certifications'
@@ -69,26 +68,28 @@ const Home = () => {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="bg-white w-11/12 md:w-3/4 lg:w-1/2 mx-auto p-8 md:p-10 mt-10 rounded-3xl flex flex-col md:flex-row items-center justify-between shadow-lg border border-gray-200"
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="w-11/12 md:w-4/5 lg:w-2/3 mx-auto mt-12 p-6 md:p-10 bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-3xl shadow-xl border border-gray-700 flex flex-col md:flex-row items-center justify-between"
       >
-        <div className="text-center flex-1 px-4 py-2 md:py-0">
-          <h1 className="text-4xl font-extrabold text-gray-900">15+</h1>
-          <p className="text-lg md:text-xl text-gray-600 font-medium">
+        <div className="text-center flex-1 px-4 py-4 md:py-0">
+          <h1 className="text-4xl font-extrabold text-lime-400">15+</h1>
+          <p className="text-lg md:text-xl text-gray-300 font-medium">
             Modern Skills
           </p>
         </div>
-        <div className="text-center flex-1 px-4 py-2 md:py-0 border-t md:border-t-0 md:border-l border-gray-300">
-          <h1 className="text-4xl font-extrabold text-gray-900">5+</h1>
-          <p className="text-lg md:text-xl text-gray-600 font-medium">
+
+        <div className="text-center flex-1 px-4 py-4 md:py-0 border-t md:border-t-0 md:border-l border-gray-700">
+          <h1 className="text-4xl font-extrabold text-yellow-400">5+</h1>
+          <p className="text-lg md:text-xl text-gray-300 font-medium">
             Projects
           </p>
         </div>
-        <div className="text-center flex-1 px-4 py-2 md:py-0 border-t md:border-t-0 md:border-l border-gray-300">
-          <h1 className="text-4xl font-extrabold text-gray-900">50+</h1>
-          <p className="text-lg md:text-xl text-gray-600 font-medium">
+
+        <div className="text-center flex-1 px-4 py-4 md:py-0 border-t md:border-t-0 md:border-l border-gray-700">
+          <h1 className="text-4xl font-extrabold text-pink-400">50+</h1>
+          <p className="text-lg md:text-xl text-gray-300 font-medium">
             DSA Problems
             <br />
             Solved

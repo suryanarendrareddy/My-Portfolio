@@ -28,32 +28,39 @@ const educationData = [
 
 const Education = () => {
   return (
-    <div className="py-16 bg-gray-900 text-white">
-      <h2 className="text-4xl font-bold text-center text-lime-500 mb-12">
+    <div
+      className="py-16 text-white"
+      style={{
+        background: 'linear-gradient(to bottom, #000000, #18181b, #000000)',
+      }}
+    >
+      <h2 className="text-4xl font-bold text-center text-lime-400 mb-10 tracking-wide">
         Education
       </h2>
 
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 space-y-6">
         {educationData.map((edu, index) => (
           <div
             key={index}
-            className={`p-8 mb-6 rounded-lg shadow-lg border-2 ${
+            className={`p-6 sm:p-8 rounded-xl border-l-4 transition-all duration-300 ${
               index % 2 === 0
                 ? 'bg-gray-800 border-lime-500'
-                : 'bg-gray-700 border-yellow-500'
+                : 'bg-zinc-800 border-yellow-400'
             }`}
           >
-            <h3 className="text-2xl font-semibold text-yellow-400 mb-2">
+            <h3 className="text-xl sm:text-2xl font-semibold text-yellow-400 mb-1">
               {edu.degree}
             </h3>
-            <p className="text-lg text-gray-100 font-medium mb-2">
+            <p className="text-base sm:text-lg text-gray-200 font-medium mb-1">
               {edu.field}
             </p>
-            <p className="text-gray-300 text-md mb-4">{edu.institution}</p>
+            <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-4">
+              {edu.institution}
+            </p>
 
-            <div className="mt-4 flex flex-col sm:flex-row justify-between items-center text-gray-400">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-sm sm:text-base text-gray-300">
               <span className="mb-2 sm:mb-0">{edu.year}</span>
-              <span className="font-bold text-gray-300">{edu.cgpa}</span>
+              <span className="font-bold">{edu.cgpa}</span>
             </div>
           </div>
         ))}

@@ -33,155 +33,100 @@ import {
   SiRedux,
   SiGitlab,
 } from 'react-icons/si'
-import { SiCplusplus } from 'react-icons/si'
 
 const skills = [
-  {
-    name: 'HTML',
-    icon: <FaHtml5 className="text-orange-500 text-6xl" />,
-  },
-  {
-    name: 'CSS',
-    icon: <FaCss3Alt className="text-blue-500 text-6xl" />,
-  },
-  {
-    name: 'JavaScript',
-    icon: <FaJs className="text-yellow-400 text-6xl" />,
-  },
+  { name: 'HTML', icon: <FaHtml5 className="text-orange-400 text-6xl" /> },
+  { name: 'CSS', icon: <FaCss3Alt className="text-sky-400 text-6xl" /> },
+  { name: 'JavaScript', icon: <FaJs className="text-yellow-300 text-6xl" /> },
   {
     name: 'TypeScript',
-    icon: <SiTypescript className="text-blue-500 text-6xl" />,
+    icon: <SiTypescript className="text-blue-400 text-6xl" />,
   },
   {
     name: 'Bootstrap',
-    icon: <FaBootstrap className="text-purple-600 text-6xl" />,
+    icon: <FaBootstrap className="text-purple-400 text-6xl" />,
   },
   {
     name: 'TailwindCSS',
-    icon: <SiTailwindcss className="text-cyan-500 text-6xl" />,
+    icon: <SiTailwindcss className="text-cyan-300 text-6xl" />,
   },
-  {
-    name: 'React.js',
-    icon: <FaReact className="text-blue-400 text-6xl" />,
-  },
+  { name: 'React.js', icon: <FaReact className="text-cyan-300 text-6xl" /> },
   {
     name: 'React Native',
-    icon: <TbBrandReactNative className="text-6xl text-[#00D8FF]" />,
+    icon: <TbBrandReactNative className="text-cyan-400 text-6xl" />,
   },
-  {
-    name: 'Node.js',
-    icon: <FaNodeJs className="text-green-500 text-6xl" />,
-  },
+  { name: 'Node.js', icon: <FaNodeJs className="text-green-400 text-6xl" /> },
   {
     name: 'MongoDB',
-    icon: <SiMongodb className="text-green-500 text-6xl" />,
+    icon: <SiMongodb className="text-emerald-400 text-6xl" />,
   },
-  {
-    name: 'Java',
-    icon: <FaJava className="text-red-500 text-6xl" />,
-  },
+  { name: 'Java', icon: <FaJava className="text-orange-300 text-6xl" /> },
   {
     name: 'Express.js',
     icon: <SiExpress className="text-gray-400 text-6xl" />,
   },
   {
     name: 'Spring Boot',
-    icon: <SiSpringboot className="text-green-500 text-6xl" />,
+    icon: <SiSpringboot className="text-lime-400 text-6xl" />,
   },
-  {
-    name: 'MySQL',
-    icon: <SiMysql className="text-blue-400 text-6xl" />,
-  },
-  {
-    name: 'REST APIs',
-    icon: <FaServer className="text-red-500 text-6xl" />,
-  },
-]
-
-const softSkills = [
-  {
-    name: 'Communication',
-    icon: <FaComments className="text-yellow-400 text-6xl" />,
-  },
-  {
-    name: 'Teamwork',
-    icon: <FaUsers className="text-purple-500 text-6xl" />,
-  },
-  {
-    name: 'Leadership',
-    icon: <FaLightbulb className="text-orange-400 text-6xl" />,
-  },
-  {
-    name: 'Problem-Solving',
-    icon: <FaCode className="text-red-400 text-6xl" />,
-  },
-  {
-    name: 'Time Management',
-    icon: <FaClock className="text-blue-500 text-6xl" />,
-  },
-  {
-    name: 'Public Speaking',
-    icon: <FaMicrophone className="text-red-500 text-6xl" />,
-  },
-]
-
-const tools = [
-  {
-    name: 'Http',
-    icon: <SiHttpie className="text-blue-500 text-6xl" />,
-  },
-  {
-    name: 'Netlify',
-    icon: <SiNetlify className="text-green-500 text-6xl" />,
-  },
-  {
-    name: 'Vercel',
-    icon: <SiVercel className="text-white text-6xl" />,
-  },
-  {
-    name: 'Git',
-    icon: <FaGitAlt className="text-red-500 text-6xl" />,
-  },
-  {
-    name: 'GitHub',
-    icon: <FaGithub className="text-gray-500 text-6xl" />,
-  },
-  {
-    name: 'Postman',
-    icon: <SiPostman className="text-orange-500 text-6xl" />,
-  },
-  {
-    name: 'Redux',
-    icon: <SiRedux className="text-blue-500 text-6xl" />,
-  },
-  {
-    name: 'GitLab',
-    icon: <SiGitlab className="text-orange-500 text-6xl" />,
-  },
+  { name: 'MySQL', icon: <SiMysql className="text-blue-400 text-6xl" /> },
+  { name: 'REST APIs', icon: <FaServer className="text-red-400 text-6xl" /> },
 ]
 
 const coreCS = [
   {
     name: 'Algorithms',
-    icon: <FaProjectDiagram className="text-red-500 text-6xl" />,
+    icon: <FaProjectDiagram className="text-red-400 text-6xl" />,
   },
   {
     name: 'Data Structures through Java',
-    icon: <FaJava className="text-red-500 text-6xl" />,
+    icon: <FaJava className="text-orange-300 text-6xl" />,
   },
-  {
-    name: 'Databases',
-    icon: <SiMysql className="text-blue-400 text-6xl" />,
-  },
+  { name: 'Databases', icon: <SiMysql className="text-blue-400 text-6xl" /> },
   {
     name: 'Software Engineering',
-    icon: <FaProjectDiagram className="text-green-500 text-6xl" />,
+    icon: <FaProjectDiagram className="text-green-400 text-6xl" />,
+  },
+]
+
+const tools = [
+  { name: 'Http', icon: <SiHttpie className="text-blue-400 text-6xl" /> },
+  { name: 'Netlify', icon: <SiNetlify className="text-green-400 text-6xl" /> },
+  { name: 'Vercel', icon: <SiVercel className="text-white text-6xl" /> },
+  { name: 'Git', icon: <FaGitAlt className="text-red-400 text-6xl" /> },
+  { name: 'GitHub', icon: <FaGithub className="text-gray-400 text-6xl" /> },
+  { name: 'Postman', icon: <SiPostman className="text-orange-400 text-6xl" /> },
+  { name: 'Redux', icon: <SiRedux className="text-purple-300 text-6xl" /> },
+  { name: 'GitLab', icon: <SiGitlab className="text-orange-400 text-6xl" /> },
+]
+
+const softSkills = [
+  {
+    name: 'Communication',
+    icon: <FaComments className="text-yellow-300 text-6xl" />,
+  },
+  { name: 'Teamwork', icon: <FaUsers className="text-purple-300 text-6xl" /> },
+  {
+    name: 'Leadership',
+    icon: <FaLightbulb className="text-orange-300 text-6xl" />,
+  },
+  {
+    name: 'Problem-Solving',
+    icon: <FaCode className="text-red-300 text-6xl" />,
+  },
+  {
+    name: 'Time Management',
+    icon: <FaClock className="text-cyan-300 text-6xl" />,
+  },
+  {
+    name: 'Public Speaking',
+    icon: <FaMicrophone className="text-pink-400 text-6xl" />,
   },
 ]
 
 const Skills = () => {
   return (
-    <div className="text-white min-h-screen py-16 px-6">
+    <div className="text-white min-h-screen py-16 px-6 bg-gradient-to-b from-gray-900 via-black to-gray-900">
       <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
         Technical Skills
       </h2>
@@ -190,10 +135,10 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-lime-400"
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-cyan-400"
           >
             {skill.icon}
-            <p className="mt-4 text-lg font-semibold text-lime-300">
+            <p className="mt-4 text-lg font-semibold text-cyan-300">
               {skill.name}
             </p>
           </div>
@@ -208,10 +153,10 @@ const Skills = () => {
         {coreCS.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-lime-400"
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-cyan-400"
           >
             {skill.icon}
-            <p className="mt-4 text-lg font-semibold text-lime-300">
+            <p className="mt-4 text-lg font-semibold text-cyan-300">
               {skill.name}
             </p>
           </div>
@@ -226,10 +171,10 @@ const Skills = () => {
         {tools.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-lime-400"
+            className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-cyan-400"
           >
             {skill.icon}
-            <p className="mt-4 text-lg font-semibold text-lime-300">
+            <p className="mt-4 text-lg font-semibold text-cyan-300">
               {skill.name}
             </p>
           </div>
@@ -244,7 +189,7 @@ const Skills = () => {
         {softSkills.map((skill, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-gray-800/50 p-6 rounded-xl shadow-lg backdrop-blur-md transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-yellow-400"
+            className="flex flex-col items-center bg-gray-800/50 p-6 rounded-xl shadow-lg backdrop-blur-md transform hover:scale-105 transition-all duration-300 border-2 border-gray-700 hover:border-yellow-300"
           >
             {skill.icon}
             <p className="mt-2 text-lg font-semibold text-yellow-300">

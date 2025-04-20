@@ -7,7 +7,7 @@ import {
   FaPhoneAlt,
   FaFilePdf,
 } from 'react-icons/fa'
-import { RiDownload2Fill,  RiLink } from 'react-icons/ri'
+import { RiDownload2Fill } from 'react-icons/ri'
 
 const Resume = () => {
   const education = [
@@ -48,14 +48,14 @@ const Resume = () => {
       'Java',
       'Spring Boot',
     ],
-    Tools: ['Git/GitHub', 'Netlify', 'Git', 'Vercel'],
+    Tools: ['Git/GitHub', 'Netlify', 'Vercel'],
   }
 
   const projects = [
     {
       name: 'Trend Reserve',
       description:
-        'Developed an interactive e-commerce platform for seamless clothing purchases, featuring secure payments, fast delivery, and an intuitive UI.',
+        'An interactive e-commerce platform for seamless clothing purchases, featuring secure payments, fast delivery, and an intuitive UI.',
       technologiesUsed: [
         'React.js',
         'TailwindCSS',
@@ -64,29 +64,23 @@ const Resume = () => {
         'MongoDB',
         'Node.js',
       ],
-      liveLink: '',
-      githubLink: '',
     },
     {
       name: 'Portfolio Website',
       description:
-        'Built a personal portfolio website using modern web technologies to showcase my projects and skills in an engaging manner.',
+        'A modern and engaging portfolio site showcasing projects and skills.',
       technologiesUsed: ['React.js', 'TailwindCSS', 'Netlify'],
-      liveLink: '',
-      githubLink: '',
     },
     {
       name: 'Engineers World',
       description:
-        'Engineers World is a platform for engineers to collaborate, share knowledge, and access career opportunities.',
+        'A platform for engineers to collaborate, share knowledge, and access career opportunities.',
       technologiesUsed: ['React.js', 'CSS', 'Hostinger', 'Framer Motion'],
-      liveLink: '',
-      githubLink: '',
     },
     {
       name: 'Shadow Fax',
       description:
-        'Shadowfax is a tech-driven logistics company specializing in fast and reliable last-mile delivery for e-commerce, food, and pharmaceuticals.',
+        'A logistics platform specializing in fast and reliable last-mile delivery.',
       technologiesUsed: [
         'React.js',
         'CSS',
@@ -94,130 +88,152 @@ const Resume = () => {
         'MySQL',
         'RESTful APIs',
       ],
-      liveLink: '',
-      githubLink: '',
     },
   ]
 
+  const hobbies = [
+    'Coding',
+    'Learning New Technologies',
+    'Gaming',
+    'UI Designing',
+  ]
+
   return (
-    <div className="text-gray-100 min-h-screen p-10">
-      <div className="text-center">
-        <h1 className="text-5xl font-extrabold text-lime-500">
+    <div
+      className="text-gray-200 min-h-screen px-6 py-10 font-sans"
+    >
+      <div className="text-center mb-10">
+        <h1 className="text-4xl md:text-5xl font-bold text-lime-400">
           Muli Surya Narendra Reddy
         </h1>
-        <p className="text-lg text-gray-300 mt-2">
+        <p className="text-lg text-gray-400 mt-2">
           Full-Stack Developer | Passionate about scalable web applications
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto mt-10">
-        <div className="bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-lime-500">
-          <h2 className="text-2xl font-bold text-yellow-400 mb-4">Education</h2>
+      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md">
+          <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
+            Education
+          </h2>
           {education.map((edu, index) => (
-            <div key={index} className="mb-4 border-b border-gray-700 pb-2">
-              <h3 className="text-xl font-semibold text-lime-400">
+            <div key={index} className="mb-4">
+              <h3 className="text-xl font-medium text-lime-300">
                 {edu.degree}
               </h3>
               <p className="text-gray-300">
-                {edu.institution} ({edu.year})
+                {edu.institution} <span className="text-sm">({edu.year})</span>
               </p>
-              <p className="text-gray-400">{edu.cgpa}</p>
+              <p className="text-sm text-gray-400">{edu.cgpa}</p>
             </div>
           ))}
-        </div>
+        </section>
 
-        <div className="bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-lime-500">
-          <h2 className="text-2xl font-bold text-yellow-400 mb-4">Skills</h2>
-          <div className="space-y-4">
-            {Object.entries(skills).map(([category, skillList], index) => (
-              <div key={index}>
-                <h3 className="text-xl font-semibold text-lime-400">
-                  {category}
-                </h3>
-                <div className="grid grid-cols-2 gap-4 mt-2">
-                  {skillList.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="bg-lime-600 text-gray-900 px-3 py-1 rounded-lg font-semibold text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+        <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md">
+          <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
+            Skills
+          </h2>
+          {Object.entries(skills).map(([category, skillList], index) => (
+            <div key={index} className="mb-4">
+              <h3 className="text-xl text-lime-300">{category}</h3>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {skillList.map((skill, i) => (
+                  <span
+                    key={i}
+                    className="bg-lime-500 text-black px-3 py-1 rounded-lg text-sm font-semibold"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          ))}
+        </section>
       </div>
 
-      <div className="bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-lime-500 mt-10 max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold text-yellow-400 mb-4">Projects</h2>
+      <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
+        <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
+          Projects
+        </h2>
         {projects.map((project, index) => (
-          <div key={index} className="mb-4 border-b border-gray-700 pb-2">
-            <h3 className="text-xl font-bold text-lime-400">{project.name}</h3>
-            <p className="text-gray-300 text-lg">{project.description}</p>
-            <p className="text-gray-400">
+          <div key={index} className="mb-5">
+            <h3 className="text-xl text-lime-300 font-semibold">
+              {project.name}
+            </h3>
+            <p className="text-gray-300">{project.description}</p>
+            <p className="text-sm text-gray-400 mt-1">
               <strong>Technologies:</strong>{' '}
               {project.technologiesUsed.join(', ')}
             </p>
           </div>
         ))}
-      </div>
+      </section>
 
-      <div className="bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-lime-500 mt-10 max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold text-yellow-400 mb-4">Contact</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <p className="flex items-center space-x-3">
-            <FaEnvelope className="text-yellow-500 text-2xl" />
+      <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
+        <h2 className="text-2xl font-semibold text-yellow-400 mb-4">Contact</h2>
+        <div className="grid md:grid-cols-2 gap-4 text-gray-300">
+          <p className="flex items-center gap-2">
+            <FaEnvelope className="text-yellow-400" />
             <a
               href="mailto:suryanarendra1000@gmail.com"
-              className="text-lime-400"
+              className="text-lime-300"
             >
               suryanarendra1000@gmail.com
             </a>
           </p>
-          <p className="flex items-center space-x-3">
-            <FaPhoneAlt className="text-yellow-500 text-2xl" />
-            <a href="tel:+917993830599" className="text-lime-400">
+          <p className="flex items-center gap-2">
+            <FaPhoneAlt className="text-yellow-400" />
+            <a href="tel:+917993830599" className="text-lime-300">
               +91 79938 3XXXX
             </a>
           </p>
-          <p className="flex items-center space-x-3">
-            <FaLinkedin className="text-blue-500 text-2xl" />
+          <p className="flex items-center gap-2">
+            <FaLinkedin className="text-blue-500" />
             <a
               href="https://linkedin.com/in/muli-surya-narendra-reddy"
-              className="text-lime-400"
+              className="text-lime-300"
             >
               LinkedIn
             </a>
           </p>
-          <p className="flex items-center space-x-3">
-            <FaGithub className="text-gray-500 text-2xl" />
-            <a href="https://github.com/Narendra-017" className="text-lime-400">
+          <p className="flex items-center gap-2">
+            <FaGithub className="text-gray-400" />
+            <a href="https://github.com/Narendra-017" className="text-lime-300">
               GitHub
             </a>
           </p>
-          <p className="flex items-center space-x-3">
-            <FaMapMarkerAlt className="text-red-500 text-2xl" />
-            <span>Faridabad, Haryana</span>
+          <p className="flex items-center gap-2">
+            <FaMapMarkerAlt className="text-red-400" />
+            Faridabad, Haryana
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className="flex justify-center mt-8 gap-5">
+      <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
+        <h2 className="text-2xl font-semibold text-yellow-400 mb-4">Hobbies</h2>
+        <ul className="list-disc list-inside text-gray-300">
+          {hobbies.map((hobby, index) => (
+            <li key={index} className="text-lime-300">
+              {hobby}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="flex justify-center mt-10 gap-5">
         <a
           href="/surya_resume.pdf"
-          target='_blank'
-          className="flex items-center gap-2 font-medium bg-lime-500 text-black px-5 py-3 rounded-lg shadow-md hover:bg-lime-400 transition-transform duration-300 hover:scale-105"
+          target="_blank"
+          className="flex items-center gap-2 bg-lime-500 text-black px-5 py-3 rounded-lg font-medium shadow hover:bg-lime-400 transition-transform duration-300 hover:scale-105"
         >
-          <FaFilePdf className="text-xl" /> View Resume
+          <FaFilePdf /> View Resume
         </a>
         <a
           href="/surya_resume.pdf"
           download="Surya_Narendra_Resume.pdf"
-          className="flex items-center gap-2 font-medium bg-lime-500 text-black px-5 py-3 rounded-lg shadow-md hover:bg-lime-400 transition-transform duration-300 hover:scale-105"
+          className="flex items-center gap-2 bg-lime-500 text-black px-5 py-3 rounded-lg font-medium shadow hover:bg-lime-400 transition-transform duration-300 hover:scale-105"
         >
-          <RiDownload2Fill className="text-xl" /> Download Resume
+          <RiDownload2Fill /> Download Resume
         </a>
       </div>
     </div>
