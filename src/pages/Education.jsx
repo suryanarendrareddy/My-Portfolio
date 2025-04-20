@@ -4,7 +4,8 @@ const educationData = [
   {
     degree: 'Bachelor of Technology (B.Tech)',
     field: 'Computer Science & Engineering',
-    institution: 'Manav Rachna International institute of research and studies, Faridabad, Haryana - 121003',
+    institution:
+      'Manav Rachna International institute of research and studies, Faridabad, Haryana - 121003',
     year: '2022 - 2026',
     cgpa: 'CGPA: 6.5',
   },
@@ -18,7 +19,8 @@ const educationData = [
   {
     degree: 'Secondary School (10th)',
     field: 'SSC',
-    institution: 'Sri Vivekananda High School, Simhadripuram, Dist. Cuddapah, Andhra Pradesh - 516454',
+    institution:
+      'Sri Vivekananda High School, Simhadripuram, Dist. Cuddapah, Andhra Pradesh - 516454',
     year: '2019 - 2020',
     cgpa: 'Marks: 589/600',
   },
@@ -47,10 +49,10 @@ const Education = () => {
             <p className="text-lg text-gray-100 font-medium mb-2">
               {edu.field}
             </p>
-            <p className="text-gray-300 text-md">{edu.institution}</p>
+            <p className="text-gray-300 text-md mb-4">{edu.institution}</p>
 
-            <div className="mt-4 flex justify-between items-center text-gray-400">
-              <span>{edu.year}</span>
+            <div className="mt-4 flex flex-col sm:flex-row justify-between items-center text-gray-400">
+              <span className="mb-2 sm:mb-0">{edu.year}</span>
               <span className="font-bold text-gray-300">{edu.cgpa}</span>
             </div>
           </div>
