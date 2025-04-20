@@ -34,7 +34,7 @@ const Certifications = () => {
             )}
             {cert.description && <p className="text-gray-300 mt-2 font-medium">{cert.description}</p>}
           </div>
-          <div className="flex flex-col gap-4 mt-4 md:mt-0">
+          <div className="flex md:flex-col flex-row gap-4 mt-4 md:mt-0">
             <a
               href={cert.certificate}
               target="_blank"
