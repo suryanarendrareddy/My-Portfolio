@@ -30,7 +30,7 @@ const App = () => {
           />
           <meta name="robots" content="index, follow" />
           <meta name="author" content="Surya Narendra Reddy" />
-          <link rel="canonical" href="https://surya-portfolio.vercel.app" />
+          <link rel="canonical" href="https://surya-narendra-portfolio.vercel.app" />
         </Helmet>
 
         <ScrollToTop />
