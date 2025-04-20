@@ -12,10 +12,10 @@ const Certifications = () => {
       certificate: 'ew-certificate.pdf',
     },
     {
-      "title": "Prompt Engineering",
-      "duration": "",
-      "description": "Completed a certification in Prompt Engineering, learning advanced AI prompt design techniques for optimizing language model outputs.",
-      "certificate": "prompt-engineering.pdf"
+      title: "Prompt Engineering",
+      duration: "",
+      description: "Completed a certification in Prompt Engineering, learning advanced AI prompt design techniques for optimizing language model outputs.",
+      certificate: "prompt-engineering.pdf"
     }
   ]
 
