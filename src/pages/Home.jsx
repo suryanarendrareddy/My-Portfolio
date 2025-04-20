@@ -7,7 +7,7 @@ import Certifications from './Certifications'
 
 const Home = () => {
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col justify-center px-6 my-16">
+    <div className="bg-gradient-to-br from-gray-900 to-black min-h-screen flex flex-col justify-center px-6 my-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
