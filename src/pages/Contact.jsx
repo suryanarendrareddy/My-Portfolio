@@ -49,7 +49,7 @@ const contactDetails = [
 
 const Contact = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-black text-white py-20 px-6 min-h-screen flex items-center justify-center">
+    <div className=" text-white py-20 px-6 min-h-screen flex items-center justify-center">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="backdrop-blur-xl bg-white/5 border border-gray-700 rounded-2xl p-8 shadow-2xl transition-all">
           <h1 className="text-4xl font-extrabold text-lime-400 mb-4">
