@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-   --tw-bg-opacity: 1;
-   background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
-   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   background: linear-gradient(to bottom, #000000, #18181b, #000000);
+   color: white;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

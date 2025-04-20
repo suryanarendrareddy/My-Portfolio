@@ -9,7 +9,7 @@ import { FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-950 text-gray-300 py-10">
+    <footer className="bg-gradient-to-t from-zinc-900 to-black text-gray-300 py-10">
       <div className="container mx-auto flex flex-col md:flex-row justify-around gap-8 px-5 text-center md:text-left">
         <nav className="flex-1">
           <h1 className="text-lime-500 text-xl font-extrabold mb-4">
