@@ -71,7 +71,7 @@ const Home = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="w-11/12 md:w-4/5 lg:w-2/3 mx-auto mt-12 p-6 md:p-10 bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-3xl shadow-xl border border-gray-700 flex flex-col md:flex-row items-center justify-between"
+        className="w-11/12 md:w-4/5 lg:w-2/3 mx-auto my-12 p-6 md:p-10 bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-3xl shadow-xl border border-gray-700 flex flex-col md:flex-row items-center justify-between"
       >
         <div className="text-center flex-1 px-4 py-4 md:py-0">
           <h1 className="text-4xl font-extrabold text-lime-400">15+</h1>

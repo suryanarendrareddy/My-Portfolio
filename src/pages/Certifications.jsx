@@ -1,6 +1,6 @@
 import React from 'react'
-import { RiDownload2Fill, RiGalleryView } from 'react-icons/ri'
-import { FaCertificate } from 'react-icons/fa'
+import { RiDownload2Fill } from 'react-icons/ri'
+import { BsFileEarmarkText } from 'react-icons/bs'
 
 const Certifications = () => {
   const certifications = [
@@ -40,7 +40,7 @@ const Certifications = () => {
               target="_blank"
               className="px-5 py-2 bg-lime-500 text-gray-900 font-bold rounded-lg hover:bg-lime-400 transition flex items-center gap-2"
             >
-              <FaCertificate className="size-5 sm:size-6 md:size-7" />
+              <BsFileEarmarkText className="size-5 sm:size-6 md:size-7" />
               View
             </a>
             <a

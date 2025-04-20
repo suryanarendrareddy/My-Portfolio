@@ -20,19 +20,34 @@ const Navbar = () => {
       </div>
 
       <nav className="hidden md:flex items-center gap-5 text-gray-200 font-semibold text-lg">
-        <Link to="/" className="hover:bg-cyan-700 px-3 py-1 rounded-lg">
+        <Link
+          to="/"
+          className="px-3 py-1 rounded-lg hover:bg-zinc-800 hover:text-white transition"
+        >
           Home
         </Link>
-        <Link to="/skills" className="hover:bg-cyan-700 px-3 py-1 rounded-lg">
+        <Link
+          to="/skills"
+          className="px-3 py-1 rounded-lg hover:bg-zinc-800 hover:text-white transition"
+        >
           Skills
         </Link>
-        <Link to="/projects" className="hover:bg-cyan-700 px-3 py-1 rounded-lg">
+        <Link
+          to="/projects"
+          className="px-3 py-1 rounded-lg hover:bg-zinc-800 hover:text-white transition"
+        >
           Projects
         </Link>
-        <Link to="/resume" className="hover:bg-cyan-700 px-3 py-1 rounded-lg">
+        <Link
+          to="/resume"
+          className="px-3 py-1 rounded-lg hover:bg-zinc-800 hover:text-white transition"
+        >
           Resume
         </Link>
-        <Link to="/contact" className="hover:bg-cyan-700 px-3 py-1 rounded-lg">
+        <Link
+          to="/contact"
+          className="px-3 py-1 rounded-lg hover:bg-zinc-800 hover:text-white transition"
+        >
           Contact
         </Link>
       </nav>
@@ -76,7 +91,7 @@ const Navbar = () => {
           <Link
             to="/"
             onClick={() => setNavDrawerOpen(false)}
-            className="block text-gray-300 hover:text-white py-2"
+            className="block text-gray-300 hover:bg-zinc-800 hover:text-white py-2 transition"
           >
             Home
           </Link>
@@ -85,7 +100,7 @@ const Navbar = () => {
               key={index}
               to={`/${item.toLowerCase()}`}
               onClick={() => setNavDrawerOpen(false)}
-              className="block text-gray-300 hover:text-white py-2"
+              className="block text-gray-300 hover:bg-zinc-800 hover:text-white py-2 transition"
             >
               {item}
             </Link>
