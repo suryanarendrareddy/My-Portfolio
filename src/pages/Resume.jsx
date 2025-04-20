@@ -99,9 +99,7 @@ const Resume = () => {
   ]
 
   return (
-    <div
-      className="text-gray-200 min-h-screen px-6 py-10 font-sans"
-    >
+    <div className="text-gray-200 min-h-screen px-6 py-10 font-sans">
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-bold text-lime-400">
           Muli Surya Narendra Reddy
@@ -112,7 +110,7 @@ const Resume = () => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md">
+        <section className="p-6 rounded-xl border-l-4 border-lime-400 shadow-md bg-gradient-to-br from-gray-900 to-gray-800">
           <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
             Education
           </h2>
@@ -122,14 +120,15 @@ const Resume = () => {
                 {edu.degree}
               </h3>
               <p className="text-gray-300">
-                {edu.institution} <span className="text-sm">({edu.year})</span>
+                {edu.institution}{' '}
+                <span className="text-sm">({edu.year})</span>
               </p>
               <p className="text-sm text-gray-400">{edu.cgpa}</p>
             </div>
           ))}
         </section>
 
-        <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md">
+        <section className="p-6 rounded-xl border-l-4 border-lime-400 shadow-md bg-gradient-to-br from-gray-900 to-gray-800">
           <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
             Skills
           </h2>
@@ -151,10 +150,8 @@ const Resume = () => {
         </section>
       </div>
 
-      <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
-        <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
-          Projects
-        </h2>
+      <section className="p-6 rounded-xl border-l-4 border-lime-400 shadow-md bg-gradient-to-br from-gray-900 to-gray-800 max-w-6xl mx-auto mt-10">
+        <h2 className="text-2xl font-semibold text-yellow-400 mb-4">Projects</h2>
         {projects.map((project, index) => (
           <div key={index} className="mb-5">
             <h3 className="text-xl text-lime-300 font-semibold">
@@ -169,7 +166,7 @@ const Resume = () => {
         ))}
       </section>
 
-      <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
+      <section className="p-6 rounded-xl border-l-4 border-lime-400 shadow-md bg-gradient-to-br from-gray-900 to-gray-800 max-w-6xl mx-auto mt-10">
         <h2 className="text-2xl font-semibold text-yellow-400 mb-4">Contact</h2>
         <div className="grid md:grid-cols-2 gap-4 text-gray-300">
           <p className="flex items-center gap-2">
@@ -198,7 +195,10 @@ const Resume = () => {
           </p>
           <p className="flex items-center gap-2">
             <FaGithub className="text-gray-400" />
-            <a href="https://github.com/Narendra-017" className="text-lime-300">
+            <a
+              href="https://github.com/Narendra-017"
+              className="text-lime-300"
+            >
               GitHub
             </a>
           </p>
@@ -209,7 +209,7 @@ const Resume = () => {
         </div>
       </section>
 
-      <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
+      <section className="p-6 rounded-xl border-l-4 border-lime-400 shadow-md bg-gradient-to-br from-gray-900 to-gray-800 max-w-6xl mx-auto mt-10">
         <h2 className="text-2xl font-semibold text-yellow-400 mb-4">Hobbies</h2>
         <ul className="list-disc list-inside text-gray-300">
           {hobbies.map((hobby, index) => (
