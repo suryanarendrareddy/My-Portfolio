@@ -6,11 +6,10 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-[#18181b] to-black text-gray-300 py-10 border-none">
       <div className="container mx-auto flex flex-col md:flex-row justify-between gap-8 px-5 text-center md:text-left">
-        {/* Quick Contact */}
+        
+        {/* Contact Section */}
         <div className="flex-1">
-          <h1 className="text-lime-500 text-2xl font-extrabold mb-4">
-            Contact
-          </h1>
+          <h1 className="text-lime-500 text-2xl font-extrabold mb-4">Contact</h1>
           <div className="space-y-3 text-lg font-medium">
             <div className="flex gap-2 items-center justify-center md:justify-start">
               <RiMailAddLine className="text-xl" />
@@ -39,11 +38,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Connect with Me */}
+        {/* Connect With Me */}
         <div className="flex-1">
-          <h1 className="text-lime-500 text-2xl font-extrabold mb-4">
-            Connect With Me
-          </h1>
+          <h1 className="text-lime-500 text-2xl font-extrabold mb-4">Connect With Me</h1>
           <div className="flex flex-col space-y-3 text-lg font-medium">
             <a
               href="https://github.com/Narendra-017"
@@ -72,12 +69,11 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Tech Stack */}
         <div className="flex-1">
-          <h1 className="text-lime-500 text-2xl font-extrabold mb-4">
-            Tech Stack
-          </h1>
+          <h1 className="text-lime-500 text-2xl font-extrabold mb-4">Tech Stack</h1>
           <ul className="space-y-2 text-lg font-medium">
-            <li>React.js </li>
+            <li>React.js</li>
             <li>Node.js & Express</li>
             <li>MongoDB, MySQL</li>
             <li>HTML, CSS, JavaScript</li>
@@ -85,13 +81,14 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="mt-8 text-center border-t border-gray-700 pt-4 px-4">
+
+      {/* Footer Bottom Note */}
+      <div className="mt-8 text-center pt-4 px-4">
         <p className="text-lg font-semibold text-gray-100">
           Let's build something amazing together!
         </p>
         <p className="text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} Surya Narendra Reddy. All Rights
-          Reserved.
+          &copy; {new Date().getFullYear()} Surya Narendra Reddy. All Rights Reserved.
         </p>
       </div>
     </footer>
