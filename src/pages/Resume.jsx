@@ -99,7 +99,7 @@ const Resume = () => {
   ]
 
   return (
-    <div className="text-gray-200 min-h-screen px-6 py-10 font-sans">
+    <div className="text-gray-200 min-h-screen px-6 py-10">
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-bold text-lime-400">
           Muli Surya Narendra Reddy
