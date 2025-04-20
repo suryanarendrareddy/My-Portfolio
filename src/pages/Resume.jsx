@@ -112,7 +112,7 @@ const Resume = () => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md">
+        <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md">
           <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
             Education
           </h2>
@@ -129,7 +129,7 @@ const Resume = () => {
           ))}
         </section>
 
-        <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md">
+        <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md">
           <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
             Skills
           </h2>
@@ -151,7 +151,7 @@ const Resume = () => {
         </section>
       </div>
 
-      <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
+      <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
         <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
           Projects
         </h2>
@@ -169,7 +169,7 @@ const Resume = () => {
         ))}
       </section>
 
-      <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
+      <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
         <h2 className="text-2xl font-semibold text-yellow-400 mb-4">Contact</h2>
         <div className="grid md:grid-cols-2 gap-4 text-gray-300">
           <p className="flex items-center gap-2">
@@ -209,7 +209,7 @@ const Resume = () => {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-[#1c1f26] via-[#262d38] to-[#1c1f26] p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
+      <section className=" p-6 rounded-xl border-l-4 border-lime-400 shadow-md max-w-6xl mx-auto mt-10">
         <h2 className="text-2xl font-semibold text-yellow-400 mb-4">Hobbies</h2>
         <ul className="list-disc list-inside text-gray-300">
           {hobbies.map((hobby, index) => (
