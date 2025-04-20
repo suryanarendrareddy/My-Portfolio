@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-   background: linear-gradient(to bottom, #000000, #18181b, #000000);
+   background: linear-gradient(to bottom, #000000, #18181b);
    color: white;
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    font-weight: 600;
