@@ -14,7 +14,7 @@ const Home = () => {
         className="flex flex-col md:flex-row justify-around w-full max-w-6xl mx-auto"
       >
         <div className="text-center md:text-left">
-          <h3 className="text-3xl font-extrabold text-lime-600 my-5">
+          <h3 className="text-4xl font-extrabold text-yellow-600 my-5">
             Welcome
           </h3>
           <h1 className="text-4xl font-extrabold text-gray-100 mx-5 my-0">

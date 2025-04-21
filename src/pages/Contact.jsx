@@ -42,8 +42,8 @@ const contactDetails = [
   {
     icon: <FaMapMarkerAlt />,
     label: 'Location',
-    text: 'Faridabad, Haryana',
-    link: 'https://goo.gl/maps/faridabad',
+    text: 'TathiReddyPalli, Lingala(M), Cuddapah(Dist.), Andhra Pradesh - 516396',
+    link: "https://www.google.com/maps/place/14%C2%B031'22.8%22N+78%C2%B001'50.4%22E/@14.5229863,78.0300123,212m/data=!3m2!1e3!4b1!4m12!1m7!3m6!1s0x3bb4c3b006f144e7:0x3a8b474096cdb050!2sThathireddy+palli!8m2!3d15.254656!4d79.0274129!16s%2Fg%2F11jkt76tg6!3m3!8m2!3d14.522985!4d78.030656!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D",
   },
 ]
 
@@ -77,11 +77,11 @@ const Contact = () => {
             </p>
           </div>
 
-          <button className="w-full max-w-fit px-6 py-3 bg-lime-500 text-gray-900 font-bold rounded-full hover:bg-lime-600 shadow-xl transition-transform hover:scale-110 flex flex-wrap justify-center items-center gap-2 text-center">
-  <span>Message me via links</span>
-  <span className="block md:hidden">below ⬇️</span>
-  <span className="hidden md:block">beside ➡️</span>
-</button>
+          <button className="w-full max-w-fit px-6 py-3 bg-lime-500 text-gray-900 font-bold rounded-full hover:bg-lime-600 shadow-xl transition-transform hover:scale-110 flex flex-wrap justify-center items-center gap-1 text-center">
+            <span>Message me via links</span>
+            <span className="block md:hidden">below ⬇️</span>
+            <span className="hidden md:block">beside ➡️</span>
+          </button>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
