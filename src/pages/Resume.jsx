@@ -120,8 +120,7 @@ const Resume = () => {
                 {edu.degree}
               </h3>
               <p className="text-gray-300">
-                {edu.institution}{' '}
-                <span className="text-sm">({edu.year})</span>
+                {edu.institution} <span className="text-sm">({edu.year})</span>
               </p>
               <p className="text-sm text-gray-400">{edu.cgpa}</p>
             </div>
@@ -151,7 +150,9 @@ const Resume = () => {
       </div>
 
       <section className="p-6 rounded-xl border-l-4 border-lime-400 shadow-md bg-gradient-to-br from-gray-900 to-gray-800 max-w-6xl mx-auto mt-10">
-        <h2 className="text-2xl font-semibold text-yellow-400 mb-4">Projects</h2>
+        <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
+          Projects
+        </h2>
         {projects.map((project, index) => (
           <div key={index} className="mb-5">
             <h3 className="text-xl text-lime-300 font-semibold">
@@ -195,17 +196,18 @@ const Resume = () => {
           </p>
           <p className="flex items-center gap-2">
             <FaGithub className="text-gray-400" />
-            <a
-              href="https://github.com/Narendra-017"
-              className="text-lime-300"
-            >
+            <a href="https://github.com/Narendra-017" className="text-lime-300">
               GitHub
             </a>
           </p>
-          <p className="flex items-center gap-2">
+          <a
+            className="flex items-center gap-2"
+            href="https://www.google.com/maps/place/14%C2%B031'22.8%22N+78%C2%B001'50.4%22E/@14.5229863,78.0300123,212m/data=!3m2!1e3!4b1!4m12!1m7!3m6!1s0x3bb4c3b006f144e7:0x3a8b474096cdb050!2sThathireddy+palli!8m2!3d15.254656!4d79.0274129!16s%2Fg%2F11jkt76tg6!3m3!8m2!3d14.522985!4d78.030656!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D"
+          >
             <FaMapMarkerAlt className="text-red-400" />
-            Faridabad, Haryana
-          </p>
+            TathiReddyPalli, Lingala(M), Cuddapah(Dist.), Andhra Pradesh -
+            516396
+          </a>
         </div>
       </section>
 
