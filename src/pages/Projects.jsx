@@ -14,8 +14,8 @@ const projects = [
       'MongoDB',
       'Node.js',
     ],
-    liveLink: 'dfb',
-    githubLink: 'dfbdf',
+    liveLink: 'https://trend-reserve-17.vercel.app',
+    githubLink: 'https://github.com/Narendra-017/trend-reserve',
   },
   {
     name: 'Portfolio Website',
@@ -31,15 +31,16 @@ const projects = [
       'Engineers World is a platform for engineers to collaborate, share knowledge, and access career opportunities.',
     technologiesUsed: ['React.js', 'CSS', 'Hostinger', 'Framer Motion'],
     liveLink: 'https://engineersworld.in',
-    githubLink: 'fdbd',
+    githubLink: 'https://github.com/Narendra-017/engineersworld',
   },
   {
     name: 'Shadow Fax',
     description:
       'Shadowfax is a tech-driven logistics company specializing in fast and reliable last-mile delivery for e-commerce, food, and pharmaceuticals.',
     technologiesUsed: ['React.js', 'CSS', 'Spring Boot', 'MySQL', 'REST APIs'],
-    liveLink: 'fbdf',
-    githubLink: 'dfdf',
+    liveLink: 'shadow-fax-1.netlify.app',
+    githubLink:
+      'https://github.com/Narendra-017/shadowFax/tree/main/Online-Booking/frontend',
   },
 ]
 
