@@ -14,7 +14,7 @@ const projects = [
       'MongoDB',
       'Node.js',
     ],
-    liveLink: 'https://trend-reserve-17.vercel.app',
+    liveLink: 'https://trend-reserve.vercel.app',
     githubLink: 'https://github.com/Narendra-017/trend-reserve',
   },
   {
