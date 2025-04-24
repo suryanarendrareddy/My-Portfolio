@@ -37,7 +37,13 @@ const projects = [
     name: 'Shadow Fax',
     description:
       'Shadowfax is a tech-driven logistics company specializing in fast and reliable last-mile delivery for e-commerce, food, and pharmaceuticals.',
-    technologiesUsed: ['React.js', 'CSS', 'Spring Boot', 'MySQL', 'REST APIs'],
+    technologiesUsed: [
+      'React.js',
+      'TailwindCSS',
+      'Spring Boot',
+      'MySQL',
+      'REST APIs',
+    ],
     liveLink: 'https://shadow-fax-1.netlify.app',
     githubLink:
       'https://github.com/Narendra-017/shadowFax/tree/main/Online-Booking/frontend',
@@ -59,7 +65,9 @@ const Projects = () => {
             <h2 className="text-2xl font-bold text-yellow-300 mb-3">
               {project.name}
             </h2>
-            <p className="text-gray-300 mb-4 md:text-[17px]">{project.description}</p>
+            <p className="text-gray-300 mb-4 md:text-[17px]">
+              {project.description}
+            </p>
             <div className="flex flex-wrap gap-2 mb-6">
               {project.technologiesUsed.map((tech, i) => (
                 <span
