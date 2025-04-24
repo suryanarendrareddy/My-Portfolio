@@ -36,7 +36,7 @@ const projects = [
   {
     name: 'Shadow Fax',
     description:
-      'Shadowfax is a tech-driven logistics company specializing in fast and reliable last-mile delivery for e-commerce, food, and pharmaceuticals.',
+      'A logistics platform specializing in fast and reliable last-mile delivery.',
     technologiesUsed: [
       'React.js',
       'TailwindCSS',
