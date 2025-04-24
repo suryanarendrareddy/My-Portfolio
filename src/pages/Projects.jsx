@@ -38,7 +38,7 @@ const projects = [
     description:
       'Shadowfax is a tech-driven logistics company specializing in fast and reliable last-mile delivery for e-commerce, food, and pharmaceuticals.',
     technologiesUsed: ['React.js', 'CSS', 'Spring Boot', 'MySQL', 'REST APIs'],
-    liveLink: 'shadow-fax-1.netlify.app',
+    liveLink: 'https://shadow-fax-1.netlify.app',
     githubLink:
       'https://github.com/Narendra-017/shadowFax/tree/main/Online-Booking/frontend',
   },
