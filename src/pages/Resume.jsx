@@ -53,6 +53,12 @@ const Resume = () => {
 
   const projects = [
     {
+      name: 'Amazon-Clone',
+      description:
+        "Built a responsive clone of Amazon's homepage using HTML, CSS and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",
+      technologiesUsed: ['HTML', 'CSS', 'JavaScript']
+    },
+    {
       name: 'Trend Reserve',
       description:
         'An interactive e-commerce platform for seamless clothing purchases, featuring secure payments, fast delivery, and an intuitive UI.',
