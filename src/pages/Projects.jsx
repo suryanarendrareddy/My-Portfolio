@@ -3,6 +3,14 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
   {
+    name: 'Amazon-Clone',
+    description:
+      "Built a responsive clone of Amazon's homepage using HTML, CSS and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",
+    technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
+    liveLink: 'https://narendra-017.github.io/amazon-clone/',
+    githubLink:"https://github.com/Narendra-017/amazon-clone"
+  },
+  {
     name: 'Trend Reserve',
     description:
       'Developed an interactive e-commerce platform for seamless clothing purchases, featuring secure payments, fast delivery, and an intuitive UI.',
