@@ -1,5 +1,6 @@
 import React from 'react'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
+import { MdOnlinePrediction } from 'react-icons/md'
 
 const projects = [
   {
@@ -94,7 +95,7 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition"
                 >
-                  <FaExternalLinkAlt /> Live
+                  <MdOnlinePrediction />Live
                 </a>
               )}
               {project.githubLink && (
