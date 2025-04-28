@@ -9,7 +9,7 @@ const projects = [
       "Built a responsive clone of Amazon's homepage using HTML, CSS and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",
     technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
     liveLink: 'https://narendra-017.github.io/amazon-clone/',
-    githubLink:"https://github.com/Narendra-017/amazon-clone"
+    githubLink: 'https://github.com/Narendra-017/amazon-clone',
   },
   {
     name: 'Trend Reserve',
@@ -56,6 +56,14 @@ const projects = [
     liveLink: 'https://shadow-fax-1.netlify.app',
     githubLink:
       'https://github.com/Narendra-017/shadowFax/tree/main/Online-Booking/frontend',
+  },
+  {
+    name: 'Online Job Application Tracker',
+    description:
+      'A platform to efficiently manage and track job applications with status updates and notifications.',
+    technologiesUsed: ['React.js', 'TailwindCSS', 'Node.js', 'MongoDB','Express.js'],
+    liveLink: 'https://your-tracker-app-link.com', 
+    githubLink: 'https://github.com/Narendra-017/online-job-tracker',
   },
 ]
 

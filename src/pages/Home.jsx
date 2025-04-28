@@ -54,14 +54,17 @@ const Home = () => {
           </div>
         </div>
         <motion.div
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
           className="mt-6 md:mt-0 flex justify-center"
         >
-          <img
+          <motion.img
             src="/Profile.jpg"
             alt="Surya Image"
+            initial={{ rotate: 0 }}
+            animate={{ rotate: -15 }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
             className="w-52 md:w-64 lg:w-72 h-52 md:h-64 lg:h-72 rounded-full border-4 border-lime-500 shadow-xl transition-transform duration-300 hover:scale-105"
           />
         </motion.div>
