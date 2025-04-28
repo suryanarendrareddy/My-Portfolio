@@ -84,14 +84,14 @@ const Home = () => {
         </div>
 
         <div className="text-center flex-1 px-4 py-4 md:py-0 border-t md:border-t-0 md:border-l border-gray-700">
-          <h1 className="text-4xl font-extrabold text-yellow-400">5+</h1>
+          <h1 className="text-4xl font-extrabold text-yellow-400">10+</h1>
           <p className="text-lg md:text-xl text-gray-300 font-medium">
             Projects
           </p>
         </div>
 
         <div className="text-center flex-1 px-4 py-4 md:py-0 border-t md:border-t-0 md:border-l border-gray-700">
-          <h1 className="text-4xl font-extrabold text-pink-400">50+</h1>
+          <h1 className="text-4xl font-extrabold text-pink-400">100+</h1>
           <p className="text-lg md:text-xl text-gray-300 font-medium">
             DSA Problems
             <br />
