@@ -56,7 +56,19 @@ const Resume = () => {
       name: 'Amazon-Clone',
       description:
         "Built a responsive clone of Amazon's homepage using HTML, CSS and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",
-      technologiesUsed: ['HTML', 'CSS', 'JavaScript']
+      technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
+    },
+    {
+      name: 'Online Job Application Tracker',
+      description:
+        'A platform to efficiently manage and track job applications with status updates and notifications.',
+      technologiesUsed: [
+        'React.js',
+        'TailwindCSS',
+        'Node.js',
+        'MongoDB',
+        'Express.js',
+      ],
     },
     {
       name: 'Trend Reserve',
