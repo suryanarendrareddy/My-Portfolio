@@ -123,3 +123,25 @@ export const softSkills = [
     icon: <FaMicrophone className="text-pink-400 text-6xl" />,
   },
 ]
+
+export const resumeSkills = {
+  Frontend: [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'Bootstrap',
+    'TailwindCSS',
+    'React.js',
+  ],
+  Backend: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Java', 'Spring Boot'],
+  Tools: ['Git/GitHub', 'Netlify', 'Vercel'],
+}
+
+export const hobbies = [
+  'Coding',
+  'Learning New Technologies',
+  'Gaming',
+  'Travelling',
+  'Volunteering',
+  'Origami',
+]

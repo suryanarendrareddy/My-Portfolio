@@ -1,54 +1,11 @@
 import React from 'react'
-import {
-  FaEnvelope,
-  FaLinkedin,
-  FaGithub,
-  FaWhatsapp,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaFilePdf,
-} from 'react-icons/fa'
+
 import { RiDownload2Fill } from 'react-icons/ri'
 import educationData from '../data/education.json'
 import projectsData from '../data/projects.json'
-
-const iconMap = {
-  FaEnvelope: FaEnvelope,
-  FaLinkedin: FaLinkedin,
-  FaGithub: FaGithub,
-  FaWhatsapp: FaWhatsapp,
-  FaMapMarkerAlt: FaMapMarkerAlt,
-  FaPhoneAlt: FaPhoneAlt,
-  FaFilePdf: FaFilePdf,
-}
+import { resumeSkills, hobbies } from '../data/skillsData.jsx'
 
 const Resume = () => {
-  const skills = {
-    Frontend: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Bootstrap',
-      'TailwindCSS',
-      'React.js',
-    ],
-    Backend: [
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'MySQL',
-      'Java',
-      'Spring Boot',
-    ],
-    Tools: ['Git/GitHub', 'Netlify', 'Vercel'],
-  }
-
-  const hobbies = [
-    'Coding',
-    'Learning New Technologies',
-    'Gaming',
-    'UI Designing',
-  ]
 
   return (
     <div className="text-white min-h-screen px-6 py-10">
@@ -81,7 +38,7 @@ const Resume = () => {
           <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
             Skills
           </h2>
-          {Object.entries(skills).map(([category, skillList], index) => (
+          {Object.entries(resumeSkills).map(([category, skillList], index) => (
             <div key={index} className="mb-4">
               <h3 className="text-xl text-lime-300">{category}</h3>
               <div className="flex flex-wrap gap-2 mt-2">
@@ -130,7 +87,7 @@ const Resume = () => {
       </section>
       <section className="mt-6 flex justify-center gap-4">
         <a
-          href="/surya_resume.pdf" 
+          href="/surya_resume.pdf"
           download
           className="flex items-center text-black bg-yellow-500 py-2 px-4 rounded-lg hover:bg-yellow-600 gap-2"
         >
