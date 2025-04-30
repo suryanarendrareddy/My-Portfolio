@@ -4,8 +4,20 @@ import { FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-t from-zinc-900 to-black text-gray-300 py-10 border-none">
+    <footer className="bg-gradient-to-t from-zinc-900 to-black text-gray-300 py-10 border-none shadow-lg">
       <div className="container mx-auto flex flex-col md:flex-row justify-between gap-8 px-5 text-center md:text-left">
+        <div className="flex-1">
+          <h1 className="text-yellow-600 text-2xl font-extrabold mb-4">
+            About Farmaha360
+          </h1>
+          <p className="text-lg font-medium mb-4">
+            At Farmaha360, our mission is to create a platform that empowers
+            farmers by connecting them directly to consumers. We believe in
+            leveraging technology to solve real-world problems and improve the
+            livelihoods of farmers.
+          </p>
+        </div>
+
         <div className="flex-1">
           <h1 className="text-yellow-600 text-2xl font-extrabold mb-4">
             Contact
@@ -42,9 +54,39 @@ const Footer = () => {
         </div>
         <div className="flex-1">
           <h1 className="text-yellow-600 text-2xl font-extrabold mb-4">
-            Connect With Me
+            Quick Links
           </h1>
-          <div className="flex flex-col space-y-3 text-lg font-medium">
+          <ul className="space-y-2 text-lg font-medium">
+            <li>
+              <a href="/skills" className="hover:text-gray-400 transition">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="/resume" className="hover:text-gray-400 transition">
+                Resume
+              </a>
+            </li>
+            <li>
+              <a href="/projects" className="hover:text-gray-400 transition">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                className="hover:text-gray-400 transition"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="flex-1">
+          <h1 className="text-yellow-600 text-2xl font-extrabold mb-4">
+            Follow Us
+          </h1>
+          <div className="space-y-3 text-lg font-medium">
             <a
               href="https://github.com/Narendra-017"
               target="_blank"
@@ -71,21 +113,9 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="flex-1">
-          <h1 className="text-yellow-600 text-2xl font-extrabold mb-4">
-            Tech Stack
-          </h1>
-          <ul className="space-y-2 text-lg font-medium">
-            <li>React.js</li>
-            <li>Node.js & Express</li>
-            <li>MongoDB, MySQL</li>
-            <li>HTML, CSS, JavaScript</li>
-            <li>Tailwind CSS, Bootstrap</li>
-          </ul>
-        </div>
       </div>
-      <div className="mt-8 text-center pt-4 px-4">
-        <p className="text-lg font-bold text-gray-100">
+      <div className="mt-8 text-center pt-2 px-4 border-t border-gray-400">
+        <p className="text-lg font-bold text-gray-100 pt-2">
           Let's build something amazing together!
         </p>
         <p className="text-sm text-gray-400 font-bold">
