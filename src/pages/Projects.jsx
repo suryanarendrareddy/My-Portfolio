@@ -50,7 +50,7 @@ const ProjectCard = ({ project }) => (
 
 const Projects = () => {
   return (
-    <div className="text-white py-16 px-6">
+    <div className="text-white pt-32 px-5">
       <h1 className="text-4xl font-bold text-center text-lime-400 mb-14">
         My Projects
       </h1>

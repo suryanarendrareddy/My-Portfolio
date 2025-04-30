@@ -10,7 +10,7 @@ const ProfileImage = () => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, ease: 'easeOut' }}
-      className="mt-6 md:mt-0 flex justify-center"
+      className="mt-6 md:mt-24 flex justify-center"
     >
       <motion.img
         src="/Profile.jpg"
@@ -65,7 +65,7 @@ const Home = () => {
         className="flex flex-col md:flex-row justify-around w-full max-w-6xl mx-auto"
       >
         <div className="text-center md:text-left">
-          <h3 className="text-4xl font-extrabold text-yellow-600 my-5">
+          <h3 className="text-4xl font-extrabold text-yellow-600 my-5 mt-20">
             Welcome
           </h3>
           <h1 className="text-4xl font-extrabold text-gray-100 mx-5 my-0">
