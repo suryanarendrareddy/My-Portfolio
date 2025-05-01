@@ -42,7 +42,7 @@ const StatsSection = () => {
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center px-6 my-16">
+    <div className="min-h-screen flex flex-col justify-center px-4 my-16">
       <div className="flex flex-col md:flex-row justify-around w-full max-w-6xl mx-auto">
         <div className="text-center md:text-left">
           <h3 className="text-4xl font-extrabold text-yellow-600 my-5 mt-20">
