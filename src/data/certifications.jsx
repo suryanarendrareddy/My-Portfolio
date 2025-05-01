@@ -1,4 +1,4 @@
-[
+export const certificationsData = [
   {
     "title": "Full-Stack Developer Intern",
     "duration": "2 Months",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { contactData } from '../data/contactData.jsx' // No need to map icons here, they're already in contactData
+import { contactData } from '../data/contactData.jsx' 
 
 const Contact = () => {
   const ContactCard = React.memo(({ data }) => {
@@ -25,7 +25,7 @@ const Contact = () => {
   })
 
   return (
-    <section className="text-white py-20 px-6 min-h-screen flex items-center justify-center">
+    <section className="text-white pb-20 pt-32 px-6 min-h-screen flex items-center justify-center">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="p-8 sm:p-10 rounded-xl border-l-4 transition-all duration-300 bg-black border-lime-500">
           <h1 className="text-4xl font-extrabold text-yellow-400 mb-4">

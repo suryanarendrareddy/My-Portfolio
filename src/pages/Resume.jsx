@@ -1,14 +1,14 @@
 import React from 'react'
 import { RiDownload2Fill } from 'react-icons/ri'
-import educationData from '../data/education.json'
-import projectsData from '../data/projects.json'
+import { educationData } from '../data/education.jsx'
+import { projectsData } from '../data/projects.jsx'
 import { resumeSkills, hobbies } from '../data/skillsData.jsx'
 
 const Resume = () => {
   return (
     <div className="text-white min-h-screen px-5 py-10 pt-32">
       <header className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-lime-400">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-lime-400">
           Muli Surya Narendra Reddy
         </h1>
         <p className="text-lg text-lime-200 mt-2">
@@ -18,7 +18,6 @@ const Resume = () => {
 
       <main>
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          
           <section className="p-6 rounded-xl border-l-4 border-lime-400 shadow-md bg-gradient-to-br from-black to-gray-900">
             <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
               Education

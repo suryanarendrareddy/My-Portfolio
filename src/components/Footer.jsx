@@ -5,7 +5,7 @@ import { FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-t from-zinc-900 to-black text-gray-300 py-10 border-none shadow-xl">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between gap-8 px-5 text-center md:text-left">
+      <div className="container mx-auto flex flex-col md:flex-row justify-evenly gap-8 px-5 text-center md:text-left">
         <div className="flex-1">
           <h2 className="text-yellow-600 text-2xl font-extrabold mb-4">
             About Farmaha360

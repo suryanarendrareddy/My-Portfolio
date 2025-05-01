@@ -24,7 +24,7 @@ const Navbar = () => {
           alt="Surya image"
           className="w-12 h-12 rounded-full border-2 border-white"
         />
-        <h1 className="text-2xl font-extrabold text-white">
+        <h1 className="md:text-2xl font-extrabold text-white text-lg">
           Muli Surya Narendra Reddy
         </h1>
       </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
           (item, index) => (
             <Link
               key={index}
-              to={`/${item.toLowerCase()}`}
+              to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
               className="px-4 py-2 rounded-lg hover:bg-zinc-800 hover:text-white transition duration-300"
             >
               {item}

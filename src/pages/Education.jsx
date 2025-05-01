@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import educationData from "../data/education.json"
+import { educationData } from "../data/education.jsx"
 const EducationCard = memo(
   ({ degree, field, institution, year, cgpa, index }) => {
     return (

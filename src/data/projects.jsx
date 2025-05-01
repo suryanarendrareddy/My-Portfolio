@@ -1,4 +1,4 @@
-[
+export const projectsData = [
   {
     "name": "Amazon-Clone",
     "description": "Built a responsive clone of Amazon's homepage using HTML, CSS and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",

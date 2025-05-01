@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { RiDownload2Fill } from 'react-icons/ri'
 import { BsFileEarmarkText } from 'react-icons/bs'
-import certificationsData from "../data/certifications.json"
+import { certificationsData } from "../data/certifications.jsx"
 const CertificationCard = memo(
   ({ title, duration, description, certificate }) => {
     return (

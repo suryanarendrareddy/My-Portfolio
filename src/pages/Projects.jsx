@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { MdOnlinePrediction } from 'react-icons/md'
 import { motion } from 'framer-motion'
-import projectsData from '../data/projects.json' // Import the JSON data
+import { projectsData } from '../data/projects.jsx' 
 
 const ProjectCard = ({ project }) => (
   <motion.div

@@ -1,4 +1,4 @@
-[
+export const educationData = [
   {
     "degree": "Bachelor of Technology (B.Tech)",
     "field": "Computer Science & Engineering",
