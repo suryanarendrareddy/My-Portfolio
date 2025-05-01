@@ -17,7 +17,7 @@ const Navbar = () => {
   }, [navDrawerOpen])
 
   return (
-    <div className="flex bg-gradient-to-t from-zinc-900 to-black p-4 w-full items-center justify-around shadow-md fixed top-0 left-0 z-50">
+    <div className="flex bg-gradient-to-t from-zinc-900 to-black p-4 w-full items-center md:justify-around justify-between shadow-md fixed top-0 left-0 z-50">
       <div className="flex gap-3 items-center">
         <img
           src="/Profile.jpg"
