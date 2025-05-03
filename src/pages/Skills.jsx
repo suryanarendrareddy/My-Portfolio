@@ -12,7 +12,7 @@ const SkillCard = ({ skill }) => (
 
 const Section = ({ title, data, wide }) => (
   <div className="w-full">
-    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-lime-400 tracking-wider drop-shadow-lg">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-green-500 tracking-wider drop-shadow-lg">
       {title}
     </h2>
     <div
