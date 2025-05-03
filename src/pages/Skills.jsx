@@ -2,49 +2,41 @@ import React from 'react'
 import { skills, coreCS, tools, softSkills } from '../data/skillsData.jsx'
 
 const SkillCard = ({ skill }) => (
-  <div className="flex flex-col items-center p-6 bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg transform hover:scale-110 transition-all duration-300 border-2 border-gray-700 hover:border-cyan-400">
+  <div className="flex flex-col items-center justify-center p-6 bg-black/40 backdrop-blur-xl rounded-2xl shadow-lg border border-lime-500/20 hover:border-lime-400 hover:shadow-lime-500/20 transition duration-300 ease-in-out hover:scale-105">
     {skill.icon}
-    <p className="mt-4 text-lg font-semibold text-cyan-300">{skill.name}</p>
+    <p className="mt-4 text-base md:text-lg font-semibold text-white text-center tracking-wide">
+      {skill.name}
+    </p>
+  </div>
+)
+
+const Section = ({ title, data, wide }) => (
+  <div className="w-full">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-lime-400 tracking-wider drop-shadow-lg">
+      {title}
+    </h2>
+    <div
+      className={`grid gap-6 ${
+        wide
+          ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'
+          : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4'
+      } max-w-7xl mx-auto`}
+    >
+      {data.map((skill, index) => (
+        <SkillCard key={index} skill={skill} />
+      ))}
+    </div>
   </div>
 )
 
 const Skills = () => {
-  console.log(skills, coreCS, tools, softSkills)
-
   return (
-    <div className="text-white min-h-screen py-16 px-5 pt-32">
-      <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
-        Technical Skills
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-        {skills.map((skill, index) => (
-          <SkillCard key={index} skill={skill} />
-        ))}
-      </div>
-
-      <h2 className="text-5xl font-extrabold text-center mb-12 mt-16 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
-        Core CS Skills
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-        {coreCS.map((skill, index) => (
-          <SkillCard key={index} skill={skill} />
-        ))}
-      </div>
-      <h2 className="text-5xl font-extrabold text-center mb-12 mt-16 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
-        Tools
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-        {tools.map((skill, index) => (
-          <SkillCard key={index} skill={skill} />
-        ))}
-      </div>
-      <h2 className="text-5xl font-extrabold text-center mb-12 mt-16 bg-gradient-to-r from-lime-400 to-yellow-400 text-transparent bg-clip-text">
-        Soft Skills
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        {softSkills.map((skill, index) => (
-          <SkillCard key={index} skill={skill} />
-        ))}
+    <div className="text-white min-h-screen pt-28 pb-20 px-6 md:px-10 bg-gradient-to-br from-zinc-950 via-black to-zinc-900">
+      <div className="space-y-28">
+        <Section title="Technical Skills" data={skills} wide />
+        <Section title="Core CS Skills" data={coreCS} wide />
+        <Section title="Tools" data={tools} wide />
+        <Section title="Soft Skills" data={softSkills} wide={false} />
       </div>
     </div>
   )

@@ -6,12 +6,12 @@ const EducationCard = memo(
       <div
         className={`p-6 sm:p-8 rounded-xl border-l-4 transition-all duration-300 ${
           index % 2 === 0
-            ? 'bg-black border-lime-500'
+            ? 'bg-black border-green-500'
             : 'bg-black border-yellow-400'
         }`}
         role="listitem"
       >
-        <h3 className="text-xl sm:text-2xl font-semibold text-yellow-400 mb-1">
+        <h3 className="text-xl sm:text-2xl font-semibold text-green-500 mb-1">
           {degree}
         </h3>
         <p className="text-base sm:text-lg text-gray-100 font-medium mb-1">
@@ -33,7 +33,7 @@ const EducationCard = memo(
 const Education = () => {
   return (
     <div className="py-16 text-white">
-      <h2 className="text-4xl font-bold text-center text-lime-400 mb-10 tracking-wide">
+      <h2 className="text-4xl font-bold text-center text-green-400 mb-10 tracking-wide">
         Education
       </h2>
 

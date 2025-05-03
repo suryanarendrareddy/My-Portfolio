@@ -10,7 +10,7 @@ const CertificationCard = memo(
         role="article"
       >
         <div className="text-left w-full md:w-3/4">
-          <h2 className="text-yellow-400 text-2xl font-semibold mb-2">
+          <h2 className="text-green-500 text-2xl font-semibold mb-2">
             {title}
           </h2>
           {duration && (
@@ -35,16 +35,16 @@ const CertificationCard = memo(
             href={certificate}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 bg-lime-500 text-gray-900 font-bold rounded-lg hover:bg-lime-400 transition flex items-center gap-2"
+            className="px-5 py-2 bg-green-500 text-gray-900 font-extrabold rounded-lg hover:bg-green-400 transition flex items-center gap-2"
             aria-label={`View certificate for ${title}`}
-          >
+          > 
             <BsFileEarmarkText className="text-lg sm:text-xl md:text-2xl" />
             View
           </a>
           <a
             href={certificate}
             download
-            className="px-5 py-2 bg-lime-500 text-gray-900 font-bold rounded-lg hover:bg-lime-400 transition flex items-center gap-2"
+            className="px-5 py-2 bg-green-500 text-gray-900 font-bold rounded-lg hover:bg-green-400 transition flex items-center gap-2"
             aria-label={`Download certificate for ${title}`}
           >
             <RiDownload2Fill className="text-lg sm:text-xl md:text-2xl" />
@@ -60,7 +60,7 @@ const Certifications = () => {
 
   return (
     <div className="mx-auto text-center max-w-3xl py-10">
-      <h1 className="text-lime-500 text-4xl font-bold mb-8">Certifications</h1>
+      <h1 className="text-green-500 text-4xl font-bold mb-8">Certifications</h1>
       {certificationsData.map((cert, index) => (
         <CertificationCard
           key={index}

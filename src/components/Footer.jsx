@@ -4,118 +4,107 @@ import { FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-t from-zinc-900 to-black text-gray-300 py-10 border-none shadow-xl">
-      <div className="container mx-auto flex flex-col md:flex-row justify-evenly gap-8 px-5 text-center md:text-left">
-        <div className="flex-1">
-          <h2 className="text-yellow-600 text-2xl font-extrabold mb-4">
-            About Farmaha360
-          </h2>
-          <p className="text-lg font-medium mb-4">
-            At Farmaha360, our mission is to empower farmers by connecting them
-            directly with consumers. We believe in using technology to solve
-            real-world problems and improve the livelihoods of farmers.
+    <footer className="bg-gradient-to-b from-black to-zinc-900 text-gray-200 py-12 px-6 shadow-inner">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-center">
+        <div>
+          <h2 className="text-green-500 text-2xl font-bold mb-4">Farmaha360</h2>
+          <p className="text-base leading-relaxed">
+            Empowering farmers by directly connecting them with consumers.
+            Tech-driven solutions for real-world agricultural challenges.
           </p>
         </div>
-        <div className="flex-1">
-          <h2 className="text-yellow-600 text-2xl font-extrabold mb-4">
-            Contact
-          </h2>
-          <div className="space-y-3 text-lg font-medium">
-            <div className="flex gap-2 items-center justify-center md:justify-start">
-              <RiMailAddLine className="text-xl" />
-              <a
-                href="mailto:suryanarendra1000@gmail.com"
-                className="hover:text-gray-400 transition"
-              >
+
+        <div>
+          <h2 className="text-green-500 text-xl font-semibold mb-4">Contact</h2>
+          <ul className="space-y-3 text-md">
+            <li className="flex items-center justify-center gap-2 hover:text-white transition">
+              <RiMailAddLine />{' '}
+              <a href="mailto:suryanarendra1000@gmail.com">
                 suryanarendra1000@gmail.com
               </a>
-            </div>
-            <div className="flex gap-2 items-center justify-center md:justify-start">
-              <RiPhoneLine className="text-xl" />
-              <a
-                href="tel:+917993830599"
-                className="hover:text-gray-400 transition"
-              >
-                +91 79938 3XXXX
-              </a>
-            </div>
-            <div className="flex gap-2 items-center justify-center md:justify-start">
-              <FaMapMarkerAlt className="text-xl" />
+            </li>
+            <li className="flex items-center justify-center gap-2 hover:text-white transition">
+              <RiPhoneLine /> <a href="tel:+917993830599">+91 79938 3XXXX</a>
+            </li>
+            <li className="flex items-center justify-center gap-2 hover:text-white transition">
+              <FaMapMarkerAlt />{' '}
               <a
                 href="https://www.google.com/maps/place/14%C2%B031'22.8%22N+78%C2%B001'50.4%22E"
-                className="hover:text-gray-400 transition"
+                target="_blank"
+                rel="noreferrer"
               >
-                Cuddapah, Andhra Pradesh, 516396
+                Cuddapah, Andhra Pradesh 516396
               </a>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
-        <div className="flex-1">
-          <h2 className="text-yellow-600 text-2xl font-extrabold mb-4">
+
+        <div>
+          <h2 className="text-green-500 text-xl font-semibold mb-4">
             Quick Links
           </h2>
-          <ul className="space-y-2 text-lg font-medium">
+          <ul className="space-y-2 text-md">
             <li>
-              <a href="/skills" className="hover:text-gray-400 transition">
+              <a href="/skills" className="hover:text-white transition">
                 Skills
               </a>
             </li>
             <li>
-              <a href="/resume" className="hover:text-gray-400 transition">
+              <a href="/resume" className="hover:text-white transition">
                 Resume
               </a>
             </li>
             <li>
-              <a href="/projects" className="hover:text-gray-400 transition">
+              <a href="/projects" className="hover:text-white transition">
                 Projects
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-gray-400 transition">
+              <a href="/contact" className="hover:text-white transition">
                 Contact
               </a>
             </li>
           </ul>
         </div>
-        <div className="flex-1">
-          <h2 className="text-yellow-600 text-2xl font-extrabold mb-4">
-            Follow Us
+        <div>
+          <h2 className="text-green-500 text-xl font-semibold mb-4">
+            Follow Me
           </h2>
-          <div className="space-y-3 text-lg font-medium">
+          <div className="flex flex-col items-center space-y-3 text-md">
             <a
               href="https://github.com/Narendra-017"
               target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center md:justify-start gap-2 hover:text-gray-400"
+              rel="noreferrer"
+              className="flex items-center gap-2 hover:text-white transition"
             >
-              <FaGithub className="text-2xl" /> GitHub
+              <FaGithub className="text-xl" /> GitHub
             </a>
             <a
               href="https://www.linkedin.com/in/muli-surya-narendra-reddy-217386337"
               target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center md:justify-start gap-2 hover:text-blue-500"
+              rel="noreferrer"
+              className="flex items-center gap-2 hover:text-blue-500 transition"
             >
-              <FaLinkedin className="text-2xl" /> LinkedIn
+              <FaLinkedin className="text-xl" /> LinkedIn
             </a>
             <a
               href="https://twitter.com/SuryaNarendra17"
               target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center md:justify-start gap-2 hover:text-blue-400"
+              rel="noreferrer"
+              className="flex items-center gap-2 hover:text-blue-400 transition"
             >
-              <FaTwitter className="text-2xl" /> Twitter
+              <FaTwitter className="text-xl" /> Twitter
             </a>
           </div>
         </div>
       </div>
-      <div className="mt-8 text-center pt-2 px-4 border-t border-gray-400">
-        <p className="text-lg font-bold text-gray-100 pt-2">
+      <div className="mt-16 border-t pt-6 text-center">
+        <p className="text-lg font-bold text-green-400">
           Let's build something amazing together!
         </p>
-        <p className="text-sm text-gray-400 font-bold">
-          © {new Date().getFullYear()} Surya Narendra Reddy. All Rights
-          Reserved.
+        <p className="text-sm text-white mt-1 tracking-wide">
+          © {new Date().getFullYear()} Surya Narendra Reddy. All rights
+          reserved.
         </p>
       </div>
     </footer>
