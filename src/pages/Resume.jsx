@@ -24,9 +24,9 @@ const Resume = () => {
             </h2>
             {educationData.map((edu, index) => (
               <article key={index} className="mb-4">
-                <h3 className="text-xl font-medium text-white">{edu.degree}</h3>
+                <h3 className="text-xl font-medium text-green-400">{edu.degree}</h3>
                 <p className="text-gray-400">
-                  {edu.institution} <span className="text-sm">{edu.year}</span>
+                  {edu.institution} <span className="text-sm text-green-400">{edu.year}</span>
                 </p>
                 <p className="text-sm text-green-300">{edu.cgpa}</p>
               </article>
