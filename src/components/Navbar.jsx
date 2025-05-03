@@ -27,7 +27,7 @@ const Navbar = () => {
             className="w-full h-full object-cover rounded-full border-2 border-black"
           />
         </div>
-        <h1 className="text-lg md:text-2xl font-extrabold bg-gradient-to-r from-lime-400 to-emerald-500 bg-clip-text text-transparent tracking-wider drop-shadow-sm">
+        <h1 className="text-md md:text-2xl font-extrabold bg-gradient-to-r from-lime-400 to-emerald-500 bg-clip-text text-transparent tracking-wider drop-shadow-sm">
           Muli Surya Narendra Reddy
         </h1>
       </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
         )}
       </button>
       <div
-        className={`fixed top-0 left-0 w-3/4 sm:w-2/3 md:w-1/3 h-full bg-black/90 backdrop-blur-md text-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
+        className={`fixed top-0 left-0 w-[50%] sm:w-2/3 md:w-1/3 h-full bg-black text-white transform transition-transform duration-300 ease-in-out ${
           navDrawerOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="dialog"
@@ -89,7 +89,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <nav className="p-4 space-y-5 text-lg font-medium">
+        <nav className="p-4 space-y-5 text-lg font-medium bg-black">
           {['Home', 'Skills', 'Projects', 'Resume', 'Contact'].map((item) => (
             <Link
               key={item}
