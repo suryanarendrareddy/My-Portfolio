@@ -69,10 +69,10 @@ export const projectsData = [
       "Express.js",
       "Node.js",
       "MongoDB",
+      "Flask", 
       "Machine Learning",
       "REST APIs",
       "Python",
-      "Flask",
       "scikit-learn",
       "TensorFlow"
     ],
