@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 @tailwind base;
 @tailwind components;
@@ -7,9 +7,12 @@
 body {
   background: linear-gradient(to bottom, #000000, #0b0a0a);
   color: white;
-  font-family: "Cabin",sans-serif;
+  font-family: "Maven Pro",sans-serif;
   font-weight: 600;
   min-height: 100vh;
   margin: 0;
   padding: 0;
+}
+.heading {
+  font-family: 'Cabin',sans-serif;
 }

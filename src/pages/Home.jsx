@@ -50,7 +50,7 @@ const Home = () => {
           </h3>
           <h1 className="md:text-4xl text-xl font-extrabold text-gray-100 mx-5 my-0">
             I'm{' '}
-            <span className="text-green-500 md:text-5xl font-bold font-mono tracking-tighter text-3xl">
+            <span className="text-green-500 md:text-5xl font-bold heading tracking-tight text-3xl">
               Muli Surya Narendra Reddy
             </span>
           </h1>
