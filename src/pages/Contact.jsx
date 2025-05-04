@@ -53,8 +53,8 @@ const Contact = () => {
           </div>
           <button className="w-full max-w-fit px-6 py-3 bg-green-400 text-black font-bold rounded-full hover:bg-green-500 shadow-md hover:shadow-green-400 transition-transform hover:scale-105 flex gap-2 items-center">
             <span>Message me via links</span>
-            <span className="hidden md:inline">➡️</span>
-            <span className="md:hidden">⬇️</span>
+            <span className="hidden md:inline">Beside ➡️</span>
+            <span className="md:hidden">Below ⬇️</span>
           </button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
