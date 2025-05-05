@@ -27,7 +27,7 @@ const Navbar = () => {
             className="w-full h-full object-cover rounded-full border-2 border-black"
           />
         </div>
-        <h1 className="text-lg md:text-2xl font-extrabold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent tracking-wide drop-shadow-sm">
+        <h1 className="text-lg md:text-2xl font-semibold text-green-400 bg-clip-text drop-shadow-sm">
           Muli Surya Narendra Reddy
         </h1>
       </div>

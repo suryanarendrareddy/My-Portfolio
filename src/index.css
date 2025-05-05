@@ -7,12 +7,13 @@
 body {
   background: linear-gradient(to bottom, #000000, #0b0a0a);
   color: white;
-  font-family: "Maven Pro",sans-serif;
-  font-weight: 600;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
   min-height: 100vh;
   margin: 0;
   padding: 0;
 }
+
 .heading {
-  font-family: 'Cabin',sans-serif;
+  font-family: 'Cabin', sans-serif;
 }

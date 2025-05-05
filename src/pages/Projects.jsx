@@ -1,17 +1,12 @@
 import React, { Suspense } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { MdOnlinePrediction } from 'react-icons/md'
-import { motion } from 'framer-motion'
 import { projectsData } from '../data/projects.jsx'
 
 const ProjectCard = ({ project }) => (
-  <motion.div
-    className="bg-black bg-opacity-30 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-gray-700 hover:scale-[1.03] transition-all duration-300"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-  >
+  <div className="bg-black bg-opacity-30 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-gray-700 hover:scale-105 transition-transform duration-300">
     <h2 className="text-2xl font-bold text-green-400 mb-3">{project.name}</h2>
-    <p className="text-gray-300 mb-4 md:text-[17px]">{project.description}</p>
+    <p className="text-gray-300 mb-4 text-md">{project.description}</p>
     <div className="flex flex-wrap gap-2 mb-6">
       {project.technologiesUsed.map((tech, i) => (
         <span
@@ -45,7 +40,7 @@ const ProjectCard = ({ project }) => (
         </a>
       )}
     </div>
-  </motion.div>
+  </div>
 )
 
 const Projects = () => {
