@@ -8,7 +8,7 @@ const Resume = () => {
   return (
     <div className="text-white min-h-screen px-5 py-10 pt-32">
       <header className="text-center mb-10">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-white">
+        <h1 className="text-3xl md:text-5xl font-bold text-green-500">
           Muli Surya Narendra Reddy
         </h1>
         <p className="text-lg text-gray-300 mt-2">

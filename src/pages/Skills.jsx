@@ -4,7 +4,7 @@ import { skills, coreCS, tools, softSkills } from '../data/skillsData.jsx'
 const SkillCard = ({ skill }) => (
   <div className="flex flex-col items-center justify-center p-6 bg-black/40 backdrop-blur-xl rounded-2xl shadow-lg border border-lime-500/20 hover:border-lime-400 hover:shadow-lime-500/20 transition duration-300 ease-in-out hover:scale-105">
     {skill.icon}
-    <p className="mt-4 text-base md:text-lg font-semibold text-white text-center tracking-wide">
+    <p className="mt-4 text-base md:text-lg font-medium text-white text-center tracking-wide">
       {skill.name}
     </p>
   </div>
