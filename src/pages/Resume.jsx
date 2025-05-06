@@ -24,9 +24,12 @@ const Resume = () => {
             </h2>
             {educationData.map((edu, index) => (
               <article key={index} className="mb-4">
-                <h3 className="text-xl font-medium text-green-400">{edu.degree}</h3>
+                <h3 className="text-xl font-medium text-green-400">
+                  {edu.degree}
+                </h3>
                 <p className="text-gray-400">
-                  {edu.institution} <span className="text-sm text-green-400">{edu.year}</span>
+                  {edu.institution}{' '}
+                  <span className="text-sm text-green-400">{edu.year}</span>
                 </p>
                 <p className="text-sm text-green-300">{edu.cgpa}</p>
               </article>
@@ -143,8 +146,8 @@ const Resume = () => {
           <article className="mb-4">
             <p className="text-gray-400 italic">
               "Surya is an outstanding full-stack developer. His attention to
-              detail and problem-solving ability is commendable." - Akshay
-              Kumar, CEO of Engineers World
+              detail and problem-solving ability is commendable." -{' '}
+              <span className='not-italic'>Akshay Kumar, CEO of Engineers World</span>
             </p>
           </article>
         </section>
