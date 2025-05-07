@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +6,7 @@
 body {
   background: linear-gradient(to bottom, #000000, #0b0a0a);
   color: white;
-  font-family: "Maven Pro";
+  font-family:'Josefin Sans', sans-serif;
   font-weight: 500;
   min-height: 100vh;
   margin: 0;
@@ -15,5 +14,5 @@ body {
 }
 
 .heading {
-  font-family: 'Cabin', sans-serif;
+  font-family: 'ubuntu', sans-serif;
 }

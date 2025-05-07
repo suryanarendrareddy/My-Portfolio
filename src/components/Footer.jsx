@@ -61,7 +61,7 @@ const Footer = () => {
               <li key={link}>
                 <a
                   href={`/${link}`}
-                  className="hover:text-white transition capitalize"
+                  className="hover:text-white transition capitalize hover:underline"
                 >
                   {link}
                 </a>

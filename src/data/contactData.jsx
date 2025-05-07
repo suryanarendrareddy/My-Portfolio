@@ -73,21 +73,21 @@ export const socialMedia = [
     icon: FaGithub,
     href: 'https://github.com/Narendra-017',
     className:
-      'flex items-center gap-2 justify-center hover:text-white transition',
+      'flex items-center gap-2 justify-center hover:text-gray-400 transition hover:underline',
     text: 'GitHub',
   },
   {
     icon: FaLinkedin,
     href: 'https://www.linkedin.com/in/muli-surya-narendra-reddy-217386337',
     className:
-      'flex items-center gap-2 justify-center hover:text-blue-500 transition',
+      'flex items-center gap-2 justify-center hover:text-blue-500 transition hover:underline',
     text: 'LinkedIn',
   },
   {
     icon: FaTwitter,
     href: 'https://twitter.com/SuryaNarendra17',
     className:
-      'flex items-center gap-2 justify-center hover:text-blue-400 transition',
+      'flex items-center gap-2 justify-center hover:text-blue-400 transition hover:underline',
     text: 'Twitter',
   },
 ]
