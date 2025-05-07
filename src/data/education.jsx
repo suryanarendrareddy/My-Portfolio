@@ -16,7 +16,7 @@ export const educationData = [
   {
     "degree": "Secondary School (10th)",
     "field": "SSC",
-    "institution": "Sri Vivekananda High School, Simhadripuram, Andhra Pradesh - 516454",
+    "institution": "Sri Vivekananda High School, S.Puram, AP - 516454",
     "year": "2019 - 2020",
     "cgpa": "Marks: 589/600"
   }

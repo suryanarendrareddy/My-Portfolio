@@ -18,7 +18,7 @@ const Resume = () => {
 
       <main>
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-900">
+          <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
             <h2 className="text-2xl font-semibold text-green-400 mb-4">
               Education
             </h2>
@@ -29,13 +29,17 @@ const Resume = () => {
                 </h3>
                 <p className="text-gray-400">
                   {edu.institution}{' '}
-                  <span className="text-sm text-green-400">{edu.year}</span>
+                  <span className="text-sm text-black bg-green-500 px-3 py-1 rounded-lg font-bold">
+                    {edu.year}
+                  </span>
                 </p>
-                <p className="text-sm text-green-300">{edu.cgpa}</p>
+                <p className="text-sm text-white mt-1">
+                  {edu.cgpa}
+                </p>
               </article>
             ))}
           </section>
-          <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-900">
+          <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
             <h2 className="text-2xl font-semibold text-green-400 mb-4">
               Skills
             </h2>
@@ -47,7 +51,7 @@ const Resume = () => {
                     {skillList.map((skill, i) => (
                       <span
                         key={i}
-                        className="bg-green-500 text-black px-3 py-1 rounded-lg text-sm font-semibold"
+                        className="bg-green-500 text-black px-3 py-1 rounded-lg text-sm font-bold"
                       >
                         {skill}
                       </span>
@@ -59,7 +63,7 @@ const Resume = () => {
           </section>
         </div>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-900 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Projects
           </h2>
@@ -70,14 +74,14 @@ const Resume = () => {
               </h3>
               <p className="text-gray-400">{project.description}</p>
               <p className="text-sm text-green-300 mt-1">
-                <strong>Technologies:</strong>{' '}
+                <strong className='text-[17px]'>Technologies:</strong>{' '}
                 {project.technologiesUsed.join(', ')}
               </p>
             </article>
           ))}
         </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-900 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Certifications
           </h2>
@@ -91,7 +95,7 @@ const Resume = () => {
           </article>
         </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-900 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Professional Experience
           </h2>
@@ -121,7 +125,7 @@ const Resume = () => {
           </article>
         </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-900 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Languages
           </h2>
@@ -139,29 +143,13 @@ const Resume = () => {
           </article>
         </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-900 max-w-6xl mx-auto mt-10">
-          <h2 className="text-2xl font-semibold text-green-400 mb-4">
-            Testimonials
-          </h2>
-          <article className="mb-4">
-            <p className="text-gray-400 italic">
-              "Surya is an outstanding full-stack developer. His attention to
-              detail and problem-solving ability is commendable." -{' '}
-              <span className='not-italic'>Akshay Kumar, CEO of Engineers World</span>
-            </p>
-          </article>
-        </section>
-
-        <section className="text-center mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Hobbies
           </h2>
-          <div className="flex justify-center gap-4 text-gray-300 flex-wrap">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-y-3 text-gray-300">
             {hobbies.map((hobby, index) => (
-              <span
-                key={index}
-                className="bg-green-500 text-black px-4 py-2 rounded-lg text-sm font-bold"
-              >
+              <span key={index} className="text-gray-300 text-md font-bold">
                 {hobby}
               </span>
             ))}

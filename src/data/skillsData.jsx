@@ -140,8 +140,12 @@ export const resumeSkills = {
 export const hobbies = [
   'Coding',
   'Learning New Technologies',
-  'Gaming',
+  'Online Games',
+  'Volley Ball',
   'Travelling',
   'Volunteering',
   'Origami',
+  'Reading',
+  'Public Speaking',
+  'Watching Movies',
 ]

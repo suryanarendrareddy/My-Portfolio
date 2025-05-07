@@ -36,7 +36,7 @@ const Home = () => (
         </h3>
         <h1 className="text-xl md:text-4xl font-semibold text-gray-100 mx-5">
           I'm{' '}
-          <span className="text-2xl md:text-[46px] font-extrabold text-green-500 heading">
+          <span className="text-2xl md:text-[46px] font-extrabold text-green-500">
             Muli Surya Narendra Reddy
           </span>
         </h1>

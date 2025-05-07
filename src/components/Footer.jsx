@@ -1,5 +1,6 @@
 import React from 'react'
 import { addressData, socialMedia } from '../data/contactData'
+
 const AddressList = ({ items }) => (
   <address className="not-italic">
     <h2 className="text-green-500 text-xl font-semibold mb-4">Contact</h2>
@@ -22,7 +23,7 @@ const AddressList = ({ items }) => (
 )
 
 const SocialMediaList = ({ items }) => (
-  <ul className="flex flex-col space-y-3 text-md">
+  <ul className="flex flex-col space-y-3 text-md text-left">
     <h1 className="text-green-500 text-xl font-semibold mb-1">Follow Me</h1>
     {items.map(({ icon: Icon, href, className, text }, index) => (
       <li key={index}>
@@ -38,6 +39,7 @@ const SocialMediaList = ({ items }) => (
     ))}
   </ul>
 )
+
 const Footer = () => {
   const year = new Date().getFullYear()
 
@@ -69,7 +71,7 @@ const Footer = () => {
             ))}
           </ul>
         </nav>
-        <SocialMediaList items={socialMedia}/>
+        <SocialMediaList items={socialMedia} />
       </div>
 
       <div className="mt-16 border-t border-zinc-700 pt-6 text-center">
