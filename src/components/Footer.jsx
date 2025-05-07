@@ -22,7 +22,7 @@ const AddressList = ({ items }) => (
 )
 
 const SocialMediaList = ({ items }) => (
-  <ul className="flex flex-col items-center space-y-3 text-md">
+  <ul className="flex flex-col space-y-3 text-md">
     <h1 className="text-green-500 text-xl font-semibold mb-1">Follow Me</h1>
     {items.map(({ icon: Icon, href, className, text }, index) => (
       <li key={index}>
