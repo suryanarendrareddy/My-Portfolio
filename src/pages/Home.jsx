@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom'
 import Education from './Education'
 import Certifications from './Certifications'
 
+const CompanySection = () => (
+  <div className="mt-12 text-center max-w-3xl mx-auto">
+    <h2 className="text-3xl font-bold text-green-500 mb-2">My Journey</h2>
+    <p className="text-white text-lg">
+      As the founder of{' '}
+      <span className="font-semibold text-green-500">Farmaha360</span>, I'm
+      committed to revolutionizing the agricultural sector. My focus is on
+      developing innovative solutions for farmers using cutting-edge web
+      technologies, AI, and data-driven insights.
+    </p>
+  </div>
+)
 const ProfileImage = () => (
   <div className="mt-6 md:mt-24 flex justify-center">
     <img
@@ -12,7 +24,14 @@ const ProfileImage = () => (
     />
   </div>
 )
-
+const FunSection = () => (
+  <div className="mt-12 text-center text-gray-200 mb-4">
+    <p className="text-md">
+      Fun Fact: I don't just code for fun — I build with purpose, aiming to make
+      tech that actually matters.
+    </p>
+  </div>
+)
 const StatsItem = ({ value, label, color }) => (
   <div className="text-center flex-1 px-4 py-4 md:py-0 border-t md:border-t-0 md:border-l border-gray-700">
     <h1 className={`text-4xl font-semibold ${color}`}>{value}</h1>
@@ -21,12 +40,15 @@ const StatsItem = ({ value, label, color }) => (
 )
 const StatsSection = () => (
   <div className="w-11/12 md:w-4/5 lg:w-2/3 mx-auto my-12 p-6 md:p-10 bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-3xl shadow-xl border border-gray-700 flex flex-col md:flex-row items-center justify-between">
-    <StatsItem value="15+" label="Modern Skills" color="text-green-500" />
+    <StatsItem value="15+" label="Modern Skills" color="text-green-500  " />
     <StatsItem value="10+" label="Projects" color="text-green-500" />
-    <StatsItem value="100+" label="DSA Problems Solved" color="text-green-500" />
+    <StatsItem
+      value="100+"
+      label="DSA Problems Solved"
+      color="text-green-500"
+    />
   </div>
 )
-
 const Home = () => (
   <div className="min-h-screen flex flex-col justify-center px-4 my-16">
     <div className="flex flex-col md:flex-row justify-around w-full max-w-6xl mx-auto">
@@ -42,7 +64,9 @@ const Home = () => (
         </h1>
         <p className="text-xl font-medium max-w-2xl text-gray-300 mx-auto md:mx-0 mt-4">
           I'm a passionate{' '}
-          <span className="text-green-500 font-semibold">Full-Stack Developer</span>{' '}
+          <span className="text-green-500 font-semibold">
+            Full-Stack Developer
+          </span>{' '}
           and the founder of{' '}
           <span className="text-green-500 font-semibold">Farmaha360</span>, an
           agri-tech startup. I create modern, seamless, and impactful web
@@ -70,30 +94,11 @@ const Home = () => (
       </div>
       <ProfileImage />
     </div>
-
     <StatsSection />
-
-    <div className="mt-12 text-center max-w-3xl mx-auto">
-      <h2 className="text-3xl font-bold text-green-500 mb-2">My Journey</h2>
-      <p className="text-white text-lg">
-        As the founder of{' '}
-        <span className="font-semibold text-green-500">Farmaha360</span>, I'm
-        committed to revolutionizing the agricultural sector. My focus is on
-        developing innovative solutions for farmers using cutting-edge web
-        technologies, AI, and data-driven insights.
-      </p>
-    </div>
-
-    <div className="mt-12 text-center text-gray-200 mb-4">
-      <p className='text-md'>
-        Fun Fact: I don't just code for fun — I build with purpose, aiming to
-        make tech that actually matters.
-      </p>
-    </div>
-
+    <CompanySection />
+    <FunSection />
     <Education />
     <Certifications />
   </div>
 )
-
 export default Home
