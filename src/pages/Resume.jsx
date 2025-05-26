@@ -103,7 +103,7 @@ const Resume = () => {
             <h3 className="text-xl font-medium text-white">
               Full Stack Developer at Engineers World
             </h3>
-            <p className="text-gray-400">Duration: 1 Jan, 2025 - Present</p>
+            <p className="text-gray-400">Duration: 1 Jan, 2025 - 25 May, 2025</p>
             <ul className="list-disc pl-6 text-gray-400">
               <li>
                 Developed and maintained both frontend and backend components of
