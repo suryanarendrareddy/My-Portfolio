@@ -80,7 +80,6 @@ const Home = () => (
       <ProfileImage />
     </div>
     <StatsSection />
-    <CompanySection />
     <FunSection />
     <Education />
     <Certifications />
