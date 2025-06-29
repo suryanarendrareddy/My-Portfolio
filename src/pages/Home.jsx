@@ -3,18 +3,6 @@ import { Link } from 'react-router-dom'
 import Education from '../pages/Education'
 import Certifications from '../pages/Certifications'
 
-const CompanySection = () => (
-  <div className="mt-12 text-center max-w-3xl mx-auto">
-    <h2 className="text-3xl font-bold text-green-500 mb-2">My Journey</h2>
-    <p className="text-white text-lg">
-      As the founder of{' '}
-      <span className="font-semibold text-green-500">Farmaha360</span>, I'm
-      committed to revolutionizing the agricultural sector. My focus is on
-      developing innovative solutions for farmers using cutting-edge web
-      technologies, AI, and data-driven insights.
-    </p>
-  </div>
-)
 const ProfileImage = () => (
   <div className="mt-6 md:mt-24 flex justify-center">
     <img
@@ -66,10 +54,7 @@ const Home = () => (
           I'm a passionate{' '}
           <span className="text-green-500 font-semibold">
             Full-Stack Developer
-          </span>{' '}
-          and the founder of{' '}
-          <span className="text-green-500 font-semibold">Farmaha360</span>, an
-          agri-tech startup. I create modern, seamless, and impactful web
+          </span> I create modern, seamless, and impactful web
           experiences using{' '}
           <span className="text-green-500 font-semibold">React</span> and{' '}
           <span className="text-green-500 font-semibold">Node.js</span>.

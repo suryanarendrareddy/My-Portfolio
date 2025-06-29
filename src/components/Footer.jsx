@@ -46,13 +46,6 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-black to-zinc-900 text-gray-200 px-6 py-12 shadow-inner md:text-center text-left">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-        <section>
-          <h2 className="text-green-500 text-2xl font-bold mb-4">Farmaha360</h2>
-          <p className="text-base leading-relaxed">
-            Empowering farmers by directly connecting them with consumers.
-            Tech-driven solutions for real-world agricultural challenges.
-          </p>
-        </section>
         <AddressList items={addressData} />
         <nav aria-label="Quick Links">
           <h2 className="text-green-500 text-xl font-semibold mb-4">
