@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Education from './Education'
-import Certifications from './Certifications'
+import Education from '../pages/Education'
+import Certifications from '../pages/Certifications'
 
 const CompanySection = () => (
   <div className="mt-12 text-center max-w-3xl mx-auto">
