@@ -12,14 +12,6 @@ const ProfileImage = () => (
     />
   </div>
 )
-const FunSection = () => (
-  <div className="mt-12 text-center text-gray-200 mb-4">
-    <p className="text-md">
-      Fun Fact: I don't just code for fun — I build with purpose, aiming to make
-      tech that actually matters.
-    </p>
-  </div>
-)
 const StatsItem = ({ value, label, color }) => (
   <div className="text-center flex-1 px-4 py-4 md:py-0 border-t md:border-t-0 md:border-l border-gray-700">
     <h1 className={`text-4xl font-semibold ${color}`}>{value}</h1>
@@ -80,7 +72,6 @@ const Home = () => (
       <ProfileImage />
     </div>
     <StatsSection />
-    <FunSection />
     <Education />
     <Certifications />
   </div>

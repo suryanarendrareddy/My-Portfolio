@@ -78,24 +78,4 @@ export const projectsData = [
     liveLink: 'https://your-tracker-app-link.com',
     githubLink: 'https://github.com/Narendra-017/online-job-tracker',
   },
-  {
-    name: 'Farmaha360 - Grow, Connect and Deliver',
-    description:
-      'A farmer-to-consumer agri-commerce platform enabling direct crop sales, price tracking, AI-based disease detection, and fertilizer ordering — all in one place.',
-    technologiesUsed: [
-      'React.js',
-      'TailwindCSS',
-      'Express.js',
-      'JWT',
-      'Node.js',
-      'MongoDB',
-      'Flask',
-      'Python',
-      'Machine Learning',
-      'scikit-learn',
-      'OpenCV',
-    ],
-    liveLink: 'https://farmaha-360.vercel.app',
-    githubLink: 'https://github.com/Narendra-017/farmaha-360',
-  },
 ]
