@@ -51,9 +51,6 @@ const Home = () => (
           <span className="text-green-500 font-semibold">React</span> and{' '}
           <span className="text-green-500 font-semibold">Node.js</span>.
         </p>
-        <p className="text-lg text-gray-400 italic mt-4">
-          "Empowering farmers with technology, one code at a time."
-        </p>
         <div className="mt-6 flex space-x-4 justify-center md:justify-start">
           <Link
             to="/resume"

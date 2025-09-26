@@ -36,7 +36,7 @@ export const contactData = [
   {
     icon: FaGithub,
     label: 'GitHub',
-    text: 'github.com/Narendra-017',
+    text: 'github.com/suryanarendrareddy',
     link: 'https://github.com/suryanarendrareddy',
   },
   {
@@ -58,7 +58,7 @@ export const addressData = [
     icon: RiPhoneLine,
     className: 'hover:text-white transition',
     href: 'tel:+917993830599',
-    text: '+91 79938 3XXXX',
+    text: '+91799383XXXX',
   },
   {
     icon: FaMapMarkerAlt,
