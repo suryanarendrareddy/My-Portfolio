@@ -158,7 +158,7 @@ const Resume = () => {
 
         <section className="mt-6 flex justify-center gap-4">
           <a
-            href="/surya_resume.pdf"
+            href="/Muli_Surya_Narendra_Reddy.pdf"
             download
             className="flex items-center text-black bg-green-600 py-2 px-4 rounded-lg hover:bg-green-700 gap-2 transition duration-300 font-bold"
           >

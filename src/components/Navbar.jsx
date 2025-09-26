@@ -49,7 +49,7 @@ const Navbar = () => {
         )}
       </nav>
       <a
-        href="/surya_resume.pdf"
+        href="/Muli_Surya_Narendra_Reddy.pdf"
         download="Surya_Narendra_Resume.pdf"
         className="hidden md:flex items-center gap-2 font-semibold text-white bg-white/10 border border-white/20 px-4 py-2 rounded-xl shadow-md hover:bg-[#4ade80] hover:text-black transition duration-300"
       >
