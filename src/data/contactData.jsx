@@ -31,13 +31,13 @@ export const contactData = [
     icon: FaLinkedin,
     label: 'LinkedIn',
     text: 'linkedin.com/in/muli-surya-narendra-reddy',
-    link: 'https://www.linkedin.com/in/muli-surya-narendra-reddy-217386337',
+    link: 'https://www.linkedin.com/in/muli-surya-narendra-reddy',
   },
   {
     icon: FaGithub,
     label: 'GitHub',
     text: 'github.com/Narendra-017',
-    link: 'https://github.com/Narendra-017',
+    link: 'https://github.com/suryanarendrareddy',
   },
   {
     icon: FaMapMarkerAlt,
@@ -71,23 +71,20 @@ export const addressData = [
 export const socialMedia = [
   {
     icon: FaGithub,
-    href: 'https://github.com/Narendra-017',
-    className:
-      'flex gap-2 hover:text-gray-400 transition hover:underline',
+    href: 'https://github.com/suryanarendrareddy',
+    className: 'flex gap-2 hover:text-gray-400 transition hover:underline',
     text: 'GitHub',
   },
   {
     icon: FaLinkedin,
-    href: 'https://www.linkedin.com/in/muli-surya-narendra-reddy-217386337',
-    className:
-      'flex gap-2 hover:text-blue-500 transition hover:underline',
+    href: 'https://www.linkedin.com/in/muli-surya-narendra-reddy',
+    className: 'flex gap-2 hover:text-blue-500 transition hover:underline',
     text: 'LinkedIn',
   },
   {
     icon: FaTwitter,
     href: 'https://twitter.com/SuryaNarendra17',
-    className:
-      'flex gap-2 hover:text-blue-400 transition hover:underline',
+    className: 'flex gap-2 hover:text-blue-400 transition hover:underline',
     text: 'Twitter',
   },
 ]
