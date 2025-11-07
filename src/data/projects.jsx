@@ -2,7 +2,7 @@ export const projectsData = [
   {
     name: 'Amazon-Clone',
     description:
-      "Built a responsive clone of Amazon's homepage using HTML, CSS and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",
+      "Built a responsive clone of Amazon's homepage using HTML, CSS, and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",
     technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
     liveLink: 'https://narendra-017.github.io/amazon-clone/',
     githubLink: 'https://github.com/Narendra-017/amazon-clone',
@@ -77,5 +77,22 @@ export const projectsData = [
     ],
     liveLink: 'https://your-tracker-app-link.com',
     githubLink: 'https://github.com/Narendra-017/online-job-tracker',
+  },
+  {
+    name: 'AI Chat Portal',
+    description:
+      'An intelligent real-time chat system powered by OpenAI GPT, built using React, TailwindCSS, Django, and PostgreSQL. Features include JWT-based authentication, persistent chat history, and a modern, responsive interface for seamless AI conversations.',
+    technologiesUsed: [
+      'React.js',
+      'TailwindCSS',
+      'Django',
+      'PostgreSQL',
+      'Python',
+      'OpenAI API',
+      'JWT Authentication',
+      'REST APIs',
+    ],
+    liveLink: '',
+    githubLink: 'https://github.com/suryanarendrareddy/AI-Chat-Portal',
   },
 ]

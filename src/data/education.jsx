@@ -4,7 +4,7 @@ export const educationData = [
     "field": "Computer Science & Engineering",
     "institution": "Manav Rachna International Institute of Research and Studies, Faridabad, Haryana - 121003",
     "year": "2022 - 2026",
-    "cgpa": "CGPA: 6.5/10"
+    "cgpa": "CGPA: 7.0/10"
   },
   {
     "degree": "Intermediate",

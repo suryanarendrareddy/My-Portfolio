@@ -16,54 +16,48 @@ const Resume = () => {
         </p>
       </header>
 
-      <main>
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
-            <h2 className="text-2xl font-semibold text-green-400 mb-4">
-              Education
-            </h2>
-            {educationData.map((edu, index) => (
-              <article key={index} className="mb-4">
-                <h3 className="text-xl font-medium text-green-400">
-                  {edu.degree}
-                </h3>
-                <p className="text-gray-400">
-                  {edu.institution}{' '}
-                  <span className="text-sm text-black bg-green-500 px-3 py-1 rounded-lg font-bold">
-                    {edu.year}
-                  </span>
-                </p>
-                <p className="text-sm text-white mt-1">
-                  {edu.cgpa}
-                </p>
-              </article>
-            ))}
-          </section>
-          <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
-            <h2 className="text-2xl font-semibold text-green-400 mb-4">
-              Skills
-            </h2>
-            {Object.entries(resumeSkills).map(
-              ([category, skillList], index) => (
-                <article key={index} className="mb-4">
-                  <h3 className="text-xl text-white">{category}</h3>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {skillList.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="bg-green-500 text-black px-3 py-1 rounded-lg text-sm font-bold"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </article>
-              )
-            )}
-          </section>
-        </div>
+      <main className="max-w-6xl mx-auto space-y-10">
+        
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
+          <h2 className="text-2xl font-semibold text-green-400 mb-4">
+            Education
+          </h2>
+          {educationData.map((edu, index) => (
+            <article key={index} className="mb-4">
+              <h3 className="text-xl font-medium text-green-400">
+                {edu.degree}
+              </h3>
+              <p className="text-gray-400">
+                {edu.institution}{' '}
+                <span className="text-sm text-black bg-green-500 px-3 py-1 rounded-lg font-bold">
+                  {edu.year}
+                </span>
+              </p>
+              <p className="text-sm text-white mt-1">{edu.cgpa}</p>
+            </article>
+          ))}
+        </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
+          <h2 className="text-2xl font-semibold text-green-400 mb-4">Skills</h2>
+          {Object.entries(resumeSkills).map(([category, skillList], index) => (
+            <article key={index} className="mb-4">
+              <h3 className="text-xl text-white">{category}</h3>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {skillList.map((skill, i) => (
+                  <span
+                    key={i}
+                    className="bg-green-500 text-black px-3 py-1 rounded-lg text-sm font-bold"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Projects
           </h2>
@@ -74,14 +68,14 @@ const Resume = () => {
               </h3>
               <p className="text-gray-400">{project.description}</p>
               <p className="text-sm text-green-300 mt-1">
-                <strong className='text-[17px]'>Technologies:</strong>{' '}
+                <strong className="text-[17px]">Technologies:</strong>{' '}
                 {project.technologiesUsed.join(', ')}
               </p>
             </article>
           ))}
         </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Certifications
           </h2>
@@ -90,42 +84,38 @@ const Resume = () => {
               Full-Stack Web Development
             </h3>
             <p className="text-gray-400">
-              Certification from Engineers world - 2025
+              Certification from Engineers World - 2025
             </p>
           </article>
         </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
-            Professional Experience
+            Internship Experience
           </h2>
           <article className="mb-4">
             <h3 className="text-xl font-medium text-white">
-              Full Stack Developer at Engineers World
+              Full Stack Developer Intern at Engineers World
             </h3>
-            <p className="text-gray-400">Duration: 1 Jan, 2025 - 25 May, 2025</p>
+            <p className="text-gray-400">
+              Duration: 1 Jan, 2025 - 25 May, 2025
+            </p>
             <ul className="list-disc pl-6 text-gray-400">
               <li>
-                Developed and maintained both frontend and backend components of
-                web applications.
+                Worked on frontend and backend components of web applications.
               </li>
               <li>
-                Utilized technologies such as React.js and Node.js to deliver
-                scalable solutions.
+                Built responsive UIs with React.js and developed APIs using
+                Node.js.
               </li>
               <li>
-                Collaborated with cross-functional teams to ensure seamless
-                integration and optimize performance.
-              </li>
-              <li>
-                Managed databases, conducted code reviews, and ensured timely
-                delivery of features.
+                Gained practical experience with databases and deployment.
               </li>
             </ul>
           </article>
         </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Languages
           </h2>
@@ -143,7 +133,7 @@ const Resume = () => {
           </article>
         </section>
 
-        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950 max-w-6xl mx-auto mt-10">
+        <section className="p-6 rounded-xl border-l-4 border-green-500 shadow-md bg-gradient-to-br from-black to-gray-950">
           <h2 className="text-2xl font-semibold text-green-400 mb-4">
             Hobbies
           </h2>

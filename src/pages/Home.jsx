@@ -54,7 +54,7 @@ const Home = () => (
         <div className="mt-6 flex space-x-4 justify-center md:justify-start">
           <Link
             to="/resume"
-            className="bg-green-500 text-gray-900 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-green-400 transition duration-300 transform hover:scale-105"
+            className="bg-green-500 text-gray-900 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-green-o gf,m transition duration-300 transform hover:scale-105"
           >
             View Resume
           </Link>
@@ -63,7 +63,7 @@ const Home = () => (
             className="bg-green-500 text-gray-900 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-green-400 transition duration-300 transform hover:scale-105"
           >
             Hire Me
-          </Link>
+          </Link> 
         </div>
       </div>
       <ProfileImage />

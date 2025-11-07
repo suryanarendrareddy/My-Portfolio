@@ -6,6 +6,7 @@ import {
   FaGithub,
   FaTwitter,
   FaMapMarkerAlt,
+  
 } from 'react-icons/fa'
 import { RiMailAddLine, RiPhoneLine } from 'react-icons/ri'
 export const contactData = [

@@ -8,6 +8,8 @@ import {
   FaGitAlt,
   FaBootstrap,
   FaJava,
+  FaPython,
+  FaDatabase,
   FaProjectDiagram,
   FaComments,
   FaUsers,
@@ -18,7 +20,9 @@ import {
   FaMicrophone,
   FaGithub,
 } from 'react-icons/fa'
+
 import { TbBrandReactNative } from 'react-icons/tb'
+
 import {
   SiNetlify,
   SiVercel,
@@ -28,10 +32,15 @@ import {
   SiSpringboot,
   SiMongodb,
   SiMysql,
+  SiDjango,
+  SiPostgresql,
+  SiFastapi,
+  SiFlask,
   SiHttpie,
   SiPostman,
   SiRedux,
   SiGitlab,
+  SiJsonwebtokens, 
 } from 'react-icons/si'
 
 export const skills = [
@@ -57,19 +66,31 @@ export const skills = [
   },
   { name: 'Node.js', icon: <FaNodeJs className="text-green-400 text-6xl" /> },
   {
-    name: 'MongoDB',
-    icon: <SiMongodb className="text-emerald-400 text-6xl" />,
-  },
-  { name: 'Java', icon: <FaJava className="text-orange-300 text-6xl" /> },
-  {
     name: 'Express.js',
     icon: <SiExpress className="text-gray-400 text-6xl" />,
   },
+  { name: 'Java', icon: <FaJava className="text-orange-300 text-6xl" /> },
   {
     name: 'Spring Boot',
     icon: <SiSpringboot className="text-lime-400 text-6xl" />,
   },
+  { name: 'Python', icon: <FaPython className="text-yellow-400 text-6xl" /> },
+  { name: 'Django', icon: <SiDjango className="text-green-600 text-6xl" /> },
+  {
+    name: 'Django REST Framework',
+    icon: <FaServer className="text-red-400 text-6xl" />, // ✅ Replaced invalid icon
+  },
+  { name: 'FastAPI', icon: <SiFastapi className="text-teal-400 text-6xl" /> },
+  { name: 'Flask', icon: <SiFlask className="text-gray-300 text-6xl" /> },
+  {
+    name: 'MongoDB',
+    icon: <SiMongodb className="text-emerald-400 text-6xl" />,
+  },
   { name: 'MySQL', icon: <SiMysql className="text-blue-400 text-6xl" /> },
+  {
+    name: 'PostgreSQL',
+    icon: <SiPostgresql className="text-sky-500 text-6xl" />,
+  },
   { name: 'REST APIs', icon: <FaServer className="text-red-400 text-6xl" /> },
 ]
 
@@ -90,14 +111,17 @@ export const coreCS = [
 ]
 
 export const tools = [
-  { name: 'Http', icon: <SiHttpie className="text-blue-400 text-6xl" /> },
-  { name: 'Netlify', icon: <SiNetlify className="text-green-400 text-6xl" /> },
-  { name: 'Vercel', icon: <SiVercel className="text-white text-6xl" /> },
+  { name: 'Postman', icon: <SiPostman className="text-orange-400 text-6xl" /> },
   { name: 'Git', icon: <FaGitAlt className="text-red-400 text-6xl" /> },
   { name: 'GitHub', icon: <FaGithub className="text-gray-400 text-6xl" /> },
-  { name: 'Postman', icon: <SiPostman className="text-orange-400 text-6xl" /> },
-  { name: 'Redux', icon: <SiRedux className="text-purple-300 text-6xl" /> },
   { name: 'GitLab', icon: <SiGitlab className="text-orange-400 text-6xl" /> },
+  { name: 'Netlify', icon: <SiNetlify className="text-green-400 text-6xl" /> },
+  { name: 'Vercel', icon: <SiVercel className="text-white text-6xl" /> },
+  { name: 'Http', icon: <SiHttpie className="text-blue-400 text-6xl" /> },
+  {
+    name: 'JWT Authentication',
+    icon: <SiJsonwebtokens className="text-yellow-400 text-6xl" />,
+  },
 ]
 
 export const softSkills = [
@@ -129,23 +153,45 @@ export const resumeSkills = {
     'HTML',
     'CSS',
     'JavaScript',
-    'Bootstrap',
-    'TailwindCSS',
+    'TypeScript',
     'React.js',
+    'TailwindCSS',
+    'Bootstrap',
   ],
-  Backend: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Java', 'Spring Boot'],
-  Tools: ['Git/GitHub', 'Netlify', 'Vercel'],
+  Backend: [
+    'Python',
+    'Django',
+    'Django REST Framework',
+    'Node.js',
+    'Express.js',
+    'FastAPI',
+    'Flask',
+    'Java',
+    'Spring Boot',
+  ],
+  Databases: ['PostgreSQL', 'MongoDB', 'MySQL'],
+  CoreCS: [
+    'Data Structures & Algorithms (DSA)',
+    'Object-Oriented Programming (OOPs)',
+    'DBMS',
+    'Operating Systems',
+  ],
+  Tools: [
+    'Git & GitHub',
+    'Postman',
+    'VS Code',
+    'Netlify',
+    'Vercel',
+    'JWT Authentication',
+  ],
 }
 
 export const hobbies = [
   'Coding',
   'Learning New Technologies',
-  'Online Games',
-  'Volley Ball',
+  'Building Full-Stack Projects',
+  'Playing Volleyball',
   'Travelling',
-  'Volunteering',
-  'Origami',
-  'Reading',
+  'Reading Tech Blogs',
   'Public Speaking',
-  'Watching Movies',
 ]
