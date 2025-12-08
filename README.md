@@ -72,5 +72,5 @@ Designed with a premium **glassmorphism UI**, smooth animations, and a dark aest
 Clone the repo:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/suryanarendrareddy/My-Portfolio.git
+cd My-Portfolio
