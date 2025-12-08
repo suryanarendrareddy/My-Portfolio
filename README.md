@@ -65,8 +65,12 @@ Designed with a premium **glassmorphism UI**, smooth animations, and a dark aest
 ### 🔹 Other
 - Beautiful 404 page  
 - Animated Navbar + Mobile drawer  
-
 ---
 
-## 📂 Project Structure
+## ⚙️ Installation & Setup
 
+Clone the repo:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
