@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { RiDownload2Fill } from 'react-icons/ri'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
   const [navDrawerOpen, setNavDrawerOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
+
+  const navLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'Skills', path: '/skills' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Resume', path: '/resume' },
+    { label: 'Contact', path: '/contact' },
+  ]
 
   useEffect(() => {
     const handleResize = () => {
@@ -13,96 +23,168 @@ const Navbar = () => {
       }
     }
 
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+
     window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [navDrawerOpen])
 
   return (
-    <div className="flex bg-black/60 backdrop-blur-md p-4 w-full items-center md:justify-around justify-between shadow-lg fixed top-0 left-0 z-50">
-      <div className="flex gap-3 items-center">
-        <div className="relative w-14 h-14 rounded-full bg-gradient-to-tr from-lime-400 via-emerald-500 to-lime-400 p-1 shadow-lg">
-          <img
-            src="/Profile.jpg"
-            alt="Surya image"
-            className="w-full h-full object-cover rounded-full border-2 border-black"
-          />
-        </div>
-        <h1 className="text-lg md:text-2xl font-semibold text-green-400 bg-clip-text drop-shadow-sm">
-          Muli Surya Narendra Reddy
-        </h1>
-      </div>
-
-      <nav className="hidden md:flex items-center gap-10 text-white font-medium text-lg">
-        {['Home', 'Skills', 'Projects', 'Resume', 'Contact'].map(
-          (item, index) => (
-            <Link
-              key={index}
-              to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-              className="relative group"
-            >
-              <span className="transition-transform group-hover:scale-105 group-hover:text-[#4ade80] duration-200">
-                {item}
+    <>
+      <header
+        className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
+          scrolled
+            ? 'bg-black/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] border-b border-white/10'
+            : 'bg-black/40 backdrop-blur-lg shadow-md border-b border-white/5'
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
+          {/* Logo + Name */}
+          <div className="flex items-center gap-3">
+            <div className="relative h-12 w-12 rounded-full bg-gradient-to-tr from-lime-400 via-emerald-500 to-lime-400 p-[2px] shadow-lg">
+              <div className="absolute -inset-1 rounded-full bg-green-500/10 blur-xl" />
+              <img
+                src="/Profile.jpg"
+                alt="Surya image"
+                className="relative z-10 h-full w-full rounded-full border-2 border-black object-cover"
+              />
+            </div>
+            <div className="flex flex-col leading-snug">
+              <span className="text-sm uppercase tracking-[0.25em] text-green-400/80">
+                Full-Stack Developer
               </span>
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#4ade80] transition-all group-hover:w-full duration-300"></span>
-            </Link>
-          )
-        )}
-      </nav>
-      <a
-        href="/Muli_Surya_Narendra_Reddy.pdf"
-        download="Surya_Narendra_Resume.pdf"
-        className="hidden md:flex items-center gap-2 font-semibold text-white bg-white/10 border border-white/20 px-4 py-2 rounded-xl shadow-md hover:bg-[#4ade80] hover:text-black transition duration-300"
-      >
-        <RiDownload2Fill className="text-xl group-hover:animate-bounce" />
-        Resume
-      </a>
+              <h1 className="text-base md:text-lg font-semibold text-green-300">
+                Muli Surya Narendra Reddy
+              </h1>
+            </div>
+          </div>
 
-      <button
-        onClick={() => setNavDrawerOpen(!navDrawerOpen)}
-        className="md:hidden text-white"
-        aria-label="Toggle menu"
-      >
-        {navDrawerOpen ? (
-          <IoMdClose className="w-7 h-7" />
-        ) : (
-          <IoMdMenu className="w-7 h-7" />
-        )}
-      </button>
+          {/* Desktop Nav */}
+          <nav
+            className="hidden items-center gap-8 text-sm md:flex md:text-[15px] lg:text-base font-medium"
+            aria-label="Main navigation"
+          >
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path
+              return (
+                <Link key={link.path} to={link.path} className="relative group">
+                  <span
+                    className={`transition-colors duration-200 ${
+                      isActive ? 'text-green-400' : 'text-gray-100'
+                    } group-hover:text-green-300`}
+                  >
+                    {link.label}
+                  </span>
+                  <span
+                    className={`absolute left-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r from-green-400 via-emerald-300 to-green-500 transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </Link>
+              )
+            })}
+          </nav>
+
+          {/* Desktop Resume Button */}
+          <a
+            href="/Muli_Surya_Narendra_Reddy.pdf"
+            download="Surya_Narendra_Resume.pdf"
+            className="group hidden items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-gray-100 shadow-lg shadow-black/40 transition-all duration-300 hover:border-green-300 hover:bg-green-400/90 hover:text-black md:inline-flex"
+          >
+            <RiDownload2Fill className="text-lg transition-transform duration-300 group-hover:-translate-y-0.5" />
+            <span>Resume</span>
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setNavDrawerOpen((prev) => !prev)}
+            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-black/40 p-2 text-white shadow-md md:hidden"
+            aria-label="Toggle menu"
+          >
+            {navDrawerOpen ? (
+              <IoMdClose className="h-6 w-6" />
+            ) : (
+              <IoMdMenu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Backdrop */}
       <div
-        className={`fixed top-0 left-0 w-[50%] sm:w-2/3 md:w-1/3 h-full bg-black text-white transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
+          navDrawerOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setNavDrawerOpen(false)}
+      />
+
+      {/* Mobile Drawer */}
+      <aside
+        className={`fixed top-0 left-0 z-50 h-full w-[70%] max-w-xs transform bg-gradient-to-b from-gray-950 via-black to-gray-950 text-white shadow-[0_0_40px_rgba(0,0,0,0.9)] transition-transform duration-300 ease-in-out ${
           navDrawerOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="dialog"
         aria-hidden={!navDrawerOpen}
-        aria-labelledby="menu"
+        aria-labelledby="mobile-menu-title"
       >
-        <div className="flex justify-between items-center p-4 border-b border-white/10">
-          <h2 id="menu" className="text-xl font-semibold">
+        <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+          <h2
+            id="mobile-menu-title"
+            className="text-lg font-semibold text-green-300"
+          >
             Menu
           </h2>
           <button
             onClick={() => setNavDrawerOpen(false)}
-            className="text-white"
+            className="rounded-full border border-white/15 bg-black/40 p-1.5 text-white"
             aria-label="Close menu"
           >
-            <IoMdClose className="h-6 w-6" />
+            <IoMdClose className="h-5 w-5" />
           </button>
         </div>
 
-        <nav className="p-4 space-y-5 text-lg font-medium bg-black">
-          {['Home', 'Skills', 'Projects', 'Resume', 'Contact'].map((item) => (
-            <Link
-              key={item}
-              to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-              onClick={() => setNavDrawerOpen(false)}
-              className="block px-2 py-2 rounded hover:bg-[#4ade80] hover:text-black transition duration-200"
-            >
-              {item}
-            </Link>
-          ))}
+        <nav
+          className="space-y-2 px-4 py-4 text-base font-medium"
+          aria-label="Mobile navigation"
+        >
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path
+            return (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setNavDrawerOpen(false)}
+                className={`block rounded-xl px-3 py-2 transition-all duration-200 ${
+                  isActive
+                    ? 'bg-green-500 text-black shadow-lg shadow-green-500/40'
+                    : 'text-gray-100 hover:bg-green-500/15 hover:text-green-200'
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
+
+          <a
+            href="/Muli_Surya_Narendra_Reddy.pdf"
+            download="Surya_Narendra_Resume.pdf"
+            className="mt-4 flex items-center justify-center gap-2 rounded-full bg-green-500/90 px-4 py-2.5 text-sm font-semibold text-black shadow-lg shadow-green-500/40 transition-all duration-300 hover:bg-green-400"
+          >
+            <RiDownload2Fill className="text-lg" />
+            <span>Download Resume</span>
+          </a>
         </nav>
-      </div>
-    </div>
+      </aside>
+    </>
   )
 }
 
