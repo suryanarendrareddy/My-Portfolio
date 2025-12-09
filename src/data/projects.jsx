@@ -5,7 +5,8 @@ export const projectsData = [
       "Built a responsive clone of Amazon's homepage using HTML, CSS, and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",
     technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
     liveLink: 'https://narendra-017.github.io/amazon-clone/',
-    githubLink: 'https://github.com/Narendra-017/amazon-clone',
+    githubLink: 'https://github.com/suryanarendrareddy/amazon-clone',
+    image:'/amazon-clone.png'
   },
   {
     name: 'Trend Reserve',
@@ -22,7 +23,8 @@ export const projectsData = [
       'REST APIs',
     ],
     liveLink: 'https://trend-reserve.vercel.app',
-    githubLink: 'https://github.com/Narendra-017/trend-reserve',
+    githubLink: 'https://github.com/suryanarendrareddy/trend-reserve',
+    image: '/trend-reserve.png',
   },
   {
     name: 'Portfolio Website',
@@ -30,21 +32,17 @@ export const projectsData = [
       'Built a personal portfolio website using modern web technologies to showcase my projects and skills in an engaging manner.',
     technologiesUsed: ['React.js', 'TailwindCSS', 'Vercel'],
     liveLink: 'https://surya-narendra-portfolio.vercel.app/',
-    githubLink: 'https://github.com/Narendra-017/My-Portfolio',
+    githubLink: 'https://github.com/suryanarendrareddy/My-Portfolio',
+    image: '/portfolio.png',
   },
   {
     name: 'Engineers World',
     description:
       'Engineers World is a next-gen startup building innovative tools and ecosystems for engineers to thrive, collaborate, and drive real-world impact across industries.',
-    technologiesUsed: [
-      'React.js',
-      'CSS',
-      'Hostinger',
-      'Framer Motion',
-      'EmailJS',
-    ],
+    technologiesUsed: ['React.js', 'CSS', 'Hostinger', 'Framer Motion', 'EmailJS'],
     liveLink: 'https://engineersworld.in',
-    githubLink: 'https://github.com/Narendra-017/engineersworld',
+    githubLink: 'https://github.com/suryanarendrareddy/engineersworld',
+    image: '/engineers-world.png',
   },
   {
     name: 'Shadow Fax',
@@ -59,40 +57,7 @@ export const projectsData = [
       'Netlify',
     ],
     liveLink: 'https://shadow-fax-1.netlify.app',
-    githubLink:
-      'https://github.com/Narendra-017/shadowFax/tree/main/Online-Booking/frontend',
-  },
-  {
-    name: 'Online Job Application Tracker',
-    description:
-      'A platform to efficiently manage and track job applications with status updates and notifications.',
-    technologiesUsed: [
-      'React.js',
-      'TailwindCSS',
-      'Node.js',
-      'MongoDB',
-      'Express.js',
-      'JWT',
-      'REST APIs',
-    ],
-    liveLink: 'https://your-tracker-app-link.com',
-    githubLink: 'https://github.com/Narendra-017/online-job-tracker',
-  },
-  {
-    name: 'AI Chat Portal',
-    description:
-      'An intelligent real-time chat system powered by OpenAI GPT, built using React, TailwindCSS, Django, and PostgreSQL. Features include JWT-based authentication, persistent chat history, and a modern, responsive interface for seamless AI conversations.',
-    technologiesUsed: [
-      'React.js',
-      'TailwindCSS',
-      'Django',
-      'PostgreSQL',
-      'Python',
-      'OpenAI API',
-      'JWT Authentication',
-      'REST APIs',
-    ],
-    liveLink: '',
-    githubLink: 'https://github.com/suryanarendrareddy/AI-Chat-Portal',
+    githubLink: 'https://github.com/suryanarendrareddy/shadowFax/',
+    image:'/shadow-fax.png'
   },
 ]

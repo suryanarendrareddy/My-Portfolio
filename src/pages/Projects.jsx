@@ -1,8 +1,10 @@
+// src/pages/Projects.jsx
 import React, { useState, useRef, useEffect } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { MdOnlinePrediction } from 'react-icons/md'
 import { projectsData } from '../data/projects.jsx'
 
+/* ---------- small hook to detect in-view ---------- */
 const useInView = (ref, opts = { threshold: 0.12 }) => {
   const [inView, setInView] = useState(false)
   useEffect(() => {
@@ -20,6 +22,7 @@ const useInView = (ref, opts = { threshold: 0.12 }) => {
   return inView
 }
 
+/* ---------- Modal to show project details ---------- */
 const Modal = ({ open, onClose, project }) => {
   useEffect(() => {
     const closeOnEsc = (e) => {
@@ -37,33 +40,41 @@ const Modal = ({ open, onClose, project }) => {
   if (!open || !project) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${project.name} details`}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6"
+    >
       <div className="max-w-4xl w-full rounded-2xl bg-gradient-to-br from-slate-900/95 to-black/95 border border-white/10 shadow-2xl overflow-hidden">
         <header className="flex items-center justify-between px-6 py-4 border-b border-white/6">
-          <h3 className="text-lg font-semibold text-green-300">
-            {project.name}
-          </h3>
+          <h3 className="text-lg font-semibold text-green-300">{project.name}</h3>
           <button
             onClick={onClose}
-            className="text-gray-200 px-3 py-1 rounded-md hover:bg-white/5"
+            aria-label="Close project details"
+            className="text-gray-200 px-3 py-1 rounded-md hover:bg-white/5 transition"
           >
             Close
           </button>
         </header>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
-          <div className="min-h-[220px] rounded-md bg-black/40 flex items-center justify-center overflow-hidden">
+          <div className="min-h-[260px] rounded-md bg-black/40 flex items-center justify-center overflow-hidden">
             {project.image ? (
               <img
                 src={project.image}
-                alt={project.name}
+                alt={`${project.name} preview`}
                 className="object-cover w-full h-full"
+                loading="lazy"
               />
             ) : (
               <div className="text-gray-400 text-sm">No preview available</div>
             )}
           </div>
+
           <div>
             <p className="text-gray-200 mb-4">{project.description}</p>
+
             <div className="mb-4 flex flex-wrap gap-2">
               {project.technologiesUsed.map((t, i) => (
                 <span
@@ -74,7 +85,8 @@ const Modal = ({ open, onClose, project }) => {
                 </span>
               ))}
             </div>
-            <div className="flex gap-3">
+
+            <div className="flex gap-3 flex-wrap">
               {project.liveLink && (
                 <a
                   href={project.liveLink}
@@ -96,51 +108,73 @@ const Modal = ({ open, onClose, project }) => {
                 </a>
               )}
             </div>
+
+            <div className="mt-6 text-sm text-gray-400">
+              {project.role && (
+                <div>
+                  <strong className="text-gray-200">Role:</strong> {project.role}
+                </div>
+              )}
+              {project.duration && (
+                <div>
+                  <strong className="text-gray-200">Duration:</strong> {project.duration}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
     </div>
   )
 }
-
 const Card = ({ project, index, onOpen }) => {
   const ref = useRef(null)
   const inView = useInView(ref)
+
   return (
     <article
       ref={ref}
-      className={`group relative rounded-2xl overflow-hidden border border-white/8 bg-gradient-to-br from-slate-900/80 to-black/80 p-4 shadow-lg transform transition-all duration-400 ${
+      className={`group relative rounded-2xl overflow-hidden border border-white/8 bg-gradient-to-br from-slate-900/80 to-black/80 p-0 shadow-lg transform transition-all duration-400 ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       } hover:-translate-y-2`}
+      aria-labelledby={`proj-${index}-title`}
     >
-      <div className="relative h-44 md:h-40 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-48 md:h-44 w-full overflow-hidden">
         {project.image ? (
           <img
             src={project.image}
-            alt={project.name}
+            alt={`${project.name} preview`}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-gray-400">
             Preview
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <div className="absolute left-4 bottom-4">
-          <h4 className="text-sm md:text-base font-bold text-green-300">
+
+        <div className="absolute inset-0 bg-black/60" />
+
+        <div className="absolute left-4 bottom-4 z-10 max-w-[70%]">
+          <h4
+            id={`proj-${index}-title`}
+            className="text-sm md:text-base font-bold text-green-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+          >
             {project.name}
           </h4>
-          <p className="text-xs text-gray-300">
-            {project.short || project.description?.slice(0, 70)}
+          <p className="text-xs text-gray-300 line-clamp-2 drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
+            {project.short || project.description?.slice(0, 80)}
           </p>
         </div>
-        <div className="absolute right-4 top-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+
+        <div className="absolute right-4 top-4 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
           {project.liveLink && (
             <a
               href={project.liveLink}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-green-400/90 text-black px-3 py-1 text-xs font-semibold shadow"
+              aria-label={`Open ${project.name} live`}
             >
               Demo
             </a>
@@ -151,6 +185,7 @@ const Card = ({ project, index, onOpen }) => {
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white/6 text-gray-200 px-3 py-1 text-xs font-semibold border border-white/8"
+              aria-label={`Open ${project.name} source`}
             >
               Code
             </a>
@@ -158,26 +193,27 @@ const Card = ({ project, index, onOpen }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex-1">
+      <div className="p-4 flex items-center justify-between gap-3">
+        <div className="flex-1 pr-3">
           <div className="mb-2 hidden md:block">
             {project.technologiesUsed.slice(0, 4).map((t, i) => (
               <span
                 key={i}
                 className="inline-block text-xs text-green-200 bg-white/5 px-2 py-1 rounded-full mr-2"
+                aria-hidden
               >
                 {t}
               </span>
             ))}
           </div>
-          <div className="text-sm text-gray-300 line-clamp-3">
-            {project.description}
-          </div>
+          <div className="text-sm text-gray-300 line-clamp-3">{project.description}</div>
         </div>
+
         <div className="flex flex-col items-end gap-2">
           <button
             onClick={() => onOpen(project)}
             className="rounded-full bg-gradient-to-r from-green-400 to-emerald-300 px-3 py-2 text-xs font-semibold text-black shadow hover:scale-105 transition"
+            aria-label={`Open details for ${project.name}`}
           >
             Details
           </button>
@@ -192,12 +228,13 @@ const Projects = () => {
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState('All')
   const [openProject, setOpenProject] = useState(null)
+
   const allTech = Array.from(
     new Set(projectsData.flatMap((p) => p.technologiesUsed))
   ).slice(0, 12)
+
   const filtered = projectsData.filter((p) => {
-    const matchesFilter =
-      filter === 'All' || p.technologiesUsed.includes(filter)
+    const matchesFilter = filter === 'All' || p.technologiesUsed.includes(filter)
     const matchesQuery =
       !query ||
       p.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -231,21 +268,18 @@ const Projects = () => {
                 setQuery('')
               }}
               className={`px-3 py-1 rounded-full text-sm font-medium transition ${
-                filter === 'All'
-                  ? 'bg-green-500 text-black'
-                  : 'bg-white/6 text-gray-200'
+                filter === 'All' ? 'bg-green-500 text-black' : 'bg-white/6 text-gray-200'
               }`}
             >
               All
             </button>
+
             {allTech.map((t) => (
               <button
                 key={t}
                 onClick={() => setFilter(t)}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition ${
-                  filter === t
-                    ? 'bg-green-500 text-black'
-                    : 'bg-white/6 text-gray-200'
+                  filter === t ? 'bg-green-500 text-black' : 'bg-white/6 text-gray-200'
                 }`}
               >
                 {t}
@@ -258,25 +292,19 @@ const Projects = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search projects..."
+              aria-label="Search projects"
               className="w-full md:w-64 rounded-full bg-white/5 px-4 py-2 text-sm text-gray-200 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
             />
             <div className="hidden md:flex items-center gap-2 text-sm text-gray-300">
               Filtered:{' '}
-              <span className="ml-1 font-semibold text-green-300">
-                {filter}
-              </span>
+              <span className="ml-1 font-semibold text-green-300">{filter}</span>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((project, i) => (
-            <Card
-              key={i}
-              project={project}
-              index={i}
-              onOpen={(p) => setOpenProject(p)}
-            />
+            <Card key={i} project={project} index={i} onOpen={(p) => setOpenProject(p)} />
           ))}
         </div>
       </div>
