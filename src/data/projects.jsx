@@ -1,17 +1,17 @@
 export const projectsData = [
   {
-    name: 'Amazon-Clone',
+    name: 'Amazon Clone',
     description:
-      "Built a responsive clone of Amazon's homepage using HTML, CSS, and JavaScript, replicating real-world UI components like navbar, product listings, and banners to strengthen frontend development skills.",
+      'A responsive clone of Amazon’s homepage built using HTML, CSS, and JavaScript. Includes real-world UI components such as navigation bars, product grids, and promotional banners to strengthen frontend development skills.',
     technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
     liveLink: 'https://narendra-017.github.io/amazon-clone/',
     githubLink: 'https://github.com/suryanarendrareddy/amazon-clone',
-    image:'/amazon-clone.png'
+    image: '/amazon-clone.png',
   },
   {
     name: 'Trend Reserve',
     description:
-      'Developed an interactive e-commerce platform for seamless clothing purchases, featuring secure payments, fast delivery, and an intuitive UI.',
+      'An interactive e-commerce platform for fashion products featuring user authentication, secure payment integration, advanced state management, seamless UI/UX, and a scalable backend architecture.',
     technologiesUsed: [
       'React.js',
       'TailwindCSS',
@@ -29,7 +29,7 @@ export const projectsData = [
   {
     name: 'Portfolio Website',
     description:
-      'Built a personal portfolio website using modern web technologies to showcase my projects and skills in an engaging manner.',
+      'A modern, fully responsive portfolio website built to showcase my projects, skills, certifications, and experience. Designed with a clean UI, smooth animations, and optimized performance for a professional developer presence.',
     technologiesUsed: ['React.js', 'TailwindCSS', 'Vercel'],
     liveLink: 'https://surya-narendra-portfolio.vercel.app/',
     githubLink: 'https://github.com/suryanarendrareddy/My-Portfolio',
@@ -38,7 +38,7 @@ export const projectsData = [
   {
     name: 'Engineers World',
     description:
-      'Engineers World is a next-gen startup building innovative tools and ecosystems for engineers to thrive, collaborate, and drive real-world impact across industries.',
+      'A next-generation engineering platform designed to help students and professionals access tools, resources, and a collaborative ecosystem. Features dynamic UI, animations, and an optimized user experience.',
     technologiesUsed: ['React.js', 'CSS', 'Hostinger', 'Framer Motion', 'EmailJS'],
     liveLink: 'https://engineersworld.in',
     githubLink: 'https://github.com/suryanarendrareddy/engineersworld',
@@ -47,7 +47,7 @@ export const projectsData = [
   {
     name: 'Shadow Fax',
     description:
-      'A logistics platform specializing in fast and reliable last-mile delivery.',
+      'A logistics and last-mile delivery platform built with a React frontend and Spring Boot backend. Includes order tracking, reliable routing, and efficient delivery management with a scalable architecture.',
     technologiesUsed: [
       'React.js',
       'TailwindCSS',
@@ -58,6 +58,6 @@ export const projectsData = [
     ],
     liveLink: 'https://shadow-fax-1.netlify.app',
     githubLink: 'https://github.com/suryanarendrareddy/shadowFax/',
-    image:'/shadow-fax.png'
+    image: '/shadow-fax.png',
   },
 ]

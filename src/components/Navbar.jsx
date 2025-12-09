@@ -37,13 +37,14 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-4 left-4 right-4 z-[60] rounded-2xl transition-all duration-350 ${
           scrolled
-            ? 'bg-black/80 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.6)] border-b border-white/10'
-            : 'bg-black/40 backdrop-blur-sm'
+            ? 'bg-black/70 backdrop-blur-xl border border-white/6 shadow-lg'
+            : 'bg-black/50 backdrop-blur-sm'
         }`}
+        role='banner'
+        aria-label='Main navigation'
       >
-        {/* Progress Bar */}
         <div
           aria-hidden
           className="absolute left-0 top-full h-[3px] bg-gradient-to-r from-green-400 to-emerald-300 transition-all"
@@ -51,7 +52,7 @@ const Navbar = () => {
         />
 
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:px-6">
-          {/* Brand Section */}
+
           <div className="flex items-center gap-3 select-none">
             <div className="relative h-14 w-14 rounded-full p-[2px] bg-gradient-to-tr from-green-400 via-emerald-500 to-green-400 shadow-lg hover:scale-105 transition">
               <img
@@ -71,13 +72,12 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             {links.map((link) => {
               const active = location.pathname === link.path
               return (
-                <Link key={link.path} to={link.path} className="group relative">
-                  <div className="flex items-center gap-2">
+                <Link key={link.path} to={link.path} className="group relative md:text-[16px]">
+                  <div className="flex items-center gap-3">
                     <span
                       className={`transition ${
                         active
@@ -110,7 +110,6 @@ const Navbar = () => {
               Resume
             </a>
 
-            {/* Mobile Menu Button */}
             <button
               ref={burgerRef}
               onClick={() => setOpen((p) => !p)}
@@ -122,7 +121,6 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition duration-300 ${
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -130,25 +128,13 @@ const Navbar = () => {
         onClick={() => setOpen(false)}
       />
 
-      {/* Mobile Drawer */}
       <aside
-        className={`fixed top-0 left-0 h-full w-[78%] max-w-xs bg-gradient-to-b from-gray-950 via-black to-gray-950 text-white z-50 shadow-xl transform transition-transform duration-300 ${
+        className={`fixed top-0 mt-10 left-0 h-full w-[78%] max-w-xs bg-gradient-to-b from-gray-950 via-black to-gray-950 text-white z-50 shadow-xl transform transition-transform duration-300 ${
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-full p-[2px] bg-gradient-to-tr from-green-400 to-emerald-500">
-              <img
-                src="/Profile.jpg"
-                alt="Surya"
-                className="h-full w-full rounded-full object-cover border-2 border-black"
-              />
-            </div>
-            <div>
-              <div className="text-green-300 font-bold">Surya Narendra</div>
-              <div className="text-xs text-gray-400">Full-Stack Dev</div>
-            </div>
           </div>
 
           <IoMdClose

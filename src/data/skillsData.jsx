@@ -37,131 +37,61 @@ import {
   SiVercel,
 } from 'react-icons/si'
 
-/* ---------------- FRONTEND ---------------- */
+const iconClass = 'text-5xl md:text-6xl'
 
 export const frontendSkills = [
-  { name: 'HTML', level: 95, icon: <FaHtml5 className="text-orange-400 text-6xl" /> },
-  { name: 'CSS', level: 92, icon: <FaCss3Alt className="text-blue-300 text-6xl" /> },
-  {
-    name: 'JavaScript',
-    level: 90,
-    icon: <FaJsSquare className="text-yellow-300 text-6xl" />,
-  },
-  {
-    name: 'TypeScript',
-    level: 80,
-    icon: <SiTypescript className="text-blue-400 text-6xl" />,
-  },
-  { name: 'React.js', level: 93, icon: <FaReact className="text-cyan-300 text-6xl" /> },
-  { name: 'Redux', level: 75, icon: <SiRedux className="text-violet-400 text-6xl" /> },
-  {
-    name: 'TailwindCSS',
-    level: 88,
-    icon: <SiTailwindcss className="text-cyan-300 text-6xl" />,
-  },
-  {
-    name: 'Bootstrap',
-    level: 78,
-    icon: <FaBootstrap className="text-purple-400 text-6xl" />,
-  },
+  { name: 'HTML', level: 95, icon: <FaHtml5 className={iconClass} /> },
+  { name: 'CSS', level: 92, icon: <FaCss3Alt className={iconClass} /> },
+  { name: 'JavaScript', level: 90, icon: <FaJsSquare className={iconClass} /> },
+  { name: 'TypeScript', level: 80, icon: <SiTypescript className={iconClass} /> },
+  { name: 'React.js', level: 93, icon: <FaReact className={iconClass} /> },
+  { name: 'Redux', level: 75, icon: <SiRedux className={iconClass} /> },
+  { name: 'TailwindCSS', level: 88, icon: <SiTailwindcss className={iconClass} /> },
+  { name: 'Bootstrap', level: 78, icon: <FaBootstrap className={iconClass} /> },
 ]
-
-/* ---------------- BACKEND ---------------- */
 
 export const backendSkills = [
-  { name: 'Node.js', level: 85, icon: <FaNodeJs className="text-green-400 text-6xl" /> },
-  {
-    name: 'Express.js',
-    level: 82,
-    icon: <SiExpress className="text-gray-300 text-6xl" />,
-  },
-  { name: 'REST APIs', level: 90, icon: <FaServer className="text-red-400 text-6xl" /> },
-  {
-    name: 'JWT Auth',
-    level: 75,
-    icon: <SiJsonwebtokens className="text-yellow-300 text-6xl" />,
-  },
-  { name: 'Python', level: 78, icon: <FaPython className="text-teal-300 text-6xl" /> },
-  { name: 'Java', level: 70, icon: <FaJava className="text-orange-300 text-6xl" /> },
+  { name: 'Node.js', level: 85, icon: <FaNodeJs className={iconClass} /> },
+  { name: 'Express.js', level: 82, icon: <SiExpress className={iconClass} /> },
+  { name: 'REST APIs', level: 90, icon: <FaServer className={iconClass} /> },
+  { name: 'JWT Auth', level: 75, icon: <SiJsonwebtokens className={iconClass} /> },
+  { name: 'Python', level: 78, icon: <FaPython className={iconClass} /> },
+  { name: 'Java', level: 70, icon: <FaJava className={iconClass} /> },
 ]
-
-/* ---------------- DATABASES ---------------- */
 
 export const databaseSkills = [
-  { name: 'MongoDB', level: 82, icon: <SiMongodb className="text-green-400 text-6xl" /> },
-  { name: 'MySQL', level: 78, icon: <SiMysql className="text-blue-400 text-6xl" /> },
-  {
-    name: 'PostgreSQL',
-    level: 75,
-    icon: <SiPostgresql className="text-sky-400 text-6xl" />,
-  },
+  { name: 'MongoDB', level: 82, icon: <SiMongodb className={iconClass} /> },
+  { name: 'MySQL', level: 78, icon: <SiMysql className={iconClass} /> },
+  { name: 'PostgreSQL', level: 75, icon: <SiPostgresql className={iconClass} /> },
 ]
-
-/* ---------------- TOOLS ---------------- */
 
 export const toolSkills = [
-  { name: 'Git', level: 90, icon: <FaGitAlt className="text-red-400 text-6xl" /> },
-  { name: 'GitHub', level: 92, icon: <FaGithub className="text-gray-300 text-6xl" /> },
-  { name: 'GitLab', level: 76, icon: <SiGitlab className="text-orange-400 text-6xl" /> },
-  {
-    name: 'Postman',
-    level: 88,
-    icon: <SiPostman className="text-orange-400 text-6xl" />,
-  },
-  { name: 'Netlify', level: 70, icon: <SiNetlify className="text-green-400 text-6xl" /> },
-  { name: 'Vercel', level: 68, icon: <SiVercel className="text-white text-6xl" /> },
+  { name: 'Git', level: 90, icon: <FaGitAlt className={iconClass} /> },
+  { name: 'GitHub', level: 92, icon: <FaGithub className={iconClass} /> },
+  { name: 'GitLab', level: 76, icon: <SiGitlab className={iconClass} /> },
+  { name: 'Postman', level: 88, icon: <SiPostman className={iconClass} /> },
+  { name: 'Netlify', level: 70, icon: <SiNetlify className={iconClass} /> },
+  { name: 'Vercel', level: 68, icon: <SiVercel className={iconClass} /> },
 ]
-
-/* ---------------- CORE CS ---------------- */
 
 export const coreCS = [
+  { name: 'Data Structures', level: 85, icon: <FaDatabase className={iconClass} /> },
+  { name: 'Algorithms', level: 82, icon: <FaProjectDiagram className={iconClass} /> },
   {
-    name: 'Data Structures',
-    level: 85,
-    icon: <FaDatabase className="text-blue-400 text-6xl" />,
+    name: 'Object-Oriented Programming (OOP)',
+    level: 80,
+    icon: <FaJava className={iconClass} />,
   },
-  {
-    name: 'Algorithms',
-    level: 82,
-    icon: <FaProjectDiagram className="text-red-400 text-6xl" />,
-  },
-  { name: 'OOPs', level: 80, icon: <FaJava className="text-orange-300 text-6xl" /> },
-  {
-    name: 'Operating Systems',
-    level: 78,
-    icon: <FaServer className="text-gray-400 text-6xl" />,
-  },
+  { name: 'Operating Systems', level: 78, icon: <FaServer className={iconClass} /> },
 ]
 
-/* ---------------- SOFT SKILLS ---------------- */
-
 export const softSkills = [
-  {
-    name: 'Communication',
-    level: 90,
-    icon: <FaComments className="text-yellow-300 text-6xl" />,
-  },
-  { name: 'Teamwork', level: 85, icon: <FaUsers className="text-purple-300 text-6xl" /> },
-  {
-    name: 'Leadership',
-    level: 78,
-    icon: <FaLightbulb className="text-orange-300 text-6xl" />,
-  },
-  {
-    name: 'Problem Solving',
-    level: 88,
-    icon: <FaCode className="text-red-300 text-6xl" />,
-  },
-  {
-    name: 'Time Management',
-    level: 72,
-    icon: <FaClock className="text-cyan-300 text-6xl" />,
-  },
-  {
-    name: 'Public Speaking',
-    level: 70,
-    icon: <FaMicrophone className="text-pink-400 text-6xl" />,
-  },
+  { name: 'Communication', level: 90, icon: <FaComments className={iconClass} /> },
+  { name: 'Teamwork', level: 85, icon: <FaUsers className={iconClass} /> },
+  { name: 'Leadership', level: 78, icon: <FaLightbulb className={iconClass} /> },
+  { name: 'Problem Solving', level: 88, icon: <FaCode className={iconClass} /> },
+  { name: 'Time Management', level: 72, icon: <FaClock className={iconClass} /> },
+  { name: 'Public Speaking', level: 70, icon: <FaMicrophone className={iconClass} /> },
 ]
 
 export const resumeSkills = {
@@ -174,39 +104,18 @@ export const resumeSkills = {
     'TailwindCSS',
     'Bootstrap',
   ],
-  Backend: [
-    'Python',
-    'Django',
-    'Django REST Framework',
-    'Node.js',
-    'Express.js',
-    'Flask',
-    'Java',
-    'Spring Boot',
-  ],
+  Backend: ['Node.js', 'Express.js', 'Python', 'Django', 'Flask', 'Java', 'Spring Boot'],
   Databases: ['PostgreSQL', 'MongoDB', 'MySQL'],
-  CoreCS: [
-    'Data Structures & Algorithms (DSA)',
-    'Object-Oriented Programming (OOPs)',
-    'DBMS',
-    'Operating Systems',
-  ],
-  Tools: [
-    'Git & GitHub',
-    'Postman',
-    'VS Code',
-    'Netlify',
-    'Vercel',
-    'JWT Authentication',
-  ],
+  CoreCS: ['Data Structures & Algorithms (DSA)', 'OOP', 'DBMS', 'Operating Systems'],
+  Tools: ['Git & GitHub', 'Postman', 'VS Code', 'Netlify', 'Vercel', 'JWT'],
 }
 
 export const hobbies = [
   'Coding',
-  'Learning New Technologies',
-  'Building Full-Stack Projects',
-  'Playing Volleyball',
+  'Learning new technologies',
+  'Building full-stack projects',
+  'Volleyball',
   'Travelling',
-  'Reading Tech Blogs',
-  'Public Speaking',
+  'Reading tech blogs',
+  'Public speaking',
 ]

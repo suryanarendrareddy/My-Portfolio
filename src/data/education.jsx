@@ -1,23 +1,24 @@
 export const educationData = [
   {
-    "degree": "Bachelor of Technology (B.Tech)",
-    "field": "Computer Science & Engineering",
-    "institution": "Manav Rachna International Institute of Research and Studies, Faridabad, Haryana - 121003",
-    "year": "2022 - 2026",
-    "cgpa": "CGPA: 7.0/10"
+    degree: 'Bachelor of Technology (B.Tech)',
+    field: 'Computer Science & Engineering',
+    institution:
+      'Manav Rachna International Institute of Research and Studies (MRIIRS), Faridabad, Haryana',
+    year: '2022 – 2026',
+    grade: 'CGPA: 7.0 / 10',
   },
   {
-    "degree": "Intermediate",
-    "field": "MPC",
-    "institution": "NRI Junior College, Guntur, Andhra Pradesh - 522005",
-    "year": "2020 - 2022",
-    "cgpa": "Marks: 941/1000"
+    degree: 'Intermediate (Class XII)',
+    field: 'MPC',
+    institution: 'NRI Junior College, Guntur, Andhra Pradesh',
+    year: '2020 – 2022',
+    grade: 'Marks: 941 / 1000',
   },
   {
-    "degree": "Secondary School (10th)",
-    "field": "SSC",
-    "institution": "Sri Vivekananda High School, S.Puram, AP - 516454",
-    "year": "2019 - 2020",
-    "cgpa": "Marks: 589/600"
-  }
+    degree: 'Secondary School (Class X)',
+    field: 'SSC',
+    institution: 'Sri Vivekananda High School, S. Puram, Andhra Pradesh',
+    year: '2019 – 2020',
+    grade: 'Marks: 589 / 600',
+  },
 ]

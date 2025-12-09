@@ -34,27 +34,27 @@ const ContactCard = memo(({ data }) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex flex-col justify-center items-center p-6 text-center 
-      rounded-2xl border border-white/10 bg-gradient-to-br 
-      from-slate-950/90 via-black/90 to-slate-950/90 shadow-xl overflow-hidden 
+      className="group relative flex flex-col justify-center items-center p-6 text-center
+      rounded-2xl border border-white/10 bg-gradient-to-br
+      from-slate-950/90 via-black/90 to-slate-950/90 shadow-xl overflow-hidden
       transition-all duration-300"
       style={{
         transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
       }}
     >
       <div
-        className="absolute -top-14 right-0 h-24 w-24 rounded-full bg-green-500/10 blur-2xl opacity-0 
+        className="absolute -top-14 right-0 h-24 w-24 rounded-full bg-green-500/10 blur-2xl opacity-0
       transition-opacity duration-500 group-hover:opacity-100"
       />
 
       <div
-        className="absolute -bottom-16 left-0 h-28 w-28 rounded-full bg-emerald-500/10 blur-3xl opacity-0 
+        className="absolute -bottom-16 left-0 h-28 w-28 rounded-full bg-emerald-500/10 blur-3xl opacity-0
       transition-opacity duration-500 group-hover:opacity-100"
       />
 
       <div className="relative flex flex-col items-center">
         <div
-          className="mb-3 h-14 w-14 flex items-center justify-center rounded-2xl 
+          className="mb-3 h-14 w-14 flex items-center justify-center rounded-2xl
         bg-green-500/10 text-2xl text-green-400 group-hover:scale-110 transition-transform duration-300"
         >
           <Icon />
@@ -90,16 +90,16 @@ const Contact = () => {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center 
+      className="relative min-h-screen flex items-center justify-center
     bg-gradient-to-b from-gray-950 via-black to-gray-950 text-white px-6 pb-20 pt-28"
     >
       <div
-        className="pointer-events-none absolute -top-32 -left-24 h-64 w-64 
+        className="pointer-events-none absolute -top-32 -left-24 h-64 w-64
       rounded-full bg-green-500/12 blur-3xl"
       />
 
       <div
-        className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 
+        className="pointer-events-none absolute bottom-0 right-0 h-72 w-72
       rounded-full bg-emerald-500/10 blur-3xl"
       />
 
@@ -110,7 +110,7 @@ const Contact = () => {
         >
           <h1
             ref={titleRef}
-            className="text-4xl font-bold text-green-400 opacity-0 translate-y-4 
+            className="text-4xl font-bold text-green-400 opacity-0 translate-y-4
             transition-all duration-700"
           >
             Let's Connect
@@ -118,7 +118,7 @@ const Contact = () => {
 
           <p
             ref={descRef}
-            className="opacity-0 translate-y-4 transition-all duration-700 
+            className="opacity-0 translate-y-4 transition-all duration-700
             text-gray-200 mt-4 text-lg leading-relaxed"
           >
             Whether it's a project idea, collaboration, hiring, or just tech
@@ -141,8 +141,8 @@ const Contact = () => {
             <a
               href="/Muli_Surya_Narendra_Reddy.pdf"
               download
-              className="inline-flex items-center gap-3 rounded-full bg-green-500 px-6 py-3 
-              text-black font-bold shadow-lg hover:bg-green-400 
+              className="inline-flex items-center gap-3 rounded-full bg-green-500 px-6 py-3
+              text-black font-bold shadow-lg hover:bg-green-400
               hover:shadow-green-400/40 transition-transform duration-300 hover:-translate-y-1"
             >
               <RiDownload2Fill className="text-lg" />
@@ -151,8 +151,8 @@ const Contact = () => {
 
             <a
               href="mailto:your-email@example.com"
-              className="inline-flex items-center gap-3 rounded-full border border-white/20 
-              bg-white/5 px-6 py-3 text-green-300 font-semibold 
+              className="inline-flex items-center gap-3 rounded-full border border-white/20
+              bg-white/5 px-6 py-3 text-green-300 font-semibold
               hover:bg-green-400/10 hover:border-green-300 hover:text-green-100
               transition-all duration-300"
             >
@@ -161,7 +161,7 @@ const Contact = () => {
             </a>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {contactData.map((item, i) => (
             <ContactCard key={i} data={item} />
           ))}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useCallback, memo } from 'react'
 import {
   frontendSkills,
   backendSkills,
@@ -8,27 +8,41 @@ import {
   softSkills,
 } from '../data/skillsData.jsx'
 
-const useInView = (ref, options = { threshold: 0.15 }) => {
+const useInView = (ref, opts = { threshold: 0.15, once: true }) => {
   const [inView, setInView] = useState(false)
+  const saved = useRef(opts)
+  useEffect(() => {
+    saved.current = opts
+  }, [opts])
+
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setInView(true)
-        obs.disconnect()
-      }
-    }, options)
+    const { threshold = 0.15, once = true } = saved.current
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          if (once) obs.disconnect()
+        }
+      },
+      { threshold }
+    )
     obs.observe(el)
     return () => obs.disconnect()
-  }, [ref, options])
+  }, [ref])
+
   return inView
 }
 
-const Tag = ({ children, active, onClick }) => (
+
+const Tag = memo(({ children, active, onClick, id }) => (
   <button
+    id={id}
+    role="tab"
+    aria-selected={active}
     onClick={onClick}
-    className={`px-4 py-1.5 rounded-full text-sm font-medium transition ${
+    className={`px-4 py-1.5 rounded-full text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-green-300 ${
       active
         ? 'bg-green-500 text-black shadow-lg'
         : 'bg-white/5 text-gray-200 hover:bg-white/10'
@@ -36,39 +50,59 @@ const Tag = ({ children, active, onClick }) => (
   >
     {children}
   </button>
-)
+))
 
-const SkillCard = ({ name, level, icon }) => {
+const SkillCard = memo(({ name = '—', level = 0, icon = null }) => {
   const ref = useRef(null)
-  const inView = useInView(ref)
+  const inView = useInView(ref, { threshold: 0.2, once: true })
+  const reducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  const width = reducedMotion ? `${level}%` : inView ? `${level}%` : '0%'
+
   return (
-    <div
+    <article
       ref={ref}
-      className="rounded-xl border border-white/10 bg-black/40 p-5 flex flex-col items-center text-center hover:-translate-y-1 hover:shadow-green-500/10 transition"
+      aria-label={`${name} proficiency ${level}%`}
+      className="rounded-xl border border-white/10 bg-black/40 p-5 flex flex-col items-center text-center transform transition hover:-translate-y-1 hover:shadow-lg"
     >
-      <div className="text-4xl mb-2 text-green-300">{icon}</div>
+      <div className="text-4xl mb-2 text-green-300">
+        {icon ?? <span className="w-10 h-10 inline-block" />}
+      </div>
       <p className="font-semibold text-gray-100">{name}</p>
 
       <div className="w-full mt-3">
         <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-green-400 to-sky-400 transition-all duration-700"
-            style={{ width: inView ? `${level}%` : '0%' }}
+            className={`h-full bg-gradient-to-r from-green-400 to-sky-400 transition-all ${
+              reducedMotion ? '' : 'duration-700'
+            }`}
+            style={{ width }}
           />
         </div>
         <p className="text-xs text-gray-400 mt-1">Proficiency {level}%</p>
       </div>
+    </article>
+  )
+})
+
+
+const SkillGrid = ({ data = [] }) => {
+  if (!Array.isArray(data) || !data.length) {
+    return <p className="text-center text-sm text-gray-400">No skills to display</p>
+  }
+
+  return (
+    <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      {data.map((s) => (
+        <SkillCard key={s.name ?? JSON.stringify(s)} {...s} />
+      ))}
     </div>
   )
 }
 
-const SkillGrid = ({ data }) => (
-  <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-    {data.map((s, i) => (
-      <SkillCard key={i} {...s} />
-    ))}
-  </div>
-)
 
 const Skills = () => {
   const tabs = [
@@ -81,7 +115,19 @@ const Skills = () => {
   ]
 
   const [active, setActive] = useState('frontend')
-  const activeTab = tabs.find((t) => t.id === active)
+  const activeTab = tabs.find((t) => t.id === active) ?? tabs[0]
+
+  const onKeyNav = useCallback(
+    (e) => {
+      const idx = tabs.findIndex((t) => t.id === active)
+      if (e.key === 'ArrowRight') {
+        setActive(tabs[(idx + 1) % tabs.length].id)
+      } else if (e.key === 'ArrowLeft') {
+        setActive(tabs[(idx - 1 + tabs.length) % tabs.length].id)
+      }
+    },
+    [active, tabs]
+  )
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-950 to-black text-white pt-28 pb-20 px-6">
@@ -93,15 +139,28 @@ const Skills = () => {
           Explore my technical strengths across all domains.
         </p>
 
-        <div className="flex flex-wrap gap-3 justify-center mb-10">
+        <div
+          role="tablist"
+          aria-label="Skill categories"
+          onKeyDown={onKeyNav}
+          className="flex flex-wrap gap-3 justify-center mb-10"
+        >
           {tabs.map((t) => (
-            <Tag key={t.id} active={t.id === active} onClick={() => setActive(t.id)}>
+            <Tag
+              key={t.id}
+              id={`tab-${t.id}`}
+              active={t.id === active}
+              onClick={() => setActive(t.id)}
+            >
               {t.label}
             </Tag>
           ))}
         </div>
 
-        <SkillGrid data={activeTab.data} />
+        <div className="mb-8">
+          <h3 className="text-lg text-green-300 font-semibold mb-4">{activeTab.label}</h3>
+          <SkillGrid data={activeTab.data} />
+        </div>
       </div>
     </section>
   )

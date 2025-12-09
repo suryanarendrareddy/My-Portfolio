@@ -21,7 +21,15 @@ const achievements = [
   'Improved API response time by optimizing MongoDB queries and implementing server-side caching.',
 ]
 
-const Reveal = ({ children, className = '', rootMargin = '0px 0px -10% 0px' }) => {
+/* -------------------- Shared classes & tiny helpers -------------------- */
+
+const cardClass =
+  'rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-black/90 p-7 md:p-9 shadow-xl'
+const smallCardClass = 'p-4 rounded-xl border border-white/10 bg-black/40'
+const labelClass = 'text-sm md:text-base font-medium text-white'
+const metaLabel = 'text-sm font-semibold text-green-300 mb-3'
+
+const useReveal = (rootMargin = '0px 0px -10% 0px') => {
   const ref = useRef(null)
   const [show, setShow] = useState(false)
 
@@ -41,6 +49,13 @@ const Reveal = ({ children, className = '', rootMargin = '0px 0px -10% 0px' }) =
     return () => obs.disconnect()
   }, [rootMargin])
 
+  return [ref, show]
+}
+
+/* -------------------- Small presentational components -------------------- */
+
+const Reveal = ({ children, className = '' }) => {
+  const [ref, show] = useReveal()
   return (
     <section
       ref={ref}
@@ -56,11 +71,7 @@ const Reveal = ({ children, className = '', rootMargin = '0px 0px -10% 0px' }) =
 const SectionCard = memo(({ title, subtitle, children }) => {
   const id = title.replace(/\s+/g, '-').toLowerCase()
   return (
-    <div
-      className="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/90 to-black/90 p-7 md:p-9 shadow-xl"
-      role="region"
-      aria-labelledby={id}
-    >
+    <div className={cardClass} role="region" aria-labelledby={id}>
       <div className="mb-5">
         <p className="text-[11px] uppercase tracking-[0.25em] text-green-400/70">
           {subtitle}
@@ -83,7 +94,7 @@ const Accordion = memo(({ title, children }) => {
         className="w-full flex items-center justify-between px-4 py-3 bg-white/5 hover:bg-white/10 transition"
         aria-expanded={open}
       >
-        <span className="text-sm md:text-base font-medium text-white">{title}</span>
+        <span className={labelClass}>{title}</span>
         <span
           className={`text-lg text-green-300 transition-transform ${
             open ? 'rotate-45' : 'rotate-0'
@@ -110,48 +121,27 @@ const SkillTag = ({ children }) => (
   </span>
 )
 
-/* ---------- simplified Skill display components (no proficiency shown) ---------- */
-
 const SkillItem = ({ name }) => (
   <div className="flex items-center gap-3">
     <div className="text-sm font-semibold text-gray-100">{name}</div>
   </div>
 )
 
-const SkillListInline = ({ items }) => (
-  <div className="flex flex-wrap gap-2">
-    {items.map((s) => (
-      <SkillTag key={s.name || s}>{s.name || s}</SkillTag>
+const TopSkillsSummary = ({
+  top = ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Spring Boot', 'MySQL'],
+}) => (
+  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+    {top.map((s, i) => (
+      <div key={i} className="flex items-center gap-3">
+        <div className="text-sm font-semibold text-gray-100">{s}</div>
+      </div>
     ))}
   </div>
 )
 
-const TopSkillsSummary = () => {
-  const top = ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Spring Boot', 'MySQL']
-
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-      {top.map((skill, i) => (
-        <div key={i} className="flex items-center gap-3">
-          <div className="text-sm font-semibold text-gray-100">{skill}</div>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-
+/* ----------------------- Resume component ----------------------- */
 
 const Resume = () => {
-  const defaultTop = [
-    'React.js',
-    'JavaScript',
-    'Node.js',
-    'TailwindCSS',
-    'MongoDB',
-    'Express.js',
-  ]
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-black to-gray-950 text-white px-6 py-16 pt-28">
       <Reveal className="max-w-4xl mx-auto text-center mb-12">
@@ -190,6 +180,7 @@ const Resume = () => {
       </Reveal>
 
       <main className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
+        {/* Left: main content */}
         <div className="lg:col-span-2 space-y-10">
           <Reveal>
             <SectionCard title="Professional Summary" subtitle="Overview">
@@ -230,10 +221,7 @@ const Resume = () => {
             <SectionCard title="Education" subtitle="Academics">
               <div className="space-y-4">
                 {educationData.map((edu, i) => (
-                  <div
-                    key={i}
-                    className="p-4 rounded-xl border border-white/10 bg-black/40"
-                  >
+                  <div key={i} className={smallCardClass}>
                     <div className="flex justify-between">
                       <div>
                         <h3 className="text-lg font-semibold text-green-300">
@@ -249,7 +237,7 @@ const Resume = () => {
                     <div className="mt-3 flex items-center gap-2">
                       <span className="text-xs text-gray-300">CGPA</span>
                       <span className="text-xs font-bold bg-green-500/10 px-3 py-1 rounded-full text-green-200">
-                        {edu.cgpa}
+                        {edu.grade}
                       </span>
                     </div>
                   </div>
@@ -299,7 +287,7 @@ const Resume = () => {
 
           <Reveal>
             <SectionCard title="Internship Experience" subtitle="Industry Work">
-              <div className="p-4 rounded-xl border border-white/10 bg-black/40">
+              <div className={smallCardClass}>
                 <h3 className="text-lg font-semibold text-white">
                   Full Stack Developer Intern — Engineers World
                 </h3>
@@ -327,14 +315,15 @@ const Resume = () => {
           </Reveal>
         </div>
 
+        {/* Right: sidebar */}
         <aside className="space-y-10">
           <Reveal>
             <SectionCard title="Skills" subtitle="Top & Quick View">
-              <h4 className="text-sm font-semibold text-green-300 mb-4">Top Skills</h4>
+              <h4 className={metaLabel}>Top Skills</h4>
               <TopSkillsSummary />
 
               <div className="mt-6">
-                <h4 className="text-sm font-semibold text-green-300 mb-3">Frontend</h4>
+                <h4 className={metaLabel}>Frontend</h4>
                 <div className="grid grid-cols-2 gap-3">
                   {frontendSkills.map((s) => (
                     <SkillItem key={s.name} name={s.name} />
@@ -343,18 +332,16 @@ const Resume = () => {
               </div>
 
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-green-300 mb-3">
-                  Backend & Databases
-                </h4>
+                <h4 className={metaLabel}>Backend & Databases</h4>
                 <div className="grid grid-cols-2 gap-3">
-                  {backendSkills.concat(databaseSkills).map((s) => (
+                  {[...backendSkills, ...databaseSkills].map((s) => (
                     <SkillItem key={s.name} name={s.name} />
                   ))}
                 </div>
               </div>
 
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-green-300 mb-3">Tools</h4>
+                <h4 className={metaLabel}>Tools</h4>
                 <div className="grid grid-cols-2 gap-3">
                   {toolSkills.map((t) => (
                     <SkillItem key={t.name} name={t.name} />
@@ -363,7 +350,7 @@ const Resume = () => {
               </div>
             </SectionCard>
           </Reveal>
-                  
+
           <Reveal>
             <SectionCard title="Certifications" subtitle="Credentials">
               <div className="grid gap-4">
@@ -383,10 +370,8 @@ const Resume = () => {
             <SectionCard title="Core CS & Soft Skills" subtitle="Foundations">
               <div className="grid grid-cols-1 gap-4">
                 <div>
-                  <h4 className="text-sm font-semibold text-green-300 mb-2">
-                    Core Computer Science
-                  </h4>
-                  <div className='grid grid-cols-2 '>
+                  <h4 className={metaLabel}>Core Computer Science</h4>
+                  <div className="grid grid-cols-2 ">
                     {coreCS.map((c) => (
                       <div key={c.name} className="mb-3">
                         <div className="flex items-center justify-between text-sm text-gray-300">
@@ -400,10 +385,8 @@ const Resume = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-green-300 mb-2">
-                    Soft Skills
-                  </h4>
-                  <div className="grid grid-cols-2 gap-3 ">
+                  <h4 className={metaLabel}>Soft Skills</h4>
+                  <div className="grid grid-cols-2 gap-3">
                     {softSkills.map((s) => (
                       <div
                         key={s.name}
@@ -453,10 +436,7 @@ const Resume = () => {
 
       <style>{`
         @media print {
-          .bg-gradient-to-b, .bg-gradient-to-br, .bg-gradient-to-r {
-            background: white !important;
-            color: black !important;
-          }
+          .bg-gradient-to-b, .bg-gradient-to-br, .bg-gradient-to-r { background: white !important; color: black !important; }
           .rounded-2xl { border-radius: 0 !important; }
           .shadow-xl { box-shadow: none !important; }
           .text-transparent { color: black !important; -webkit-text-fill-color: black !important; }
