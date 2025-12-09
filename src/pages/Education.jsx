@@ -10,13 +10,10 @@ const EducationCard = memo(
         className="group relative rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-black/95 to-slate-950/90 p-5 sm:p-7 shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-green-400/70 hover:shadow-[0_25px_70px_rgba(34,197,94,0.35)]"
         role="listitem"
       >
-        {/* Accent glow on hover */}
         <div className="pointer-events-none absolute -top-10 right-0 h-24 w-24 rounded-full bg-green-500/10 blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-        {/* Timeline dot */}
         <span className="absolute -left-3 top-6 hidden h-3 w-3 rounded-full bg-gradient-to-br from-green-400 to-emerald-300 shadow-[0_0_0_6px_rgba(34,197,94,0.25)] sm:block" />
 
-        {/* Colored accent bar */}
         <div
           className={`mb-3 h-1.5 w-20 rounded-full ${
             isEven
@@ -42,6 +39,7 @@ const EducationCard = memo(
             <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
             {year}
           </span>
+
           <span className="inline-flex items-center gap-2 font-semibold text-green-300">
             CGPA:
             <span className="rounded-full bg-green-500/10 px-3 py-0.5 text-xs sm:text-sm">
@@ -69,7 +67,6 @@ const Education = () => {
         </div>
 
         <div className="relative">
-          {/* Vertical timeline line */}
           <div className="pointer-events-none absolute left-0 top-0 hidden h-full w-px bg-gradient-to-b from-green-500/40 via-emerald-500/10 to-transparent sm:block" />
 
           <ul className="space-y-5">

@@ -1,123 +1,291 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { MdOnlinePrediction } from 'react-icons/md'
 import { projectsData } from '../data/projects.jsx'
 
-const FadeInSection = ({ children, className = '' }) => {
-  const ref = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
-
+const useInView = (ref, opts = { threshold: 0.12 }) => {
+  const [inView, setInView] = useState(false)
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.15 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        setInView(true)
+        obs.disconnect()
+      }
+    }, opts)
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [ref, opts])
+  return inView
+}
+
+const Modal = ({ open, onClose, project }) => {
+  useEffect(() => {
+    const closeOnEsc = (e) => {
+      if (e.key === 'Escape') onClose()
+    }
+    if (open) document.body.style.overflow = 'hidden'
+    else document.body.style.overflow = ''
+    window.addEventListener('keydown', closeOnEsc)
+    return () => {
+      window.removeEventListener('keydown', closeOnEsc)
+      document.body.style.overflow = ''
+    }
+  }, [open, onClose])
+
+  if (!open || !project) return null
 
   return (
-    <div
-      ref={ref}
-      className={`transform transition-all duration-700 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      } ${className}`}
-    >
-      {children}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6">
+      <div className="max-w-4xl w-full rounded-2xl bg-gradient-to-br from-slate-900/95 to-black/95 border border-white/10 shadow-2xl overflow-hidden">
+        <header className="flex items-center justify-between px-6 py-4 border-b border-white/6">
+          <h3 className="text-lg font-semibold text-green-300">
+            {project.name}
+          </h3>
+          <button
+            onClick={onClose}
+            className="text-gray-200 px-3 py-1 rounded-md hover:bg-white/5"
+          >
+            Close
+          </button>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
+          <div className="min-h-[220px] rounded-md bg-black/40 flex items-center justify-center overflow-hidden">
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={project.name}
+                className="object-cover w-full h-full"
+              />
+            ) : (
+              <div className="text-gray-400 text-sm">No preview available</div>
+            )}
+          </div>
+          <div>
+            <p className="text-gray-200 mb-4">{project.description}</p>
+            <div className="mb-4 flex flex-wrap gap-2">
+              {project.technologiesUsed.map((t, i) => (
+                <span
+                  key={i}
+                  className="text-xs font-semibold bg-white/5 text-green-200 px-3 py-1 rounded-full"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-3">
+              {project.liveLink && (
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-400 to-sky-400 px-4 py-2 text-sm font-semibold text-black shadow"
+                >
+                  <MdOnlinePrediction /> Live
+                </a>
+              )}
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-gray-100"
+                >
+                  <FaGithub /> Code
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
 
-const ProjectCard = ({ project, index }) => (
-  <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-black/95 to-slate-950/90 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-2 hover:border-green-400/70 hover:shadow-[0_25px_70px_rgba(34,197,94,0.35)]">
-    <div className="pointer-events-none absolute -top-16 right-0 h-28 w-28 rounded-full bg-green-500/10 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-    <div className="pointer-events-none absolute -bottom-16 left-0 h-32 w-32 rounded-full bg-emerald-500/10 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-    <div className="relative">
-      <div className="mb-3 flex items-center justify-between gap-2">
-        <h2 className="text-xl md:text-2xl font-bold text-green-400 tracking-tight">
-          {project.name}
-        </h2>
-        <span className="rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-gray-300">
-          #{index + 1}
-        </span>
-      </div>
-
-      <p className="text-gray-300 mb-4 text-sm md:text-base leading-relaxed">
-        {project.description}
-      </p>
-
-      <div className="mb-6 flex flex-wrap gap-2">
-        {project.technologiesUsed.map((tech, i) => (
-          <span
-            key={i}
-            className="rounded-full border border-green-500/40 bg-green-500/10 px-3 py-1 text-xs font-semibold text-green-300"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-
-      <div className="flex flex-wrap gap-3">
-        {project.liveLink && (
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-sky-400 px-5 py-2 text-sm font-semibold text-gray-900 shadow-lg shadow-green-500/30 transition-all duration-300 hover:shadow-green-400/40 hover:-translate-y-0.5"
-          >
-            <MdOnlinePrediction className="text-lg" />
-            <span>Live Demo</span>
-          </a>
+const Card = ({ project, index, onOpen }) => {
+  const ref = useRef(null)
+  const inView = useInView(ref)
+  return (
+    <article
+      ref={ref}
+      className={`group relative rounded-2xl overflow-hidden border border-white/8 bg-gradient-to-br from-slate-900/80 to-black/80 p-4 shadow-lg transform transition-all duration-400 ${
+        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      } hover:-translate-y-2`}
+    >
+      <div className="relative h-44 md:h-40 rounded-xl overflow-hidden mb-4">
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-gray-400">
+            Preview
+          </div>
         )}
-        {project.githubLink && (
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2 text-sm font-semibold text-gray-100 backdrop-blur-md transition-all duration-300 hover:border-green-300 hover:bg-green-400/10 hover:text-green-100 hover:-translate-y-0.5"
-          >
-            <FaGithub className="text-lg" />
-            <span>GitHub</span>
-          </a>
-        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute left-4 bottom-4">
+          <h4 className="text-sm md:text-base font-bold text-green-300">
+            {project.name}
+          </h4>
+          <p className="text-xs text-gray-300">
+            {project.short || project.description?.slice(0, 70)}
+          </p>
+        </div>
+        <div className="absolute right-4 top-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-green-400/90 text-black px-3 py-1 text-xs font-semibold shadow"
+            >
+              Demo
+            </a>
+          )}
+          {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-white/6 text-gray-200 px-3 py-1 text-xs font-semibold border border-white/8"
+            >
+              Code
+            </a>
+          )}
+        </div>
       </div>
-    </div>
-  </div>
-)
+
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex-1">
+          <div className="mb-2 hidden md:block">
+            {project.technologiesUsed.slice(0, 4).map((t, i) => (
+              <span
+                key={i}
+                className="inline-block text-xs text-green-200 bg-white/5 px-2 py-1 rounded-full mr-2"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+          <div className="text-sm text-gray-300 line-clamp-3">
+            {project.description}
+          </div>
+        </div>
+        <div className="flex flex-col items-end gap-2">
+          <button
+            onClick={() => onOpen(project)}
+            className="rounded-full bg-gradient-to-r from-green-400 to-emerald-300 px-3 py-2 text-xs font-semibold text-black shadow hover:scale-105 transition"
+          >
+            Details
+          </button>
+          <span className="text-xs text-gray-400">#{index + 1}</span>
+        </div>
+      </div>
+    </article>
+  )
+}
 
 const Projects = () => {
+  const [query, setQuery] = useState('')
+  const [filter, setFilter] = useState('All')
+  const [openProject, setOpenProject] = useState(null)
+  const allTech = Array.from(
+    new Set(projectsData.flatMap((p) => p.technologiesUsed))
+  ).slice(0, 12)
+  const filtered = projectsData.filter((p) => {
+    const matchesFilter =
+      filter === 'All' || p.technologiesUsed.includes(filter)
+    const matchesQuery =
+      !query ||
+      p.name.toLowerCase().includes(query.toLowerCase()) ||
+      (p.description || '').toLowerCase().includes(query.toLowerCase())
+    return matchesFilter && matchesQuery
+  })
+
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-gray-950 via-black to-gray-950 text-white pt-24 pb-16 px-5 mt-3">
+    <section className="relative min-h-screen bg-gradient-to-b from-gray-950 via-black to-gray-950 text-white pt-24 pb-16 px-5">
       <div className="pointer-events-none absolute -top-32 -left-20 h-64 w-64 rounded-full bg-green-500/15 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
 
-      <FadeInSection className="max-w-5xl mx-auto text-center mb-12">
-        <p className="text-xs uppercase tracking-[0.3em] text-green-400/80">
-          Work Showcase
-        </p>
-        <h1 className="mt-2 text-3xl md:text-4xl font-bold text-green-400">
-          My Projects
-        </h1>
-        <div className="mt-3 mx-auto h-1 w-16 rounded-full bg-gradient-to-r from-green-400 via-emerald-300 to-green-500" />
-        <p className="mt-4 text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
-          A collection of applications I&apos;ve built using modern web
-          technologies, focused on performance, usability, and clean UI.
-        </p>
-      </FadeInSection>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-green-400/80">
+            Work Showcase
+          </p>
+          <h1 className="mt-2 text-3xl md:text-4xl font-bold text-green-400">
+            Selected Projects
+          </h1>
+          <p className="mt-3 text-sm text-gray-300 max-w-2xl mx-auto">
+            Interactive, performant projects built with modern web technologies.
+          </p>
+        </div>
 
-      <FadeInSection className="relative max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projectsData.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
+        <div className="flex flex-col md:flex-row gap-3 items-center justify-between mb-6">
+          <div className="flex gap-2 flex-wrap">
+            <button
+              onClick={() => {
+                setFilter('All')
+                setQuery('')
+              }}
+              className={`px-3 py-1 rounded-full text-sm font-medium transition ${
+                filter === 'All'
+                  ? 'bg-green-500 text-black'
+                  : 'bg-white/6 text-gray-200'
+              }`}
+            >
+              All
+            </button>
+            {allTech.map((t) => (
+              <button
+                key={t}
+                onClick={() => setFilter(t)}
+                className={`px-3 py-1 rounded-full text-sm font-medium transition ${
+                  filter === t
+                    ? 'bg-green-500 text-black'
+                    : 'bg-white/6 text-gray-200'
+                }`}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3 w-full md:w-auto mt-3 md:mt-0">
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search projects..."
+              className="w-full md:w-64 rounded-full bg-white/5 px-4 py-2 text-sm text-gray-200 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+            />
+            <div className="hidden md:flex items-center gap-2 text-sm text-gray-300">
+              Filtered:{' '}
+              <span className="ml-1 font-semibold text-green-300">
+                {filter}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filtered.map((project, i) => (
+            <Card
+              key={i}
+              project={project}
+              index={i}
+              onOpen={(p) => setOpenProject(p)}
+            />
           ))}
         </div>
-      </FadeInSection>
+      </div>
+
+      <Modal
+        open={!!openProject}
+        onClose={() => setOpenProject(null)}
+        project={openProject}
+      />
     </section>
   )
 }

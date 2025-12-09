@@ -1,7 +1,8 @@
-// skillsData.js
+
+import React from 'react'
 import {
   FaReact,
-  FaJs,
+  FaJsSquare,
   FaHtml5,
   FaCss3Alt,
   FaNodeJs,
@@ -21,32 +22,33 @@ import {
   FaGithub,
 } from 'react-icons/fa'
 
-import { TbBrandReactNative } from 'react-icons/tb'
-
 import {
+  SiReact,
   SiNetlify,
   SiVercel,
   SiTailwindcss,
   SiTypescript,
+} from 'react-icons/si'
+import {
   SiExpress,
   SiSpringboot,
   SiMongodb,
   SiMysql,
-  SiDjango,
   SiPostgresql,
-  SiFastapi,
-  SiFlask,
-  SiHttpie,
   SiPostman,
   SiRedux,
   SiGitlab,
-  SiJsonwebtokens, 
+  SiJsonwebtokens,
+  SiDjango,
 } from 'react-icons/si'
 
 export const skills = [
   { name: 'HTML', icon: <FaHtml5 className="text-orange-400 text-6xl" /> },
   { name: 'CSS', icon: <FaCss3Alt className="text-sky-400 text-6xl" /> },
-  { name: 'JavaScript', icon: <FaJs className="text-yellow-300 text-6xl" /> },
+  {
+    name: 'JavaScript',
+    icon: <FaJsSquare className="text-yellow-300 text-6xl" />,
+  },
   {
     name: 'TypeScript',
     icon: <SiTypescript className="text-blue-400 text-6xl" />,
@@ -60,10 +62,7 @@ export const skills = [
     icon: <SiTailwindcss className="text-cyan-300 text-6xl" />,
   },
   { name: 'React.js', icon: <FaReact className="text-cyan-300 text-6xl" /> },
-  {
-    name: 'React Native',
-    icon: <TbBrandReactNative className="text-cyan-400 text-6xl" />,
-  },
+  { name: 'React (alt)', icon: <SiReact className="text-cyan-400 text-6xl" /> },
   { name: 'Node.js', icon: <FaNodeJs className="text-green-400 text-6xl" /> },
   {
     name: 'Express.js',
@@ -74,14 +73,8 @@ export const skills = [
     name: 'Spring Boot',
     icon: <SiSpringboot className="text-lime-400 text-6xl" />,
   },
-  { name: 'Python', icon: <FaPython className="text-yellow-400 text-6xl" /> },
+  { name: 'Python', icon: <FaPython className="text-teal-400 text-6xl" /> },
   { name: 'Django', icon: <SiDjango className="text-green-600 text-6xl" /> },
-  {
-    name: 'Django REST Framework',
-    icon: <FaServer className="text-red-400 text-6xl" />, // ✅ Replaced invalid icon
-  },
-  { name: 'FastAPI', icon: <SiFastapi className="text-teal-400 text-6xl" /> },
-  { name: 'Flask', icon: <SiFlask className="text-gray-300 text-6xl" /> },
   {
     name: 'MongoDB',
     icon: <SiMongodb className="text-emerald-400 text-6xl" />,
@@ -100,10 +93,13 @@ export const coreCS = [
     icon: <FaProjectDiagram className="text-red-400 text-6xl" />,
   },
   {
-    name: 'Data Structures through Java',
+    name: 'Data Structures (Java)',
     icon: <FaJava className="text-orange-300 text-6xl" />,
   },
-  { name: 'Databases', icon: <SiMysql className="text-blue-400 text-6xl" /> },
+  {
+    name: 'Databases',
+    icon: <FaDatabase className="text-blue-400 text-6xl" />,
+  },
   {
     name: 'Software Engineering',
     icon: <FaProjectDiagram className="text-green-400 text-6xl" />,
@@ -117,9 +113,9 @@ export const tools = [
   { name: 'GitLab', icon: <SiGitlab className="text-orange-400 text-6xl" /> },
   { name: 'Netlify', icon: <SiNetlify className="text-green-400 text-6xl" /> },
   { name: 'Vercel', icon: <SiVercel className="text-white text-6xl" /> },
-  { name: 'Http', icon: <SiHttpie className="text-blue-400 text-6xl" /> },
+  { name: 'Redux', icon: <SiRedux className="text-violet-400 text-6xl" /> },
   {
-    name: 'JWT Authentication',
+    name: 'JWT',
     icon: <SiJsonwebtokens className="text-yellow-400 text-6xl" />,
   },
 ]
@@ -164,7 +160,6 @@ export const resumeSkills = {
     'Django REST Framework',
     'Node.js',
     'Express.js',
-    'FastAPI',
     'Flask',
     'Java',
     'Spring Boot',
