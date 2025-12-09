@@ -73,7 +73,7 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-950 to-black text-gray-200 px-6 py-20 overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-gray-950 to-black text-gray-200 px-6 pb-10 pt-5 overflow-hidden">
       <div
         ref={orbRef}
         className="pointer-events-none absolute -top-32 left-1/4 h-60 w-60 rounded-full bg-green-500/12 blur-3xl transition-transform duration-300"
