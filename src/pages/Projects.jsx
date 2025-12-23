@@ -1,10 +1,9 @@
-// src/pages/Projects.jsx
+
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { MdOnlinePrediction } from 'react-icons/md'
 import { projectsData } from '../data/projects.jsx'
 
-/* ---------------------- useInView (stable, once option) ---------------------- */
 const useInView = (ref, opts = { threshold: 0.12, once: true }) => {
   const [inView, setInView] = useState(false)
   const saved = useRef(opts)
@@ -32,7 +31,6 @@ const useInView = (ref, opts = { threshold: 0.12, once: true }) => {
   return inView
 }
 
-/* ---------------------- Utility helpers ---------------------- */
 const slugify = (s = '') =>
   s
     .toString()
@@ -40,7 +38,6 @@ const slugify = (s = '') =>
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '')
 
-/* ---------------------- Modal (accessible) ---------------------- */
 const Modal = React.memo(function Modal({ open, onClose, project }) {
   const dialogRef = useRef(null)
   const previouslyFocused = useRef(null)
@@ -51,10 +48,8 @@ const Modal = React.memo(function Modal({ open, onClose, project }) {
     }
     if (open) {
       previouslyFocused.current = document.activeElement
-      // lock scroll
       document.body.style.overflow = 'hidden'
       window.addEventListener('keydown', onKey)
-      // focus first focusable element inside modal (close button)
       setTimeout(() => {
         dialogRef.current?.querySelector('button, a, [tabindex]')?.focus()
       }, 0)
@@ -67,7 +62,9 @@ const Modal = React.memo(function Modal({ open, onClose, project }) {
       if (previouslyFocused.current) {
         try {
           previouslyFocused.current.focus()
-        } catch {}
+        } catch (err) {
+          console.log(err)
+        }
       }
     }
   }, [open, onClose])
@@ -308,7 +305,7 @@ const Projects = () => {
       <div className="pointer-events-none absolute -top-32 -left-20 h-64 w-64 rounded-full bg-green-500/15 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto md:pt-5 pt-10">
         <div className="text-center mb-8">
           <p className="text-xs uppercase tracking-[0.3em] text-green-400/80">
             Work Showcase

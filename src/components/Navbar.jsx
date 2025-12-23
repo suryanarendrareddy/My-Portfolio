@@ -72,7 +72,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-14 text-sm font-medium">
             {links.map((link) => {
               const active = location.pathname === link.path
               return (

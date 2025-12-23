@@ -39,7 +39,7 @@ export const projectsData = [
     name: 'Engineers World',
     description:
       'A next-generation engineering platform designed to help students and professionals access tools, resources, and a collaborative ecosystem. Features dynamic UI, animations, and an optimized user experience.',
-    technologiesUsed: ['React.js', 'CSS', 'Hostinger', 'Framer Motion', 'EmailJS'],
+    technologiesUsed: ['React.js', 'TailwindCSS', 'Hostinger', 'Framer Motion', 'EmailJS','Express.js', 'Node.js'],
     liveLink: 'https://engineersworld.in',
     githubLink: 'https://github.com/suryanarendrareddy/engineersworld',
     image: '/engineers-world.png',
